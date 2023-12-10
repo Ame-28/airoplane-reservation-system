@@ -20,6 +20,10 @@
                 </TransformGroup>
             </TextBlock.RenderTransform>
         </TextBlock>
+        <!--<TextBox TextWrapping="Wrap" Text="TextBox" Width="120" Margin="91,314,489,-71" TextChanged="TextBox_TextChanged"/>
+        <TextBox TextWrapping="Wrap" Text="TextBox" Width="120"/>-->
+        <TextBlock TextWrapping="Wrap" Text="USER ID" FontWeight="bold" />
+        <TextBlock TextWrapping="Wrap" Text="USER ID" FontWeight="bold" Margin="50,257,568,302"/>
 
 
 
