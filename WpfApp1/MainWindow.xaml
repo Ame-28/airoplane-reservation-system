@@ -4,12 +4,24 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="AeroVista Reservation System" Height="768" Width="1080">
+        Title="AeroVista Reservation System" Height="600" Width="700" ResizeMode="NoResize">
     <Grid Margin="5,6,-5,0">
-        <Image Height="148" Margin="0,-5,1,0" VerticalAlignment="Top" Width="1102" Source="img/header-image.png" Stretch="UniformToFill" HorizontalAlignment="Right"/>
-        <TextBlock TextWrapping="Wrap"  Text="Welcome to online reservation system" Foreground="White"  FontSize="25" Margin="362,39,285,670" FontWeight="Bold"/>
-        <TextBlock TextWrapping="Wrap" Text="AeroVista Airlines" Foreground="White" Background="Transparent" FontSize="20" Margin="461,74,450,648" FontWeight="Bold" />
-        <!--header image-->
+        <Image Height="104" Margin="0,-2,6,0" VerticalAlignment="Top" Width="713" Source="img/header-image.png" Stretch="UniformToFill" HorizontalAlignment="Right"/>
+        <TextBlock TextWrapping="Wrap"  Text="Welcome to online reservation system" Foreground="White"  FontSize="20" Margin="190,23,136,528" FontWeight="Bold"/>
+        <TextBlock TextWrapping="Wrap" Text="AeroVista Airlines" Foreground="White" Background="Transparent" FontSize="17" Margin="297,52,246,501" FontWeight="Bold" />
+        <Image Margin="426,133,40,40" Source="img/Poster.png"/>
+        <TextBlock TextWrapping="Wrap" Text="LOGIN TO AEROVISTA RESERVATION SYSTEM" Margin="43,157,0,202" FontSize="20" TextAlignment="Center" HorizontalAlignment="Left" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" Width="362">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="0.707"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="1.988"/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+
+
 
     </Grid>
 </Window>
