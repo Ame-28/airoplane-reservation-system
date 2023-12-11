@@ -75,7 +75,14 @@
         <TextBlock Grid.Row="3" Margin="316,0,31,4" FontSize="12" Foreground="LightBlue" TextAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" Text="Forgot Passoword?"  />
 
         <!-- Sign In Button -->
-        <Button Grid.Row="4" Height="40" Width="100" VerticalAlignment="Center" x:Name="SignIn" Content="SIGN IN" Background="#374B68" Foreground="white" FontWeight="bold" Click="SignIn_Click" />
+        <Button Grid.Row="4" 
+                Height="40" Width="100" 
+                VerticalAlignment="Center" 
+                x:Name="SignIn" 
+                Content="SIGN IN" 
+                Background="#374B68" Foreground="white" 
+                FontWeight="bold" 
+                Click="SignIn_Click" />
 
     </Grid>
 </Window>
