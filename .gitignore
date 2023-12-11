@@ -27,3 +27,5 @@ WpfApp1/obj/Debug/MainWindow.g.i.cs
 *.resources
 *.pdb
 /WpfApp1/MainWindow.xaml
+WpfApp1/obj/Debug/travel_details.g.cs
+WpfApp1/obj/Debug/travel_details.g.i.cs
