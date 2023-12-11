@@ -64,7 +64,7 @@
     
         <!-- User Name Text Box -->
         <Border Grid.Row="2" CornerRadius="10" BorderBrush="black" BorderThickness="1" Background="white" Margin="75,50,125,26">
-            <TextBox x:Name="UsernameTextBox" BorderThickness="0" VerticalContentAlignment="center" Margin="3,3,3,3" TextChanged="UsernameTextBox_TextChanged"/>
+            <TextBox x:Name="UsernameTextBox" BorderThickness="0" VerticalContentAlignment="center" Margin="3,3,3,3"/>
         </Border>
         <TextBox Grid.Row="2" x:Name="userNameError" BorderThickness="0" Margin="75,95,125,0"/>
 

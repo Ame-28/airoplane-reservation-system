@@ -27,3 +27,8 @@ WpfApp1/obj/Debug/MainWindow.g.i.cs
 *.resources
 *.pdb
 /WpfApp1/MainWindow.xaml
+*.dll
+*.xml
+*.exe
+*.pdb
+*.CopyComplete
