@@ -25,7 +25,13 @@
         <Border Grid.Column="1" Grid.Row="1" 
                 Grid.RowSpan="4" 
                 Background="#FFE0E0E0">
-            <Image Margin="30,32,30,44" Source="img/Poster.png"/>
+            <Border CornerRadius="10"
+                    BorderThickness="0"
+                    Background="#FF095D80"
+                    Height="410" Width="260">
+                <Image Height="400" Width="250" Source="img/Poster.png"/>
+            </Border>
+            
         </Border>
         
 
