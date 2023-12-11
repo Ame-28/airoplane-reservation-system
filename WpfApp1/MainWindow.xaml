@@ -5,27 +5,46 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         Title="AeroVista Reservation System" Height="600" Width="700" ResizeMode="NoResize">
-    <Grid Margin="5,6,-5,0">
-        <Image Height="104" Margin="0,-2,6,0" VerticalAlignment="Top" Width="713" Source="img/header-image.png" Stretch="UniformToFill" HorizontalAlignment="Right"/>
-        <TextBlock TextWrapping="Wrap"  Text="Welcome to online reservation system" Foreground="White"  FontSize="20" Margin="190,23,136,528" FontWeight="Bold"/>
-        <TextBlock TextWrapping="Wrap" Text="AeroVista Airlines" Foreground="White" Background="Transparent" FontSize="17" Margin="297,52,246,501" FontWeight="Bold" />
-        <Image Margin="426,133,40,40" Source="img/Poster.png"/>
-        <TextBlock TextWrapping="Wrap" Text="LOGIN TO AEROVISTA RESERVATION SYSTEM" Margin="43,157,0,202" FontSize="20" TextAlignment="Center" HorizontalAlignment="Left" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" Width="362">
-            <TextBlock.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform AngleY="0.707"/>
-                    <RotateTransform/>
-                    <TranslateTransform Y="1.988"/>
-                </TransformGroup>
-            </TextBlock.RenderTransform>
-        </TextBlock>
-        <!--<TextBox TextWrapping="Wrap" Text="TextBox" Width="120" Margin="91,314,489,-71" TextChanged="TextBox_TextChanged"/>
-        <TextBox TextWrapping="Wrap" Text="TextBox" Width="120"/>-->
-        <TextBlock TextWrapping="Wrap" Text="USER ID" FontWeight="bold" />
-        <TextBlock TextWrapping="Wrap" Text="USER ID" FontWeight="bold" Margin="50,257,568,302"/>
-
-        <!-- hey there -->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Image Grid.ColumnSpan="2" Source="img/header-image.png" Stretch="Fill"/>
+        <TextBlock Grid.ColumnSpan="2" 
+                   TextWrapping="Wrap"  
+                   Text="Welcome to Online Reservation System"                
+                   Foreground="White"  
+                   FontSize="20" FontWeight="Bold"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"/>
+        <TextBlock TextWrapping="Wrap" 
+                   Grid.ColumnSpan="2"
+                   Text="AeroVista Airlines" 
+                   Foreground="White" Background="Transparent" 
+                   FontSize="17" 
+                   Margin="1,40,1,1"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   FontWeight="Bold" />
+        <Image Grid.Column="1" Grid.Row="1" 
+               Grid.RowSpan="4" 
+               Margin="30,32,30,44" 
+               Source="img/Poster.png"/>
+        <TextBlock Grid.Row="1" TextWrapping="Wrap" Text="LOGIN TO AEROVISTA RESERVATION SYSTEM" FontSize="20" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Width="362"/>
+        <TextBlock Grid.Row="2" Margin="25,25,1,1" FontSize="15" TextWrapping="Wrap" Text="USER ID" FontWeight="bold" Grid.ColumnSpan="2" />
+        <TextBox Grid.Row="2" Width="300" Height="40" Margin="1,25,1,1"/>
+        <TextBlock Grid.Row="3" Margin="25,25,1,1" FontSize="15" TextWrapping="Wrap" Text="PASSWORD" FontWeight="bold" />
+        <TextBox Grid.Row="3" Width="300" Height="40" Margin="1,25,1,1"/>
+        <TextBlock Grid.Row="3" Margin="25,25,25,1" FontSize="12" Foreground="LightBlue" TextAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" Text="Forgot Passoword?"/>
+        <Button Grid.Row="4" Height="40" Width="100" VerticalAlignment="Center" x:Name="SignIn" Content="Sign In"/>
 
     </Grid>
 </Window>

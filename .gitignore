@@ -3,3 +3,11 @@
 *.vsidx
 *.cache
 *.cache
+.vs/WpfApp1/v17/.suo
+.vs/WpfApp1/v17/.suo
+.vs/WpfApp1/v17/.suo
+*.exe
+*.pdb
+*.baml
+WpfApp1/obj/Debug/MainWindow.g.i.cs
+WpfApp1/obj/Debug/MainWindow.g.cs

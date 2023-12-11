@@ -12,3 +12,17 @@ C:\Users\amels\Desktop\airport reservation system\WpfApp1\WpfApp1\obj\Debug\WpfA
 C:\Users\amels\Desktop\airport reservation system\WpfApp1\WpfApp1\obj\Debug\WpfApp1.csproj.CoreCompileInputs.cache
 C:\Users\amels\Desktop\airport reservation system\WpfApp1\WpfApp1\obj\Debug\WpfApp1.exe
 C:\Users\amels\Desktop\airport reservation system\WpfApp1\WpfApp1\obj\Debug\WpfApp1.pdb
+C:\Users\abrah\Downloads\TEMP\airoplane-reservation-system\WpfApp1\bin\Debug\WpfApp1.exe.config
+C:\Users\abrah\Downloads\TEMP\airoplane-reservation-system\WpfApp1\bin\Debug\WpfApp1.exe
+C:\Users\abrah\Downloads\TEMP\airoplane-reservation-system\WpfApp1\bin\Debug\WpfApp1.pdb
+C:\Users\abrah\Downloads\TEMP\airoplane-reservation-system\WpfApp1\obj\Debug\WpfApp1.csproj.AssemblyReference.cache
+C:\Users\abrah\Downloads\TEMP\airoplane-reservation-system\WpfApp1\obj\Debug\MainWindow.baml
+C:\Users\abrah\Downloads\TEMP\airoplane-reservation-system\WpfApp1\obj\Debug\MainWindow.g.cs
+C:\Users\abrah\Downloads\TEMP\airoplane-reservation-system\WpfApp1\obj\Debug\App.g.cs
+C:\Users\abrah\Downloads\TEMP\airoplane-reservation-system\WpfApp1\obj\Debug\WpfApp1_MarkupCompile.cache
+C:\Users\abrah\Downloads\TEMP\airoplane-reservation-system\WpfApp1\obj\Debug\WpfApp1.g.resources
+C:\Users\abrah\Downloads\TEMP\airoplane-reservation-system\WpfApp1\obj\Debug\WpfApp1.Properties.Resources.resources
+C:\Users\abrah\Downloads\TEMP\airoplane-reservation-system\WpfApp1\obj\Debug\WpfApp1.csproj.GenerateResource.cache
+C:\Users\abrah\Downloads\TEMP\airoplane-reservation-system\WpfApp1\obj\Debug\WpfApp1.csproj.CoreCompileInputs.cache
+C:\Users\abrah\Downloads\TEMP\airoplane-reservation-system\WpfApp1\obj\Debug\WpfApp1.exe
+C:\Users\abrah\Downloads\TEMP\airoplane-reservation-system\WpfApp1\obj\Debug\WpfApp1.pdb
