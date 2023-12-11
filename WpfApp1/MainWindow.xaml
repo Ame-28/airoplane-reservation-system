@@ -85,7 +85,7 @@
                 x:Name="SignIn" 
                 Content="SIGN IN" 
                 Background="#374B68" Foreground="white" 
-                FontWeight="bold" 
+                FontSize="20" FontWeight="bold" 
                 Click="SignIn_Click" />
 
     </Grid>
