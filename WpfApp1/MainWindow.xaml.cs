@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -31,10 +32,34 @@ namespace WpfApp1
         }
 
         private void SignIn_Click(object sender, RoutedEventArgs e)
-        { 
-          Page page=new Page1();
-            this.Content = page;
-            
+        {
+            string userName = UsernameTextBox.Text;
+            SecureString password = PasswordBox.SecurePassword;
+
+            if (!validateUserName(userName))
+            {
+                userNameError.Text = "ERROR: The Username is invalid";
+            }
+            else
+            {
+                // Store the username and password in database
+                Page page = new Page1();
+                this.Content = page;
+            }
+
+        }
+
+        public bool validateUserName(string userName)
+        {
+            if(userName == null)
+            {
+                return false;
+            }
+            else if(userName.Any(char.IsDigit))
+            {
+                return false;
+            }
+            else { return true; }
         }
     }
 }
