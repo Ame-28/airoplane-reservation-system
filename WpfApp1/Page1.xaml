@@ -7,7 +7,31 @@
       mc:Ignorable="d"
       Height="600" Width="900" 
       Title="Page1">
-
+    <Page.Resources>
+        <Style x:Key="RoundedButtonStyle" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" Background="White" CornerRadius="10" BorderBrush="Black" BorderThickness="1">
+                            <ContentPresenter x:Name="contentPresenter" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#2e395d"/>
+                                
+                                <Setter TargetName="contentPresenter" Property="TextElement.Foreground" Value="white"/>
+                                
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Width" Value="150"/>
+            <Setter Property="Height" Value="40"/>
+        </Style>
+    </Page.Resources>
     <Grid Background="White">
         <!-- Define Columns & Rows -->
         <Grid.RowDefinitions>
@@ -45,27 +69,27 @@
         <Button Content="SEARCH FLIGHTS" 
                 Grid.Row="1" 
                 HorizontalAlignment="Center" VerticalAlignment="Center" 
-                Height="40" Width="150" 
-                Background='white' Foreground="Black"/>
+                 
+                Background='white' Foreground="Black" Style="{StaticResource RoundedButtonStyle}"/>
         <Button Content="CHECK-IN" Grid.Row="2" 
                 HorizontalAlignment="Center" VerticalAlignment="Center" 
-                Height="40" Width="150" 
-                Background='white' Foreground="Black"/>
+                
+                Background='white' Foreground="Black" Style="{StaticResource RoundedButtonStyle}"/>
         <Button Content="MANAGE BOOKING" 
                 Grid.Row="3" 
                 HorizontalAlignment="Center" VerticalAlignment="Center" 
-                Height="40" Width="150" 
-                Background='white' Foreground="Black"/>
+                
+                Background='white' Foreground="Black" Style="{StaticResource RoundedButtonStyle}"/>
         <Button Content="FLIGHT STATUS" 
                 Grid.Row="4" 
                 HorizontalAlignment="Center" VerticalAlignment="Center" 
-                Height="40" Width="150" 
-                Background='white' Foreground="Black"/>
+                
+                Background='white' Foreground="Black" Style="{StaticResource RoundedButtonStyle}"/>
         <Button Content="ACCOUNTS" 
                 Grid.Row="5" 
                 HorizontalAlignment="Center" VerticalAlignment="Center" 
-                Height="40" Width="150" 
-                Background='white' Foreground="Black"/>
+                 
+                Background='white' Foreground="Black" Style="{StaticResource RoundedButtonStyle}"/>
 
 
 
