@@ -66,7 +66,7 @@
         <Border Grid.Row="2" CornerRadius="10" BorderBrush="black" BorderThickness="1" Background="white" Margin="75,50,125,26">
             <TextBox x:Name="UsernameTextBox" BorderThickness="0" VerticalContentAlignment="center" Margin="3,3,3,3" TextChanged="UsernameTextBox_TextChanged"/>
         </Border>
-        <TextBox Grid.Row="2" x:Name="userNameError" BorderThickness="0" Margin="75,95,75,0"/>
+        <TextBox Grid.Row="2" x:Name="userNameError" BorderThickness="0" Margin="75,95,125,0"/>
 
         <!-- Password Text Block -->
         <TextBlock Grid.Row="3" 
@@ -79,10 +79,10 @@
         <Border Grid.Row="3" CornerRadius="10" BorderBrush="black" BorderThickness="1"  Margin="75,50,125,26">
             <PasswordBox x:Name="PasswordBox" BorderThickness="0" VerticalContentAlignment="center" Margin="3,3,3,3"/>
         </Border>
-        <TextBox Grid.Row="3" x:Name="passwordError" BorderThickness="0" Margin="75,96,75,0"/>
+        <TextBox Grid.Row="3" x:Name="passwordError" BorderThickness="0" Margin="75,96,125,0"/>
 
         <!-- Forgot Password Text Block -->
-        <TextBlock Grid.Row="3" Margin="316,0,31,4" FontSize="12" Foreground="LightBlue" TextAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" Text="Forgot Passoword?"  />
+        <TextBlock Grid.Row="3" Margin="365,0,31,4" FontSize="12" Foreground="LightBlue" TextAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" Text="Forgot Passoword?"  />
 
         <!-- Sign In Button -->
         <Button Grid.Row="4" 
