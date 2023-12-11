@@ -19,34 +19,32 @@
             <RowDefinition Height="80*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width=".2*"/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="19*"/>
+            <ColumnDefinition Width="81*"/>
         </Grid.ColumnDefinitions>
-        
+
         <!-- Set Images -->
         <Image Grid.ColumnSpan="2" Source="img/header-image.png" Stretch="Fill"/>
 
         <!-- Define Headings -->
-        <TextBlock Grid.ColumnSpan="2" 
+        <TextBlock 
                    TextWrapping="Wrap"  
                    Text="Welcome to Online Reservation System"                
                    Foreground="White"  
                    FontSize="20" FontWeight="Bold"
-                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <TextBlock TextWrapping="Wrap" 
-                   Grid.ColumnSpan="2"
+                   HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Height="26" Width="368"/>
+        <TextBlock TextWrapping="Wrap"
                    Text="AeroVista Airlines" 
                    Foreground="White" Background="Transparent" 
                    FontSize="17" FontWeight="Bold"
-                   Margin="1,40,1,1"
-                   VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                   VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" Height="24" Width="142"/>
 
         <!-- First Row Buttons -->
-        <Button Content="Button" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="39" Width="100"/>
-        <Button Content="Button" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="39" Width="100"/>
-        <Button Content="Button" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Height="39" Width="100"/>
-        <Button Content="Button" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" Height="40" Width="100"/>
-        <Button Content="Button" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" Height="40" Width="100"/>
+        <Button Content="SEARCH FLIGHTS" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="40" Width="150" Background='white' Foreground="Black"/>
+        <Button Content="CHECK-IN" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="40" Width="150" Background='white' Foreground="Black"/>
+        <Button Content="MANAGE BOOKING" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Height="40" Width="150" Background='white' Foreground="Black"/>
+        <Button Content="FLIGHT STATUS" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" Height="40" Width="150" Background='white' Foreground="Black"/>
+        <Button Content="ACCOUNTS" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" Height="40" Width="150" Background='white' Foreground="Black"/>
 
 
 
