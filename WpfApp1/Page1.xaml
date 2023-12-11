@@ -12,13 +12,14 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
+                        <!-- Add Radius -->
                         <Border x:Name="border" Background="White" CornerRadius="10" BorderBrush="Black" BorderThickness="1">
                             <ContentPresenter x:Name="contentPresenter" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="border" Property="Background" Value="#2e395d"/>
                                 
+                                <Setter TargetName="border" Property="Background" Value="#2e395d"/>
                                 <Setter TargetName="contentPresenter" Property="TextElement.Foreground" Value="white"/>
                                 
                             </Trigger>
@@ -40,7 +41,7 @@
             <RowDefinition Height="80*"/>
             <RowDefinition Height="80*"/>
             <RowDefinition Height="80*"/>
-            <RowDefinition Height="80*"/>
+            <RowDefinition Height="150"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="19*"/>
@@ -68,27 +69,26 @@
         <!-- First Row Buttons -->
         <Button Content="SEARCH FLIGHTS" 
                 Grid.Row="1" 
-                HorizontalAlignment="Center" VerticalAlignment="Center" 
-                 
+                HorizontalAlignment="Center" VerticalAlignment="Center"                  
                 Background='white' Foreground="Black" Style="{StaticResource RoundedButtonStyle}"/>
+        
         <Button Content="CHECK-IN" Grid.Row="2" 
-                HorizontalAlignment="Center" VerticalAlignment="Center" 
-                
+                HorizontalAlignment="Center" VerticalAlignment="Center"                
                 Background='white' Foreground="Black" Style="{StaticResource RoundedButtonStyle}"/>
+        
         <Button Content="MANAGE BOOKING" 
                 Grid.Row="3" 
-                HorizontalAlignment="Center" VerticalAlignment="Center" 
-                
+                HorizontalAlignment="Center" VerticalAlignment="Center"              
                 Background='white' Foreground="Black" Style="{StaticResource RoundedButtonStyle}"/>
+        
         <Button Content="FLIGHT STATUS" 
                 Grid.Row="4" 
-                HorizontalAlignment="Center" VerticalAlignment="Center" 
-                
+                HorizontalAlignment="Center" VerticalAlignment="Center"                
                 Background='white' Foreground="Black" Style="{StaticResource RoundedButtonStyle}"/>
+        
         <Button Content="ACCOUNTS" 
                 Grid.Row="5" 
-                HorizontalAlignment="Center" VerticalAlignment="Center" 
-                 
+                HorizontalAlignment="Center" VerticalAlignment="Center"                 
                 Background='white' Foreground="Black" Style="{StaticResource RoundedButtonStyle}"/>
 
 
