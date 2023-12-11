@@ -47,7 +47,7 @@
                    HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <!-- User ID TextBlock -->
         <TextBlock Grid.Row="2" 
-                   Margin="29,28,36,60" 
+                   Margin="45,29,23,65"
                    FontSize="15" FontWeight="bold"
                    TextWrapping="Wrap">
             <Run Text="      "/>
