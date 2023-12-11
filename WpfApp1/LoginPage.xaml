@@ -52,7 +52,7 @@
                    TextWrapping="Wrap">
             <Run Text="      "/>
             <Run Language="en-ca" Text="       "/>
-            <Run Text="User Name"/>
+            <Run Text="USER NAME"/>
         </TextBlock>
         <!-- User Name Text Box -->
         <Border Grid.Row="2"  CornerRadius="10" BorderBrush="black" BorderThickness="1" Background="white" Margin="1,25,1,1" Width="300" Height="40">
