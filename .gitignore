@@ -11,3 +11,7 @@
 *.baml
 WpfApp1/obj/Debug/MainWindow.g.i.cs
 WpfApp1/obj/Debug/MainWindow.g.cs
+*.cache
+.vs/WpfApp1/v17/.suo
+WpfApp1/obj/Debug/MainWindow.g.i.cs
+*.cache
