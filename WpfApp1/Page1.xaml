@@ -42,11 +42,30 @@
                    VerticalAlignment="Center" HorizontalAlignment="Center"/>
 
         <!-- First Row Buttons -->
-        <Button Content="SEARCH FLIGHTS" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="40" Width="150" Background='white' Foreground="Black"/>
-        <Button Content="CHECK-IN" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="40" Width="150" Background='white' Foreground="Black"/>
-        <Button Content="MANAGE BOOKING" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Height="40" Width="150" Background='white' Foreground="Black"/>
-        <Button Content="FLIGHT STATUS" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" Height="40" Width="150" Background='white' Foreground="Black"/>
-        <Button Content="ACCOUNTS" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" Height="40" Width="150" Background='white' Foreground="Black"/>
+        <Button Content="SEARCH FLIGHTS" 
+                Grid.Row="1" 
+                HorizontalAlignment="Center" VerticalAlignment="Center" 
+                Height="40" Width="150" 
+                Background='white' Foreground="Black"/>
+        <Button Content="CHECK-IN" Grid.Row="2" 
+                HorizontalAlignment="Center" VerticalAlignment="Center" 
+                Height="40" Width="150" 
+                Background='white' Foreground="Black"/>
+        <Button Content="MANAGE BOOKING" 
+                Grid.Row="3" 
+                HorizontalAlignment="Center" VerticalAlignment="Center" 
+                Height="40" Width="150" 
+                Background='white' Foreground="Black"/>
+        <Button Content="FLIGHT STATUS" 
+                Grid.Row="4" 
+                HorizontalAlignment="Center" VerticalAlignment="Center" 
+                Height="40" Width="150" 
+                Background='white' Foreground="Black"/>
+        <Button Content="ACCOUNTS" 
+                Grid.Row="5" 
+                HorizontalAlignment="Center" VerticalAlignment="Center" 
+                Height="40" Width="150" 
+                Background='white' Foreground="Black"/>
 
 
 
