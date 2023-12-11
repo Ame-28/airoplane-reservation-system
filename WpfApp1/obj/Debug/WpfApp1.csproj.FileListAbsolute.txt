@@ -40,3 +40,6 @@ C:\Users\amels\Desktop\airport reservation system\WpfApp1\WpfApp1\airoplane-rese
 C:\Users\amels\Desktop\airport reservation system\WpfApp1\WpfApp1\airoplane-reservation-system\WpfApp1\obj\Debug\WpfApp1.csproj.CoreCompileInputs.cache
 C:\Users\amels\Desktop\airport reservation system\WpfApp1\WpfApp1\airoplane-reservation-system\WpfApp1\obj\Debug\WpfApp1.exe
 C:\Users\amels\Desktop\airport reservation system\WpfApp1\WpfApp1\airoplane-reservation-system\WpfApp1\obj\Debug\WpfApp1.pdb
+C:\Users\amels\Desktop\airport reservation system\WpfApp1\WpfApp1\airoplane-reservation-system\WpfApp1\obj\Debug\Page1.g.cs
+C:\Users\amels\Desktop\airport reservation system\WpfApp1\WpfApp1\airoplane-reservation-system\WpfApp1\obj\Debug\WpfApp1_MarkupCompile.lref
+C:\Users\amels\Desktop\airport reservation system\WpfApp1\WpfApp1\airoplane-reservation-system\WpfApp1\obj\Debug\Page1.baml
