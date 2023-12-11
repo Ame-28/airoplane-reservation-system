@@ -29,5 +29,10 @@ namespace WpfApp1
         {
             
         }
+
+        private void SignIn_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }
