@@ -52,7 +52,7 @@ namespace WpfApp1
 
         public bool validateUserName(string userName)
         {
-            if(userName == null)
+            if(userName == string.Empty)
             {
                 return false;
             }
