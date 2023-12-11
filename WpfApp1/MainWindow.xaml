@@ -17,13 +17,14 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width=".8*"/>
         </Grid.ColumnDefinitions>
         
         <!-- Set Images -->
         <Image Grid.ColumnSpan="2" Source="img/header-image.png" Stretch="Fill"/>
         <Border Grid.Column="1" Grid.Row="1" 
-              Grid.RowSpan="4" Background="#FFE0E0E0">
+                Grid.RowSpan="4" 
+                Background="#FFE0E0E0">
             <Image Margin="30,32,30,44" Source="img/Poster.png"/>
         </Border>
         
@@ -54,10 +55,10 @@
                    FontSize="15" FontWeight="bold"
                    TextWrapping="Wrap"
                    Text="USER NAME"/>
-
+    
         <!-- User Name Text Box -->
-        <Border Grid.Row="2"  CornerRadius="10" BorderBrush="black" BorderThickness="1" Background="white" Margin="1,25,1,1" Width="300" Height="40">
-            <TextBox x:Name="UsernameTextBox" BorderThickness="0" VerticalContentAlignment="center" Margin="3,3,3,3"/>
+        <Border Grid.Row="2" CornerRadius="10" BorderBrush="black" BorderThickness="1" Background="white" Margin="75,50,125,26">
+            <TextBox x:Name="UsernameTextBox" BorderThickness="0" VerticalContentAlignment="center" Margin="3,3,3,3" TextChanged="UsernameTextBox_TextChanged"/>
         </Border>
         <TextBox Grid.Row="2" x:Name="userNameError" BorderThickness="0" Margin="75,95,75,0"/>
 
@@ -69,7 +70,7 @@
                    Text="PASSWORD"/>
 
         <!-- Password Text Box -->
-        <Border Grid.Row="3" CornerRadius="10" BorderBrush="black" BorderThickness="1"  Margin="1,25,1,1" Width="300" Height="40">
+        <Border Grid.Row="3" CornerRadius="10" BorderBrush="black" BorderThickness="1"  Margin="75,50,125,26">
             <PasswordBox x:Name="PasswordBox" BorderThickness="0" VerticalContentAlignment="center" Margin="3,3,3,3"/>
         </Border>
         <TextBox Grid.Row="3" x:Name="passwordError" BorderThickness="0" Margin="75,96,75,0"/>
