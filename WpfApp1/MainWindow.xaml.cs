@@ -37,9 +37,15 @@ namespace WpfApp1
             string userName = UsernameTextBox.Text;
             SecureString password = PasswordBox.SecurePassword;
 
+            // Check user name field
             if (!validateUserName(userName))
             {
                 userNameError.Text = "ERROR: The Username is invalid";
+            }
+            // Check password field
+            else if(password.Length == 0)
+            {
+                passwordError.Text = "ERROR: The password is empty";
             }
             else
             {
