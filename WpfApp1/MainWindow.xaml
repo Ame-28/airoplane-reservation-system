@@ -6,6 +6,7 @@
         mc:Ignorable="d"
         Title="AeroVista Reservation System" Height="600" Width="900" ResizeMode="NoResize">
     <Grid>
+        
         <!-- Define Columns & Rows -->
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -18,12 +19,14 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
+        
         <!-- Set Images -->
         <Image Grid.ColumnSpan="2" Source="img/header-image.png" Stretch="Fill"/>
-        <Image Grid.Column="1" Grid.Row="1" 
-              Grid.RowSpan="4" 
-              Margin="30,32,30,44" 
-              Source="img/Poster.png"/>
+        <Border Grid.Column="1" Grid.Row="1" 
+              Grid.RowSpan="4" Background="#FFE0E0E0">
+            <Image Margin="30,32,30,44" Source="img/Poster.png"/>
+        </Border>
+        
 
         <!-- Define Headings -->
         <TextBlock Grid.ColumnSpan="2" 
