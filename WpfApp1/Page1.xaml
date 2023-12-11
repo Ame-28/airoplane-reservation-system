@@ -8,43 +8,47 @@
       d:DesignHeight="700" d:DesignWidth="900" 
       Title="Page1">
 
-	<Grid>
-		<Grid.RowDefinitions>
-			<RowDefinition Height="175*"/>
-			<RowDefinition Height="473*"/>
-			<RowDefinition Height="19*"/>
-			<RowDefinition Height="33*"/>
+    <Grid>
+        <!-- Define Columns & Rows -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="80*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".2*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        
+        <!-- Set Images -->
+        <Image Grid.ColumnSpan="2" Source="img/header-image.png" Stretch="Fill"/>
 
-		</Grid.RowDefinitions>
-		<Grid.ColumnDefinitions>
-			<ColumnDefinition/>
-			<ColumnDefinition/>
-		</Grid.ColumnDefinitions>
-		<Image Grid.ColumnSpan="2" Source="img/header-image.png" Stretch="Fill" Margin="0,0,0,4"/>
-		<TextBlock Grid.ColumnSpan="2" 
+        <!-- Define Headings -->
+        <TextBlock Grid.ColumnSpan="2" 
                    TextWrapping="Wrap"  
                    Text="Welcome to Online Reservation System"                
                    Foreground="White"  
                    FontSize="20" FontWeight="Bold"
-                   HorizontalAlignment="Left"
-                   VerticalAlignment="Center" Margin="216,0,0,0" Height="26" Width="369"/>
-		<TextBlock TextWrapping="Wrap" 
+                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock TextWrapping="Wrap" 
                    Grid.ColumnSpan="2"
                    Text="AeroVista Airlines" 
                    Foreground="White" Background="Transparent" 
-                   FontSize="17" 
-                   Margin="329,78,0,0"
-                   VerticalAlignment="Top"
-                   HorizontalAlignment="Left"
-                   FontWeight="Bold" Height="23" Width="143" />
+                   FontSize="17" FontWeight="Bold"
+                   Margin="1,40,1,1"
+                   VerticalAlignment="Center" HorizontalAlignment="Center"/>
 
-		<!-- First Row Buttons -->
-		<Button Content="Button" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="39" Width="100" Margin="19,16,0,0"/>
-		<Button Content="Button" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="39" Width="100" Margin="19,80,0,0"/>
-		<Button Content="Button" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="39" Width="100" Margin="23,144,0,0"/>
-		<Button Content="Button" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="40" Width="100" Margin="23,208,0,0"/>
-
+        <!-- First Row Buttons -->
+        <Button Content="Button" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="39" Width="100"/>
+        <Button Content="Button" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="39" Width="100"/>
+        <Button Content="Button" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Height="39" Width="100"/>
+        <Button Content="Button" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" Height="40" Width="100"/>
+        <Button Content="Button" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" Height="40" Width="100"/>
 
 
-	</Grid>
+
+    </Grid>
 </Page>
