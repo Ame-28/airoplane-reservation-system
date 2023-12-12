@@ -22,6 +22,7 @@
             <ColumnDefinition/>
             <ColumnDefinition Width=".8*"/>
         </Grid.ColumnDefinitions>
+        
         <!-- Set Images -->
         <Image Grid.ColumnSpan="2" Source="img/header-image.png" Stretch="Fill"/>
         <Border Grid.Column="1" Grid.Row="1" 
@@ -96,12 +97,11 @@
                    FontSize="15" FontWeight="bold"
                    TextWrapping="Wrap"
                    Text="DATE OF BIRTH" Grid.RowSpan="2"/>
-        <!-- DOB Text Box -->
+        <!-- DOB Box -->
         <Border Grid.Row="3" CornerRadius="10" BorderBrush="#b5b5b5" BorderThickness="1" HorizontalAlignment="Left" Background="white" Margin="273,50,0,10" Width="217">
             <DatePicker x:Name="datePicker" BorderThickness="0" VerticalContentAlignment="center" Margin="3,3,3,3"/>
         </Border>
         
-
         <!-- Password Text Block -->
         <TextBlock Grid.Row="4" 
                    Margin="10,30,0,0"
