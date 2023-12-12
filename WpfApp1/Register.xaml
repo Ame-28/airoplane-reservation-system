@@ -63,7 +63,6 @@
                    FontSize="15" FontWeight="bold"
                    TextWrapping="Wrap"
                    Text="FIRST NAME"/>
-
         <!-- First Name Text Box -->
         <Border Grid.Row="2" CornerRadius="10" BorderBrush="#b5b5b5" BorderThickness="1" HorizontalAlignment="Left" Background="white" Margin="10,50,0,10" Width="258">
             <TextBox x:Name="FirstNameTextBox" BorderThickness="0" VerticalContentAlignment="center" Margin="3,3,3,3"/>
@@ -75,10 +74,31 @@
                    FontSize="15" FontWeight="bold"
                    TextWrapping="Wrap"
                    Text="LAST NAME" Grid.RowSpan="2"/>
-
         <!-- Last Name Text Box -->
         <Border Grid.Row="2" CornerRadius="10" BorderBrush="#b5b5b5" BorderThickness="1" HorizontalAlignment="Left" Background="white" Margin="273,50,0,10" Width="217">
             <TextBox x:Name="LastNameTextBox" BorderThickness="0" VerticalContentAlignment="center" Margin="3,3,3,3"/>
+        </Border>
+        
+        <!-- Email Text Block -->
+        <TextBlock Grid.Row="3" 
+                   Margin="10,30,0,0"
+                   FontSize="15" FontWeight="bold"
+                   TextWrapping="Wrap"
+                   Text="EMAIL"/>
+        <!-- Email Text Box -->
+        <Border Grid.Row="3" CornerRadius="10" BorderBrush="#b5b5b5" BorderThickness="1" HorizontalAlignment="Left" Background="white" Margin="10,50,0,10" Width="258">
+            <TextBox x:Name="EmailTextBox" BorderThickness="0" VerticalContentAlignment="center" Margin="3,3,3,3"/>
+        </Border>
+        
+        <!-- DOB Text Block -->
+        <TextBlock Grid.Row="3" 
+                   Margin="273,30,0,96"
+                   FontSize="15" FontWeight="bold"
+                   TextWrapping="Wrap"
+                   Text="DATE OF BIRTH" Grid.RowSpan="2"/>
+        <!-- DOB Text Box -->
+        <Border Grid.Row="3" CornerRadius="10" BorderBrush="#b5b5b5" BorderThickness="1" HorizontalAlignment="Left" Background="white" Margin="273,50,0,10" Width="217">
+            <TextBox x:Name="DOBTextBox" BorderThickness="0" VerticalContentAlignment="center" Margin="3,3,3,3"/>
         </Border>
     </Grid>
 </Page>
