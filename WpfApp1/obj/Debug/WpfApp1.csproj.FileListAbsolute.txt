@@ -49,3 +49,5 @@ C:\Users\abrah\Downloads\TEMP\airoplane-reservation-system\WpfApp1\obj\Debug\Mai
 C:\Users\abrah\Downloads\TEMP\airoplane-reservation-system\WpfApp1\bin\Debug\Dapper.dll
 C:\Users\abrah\Downloads\TEMP\airoplane-reservation-system\WpfApp1\bin\Debug\Dapper.xml
 C:\Users\abrah\Downloads\TEMP\airoplane-reservation-system\WpfApp1\obj\Debug\WpfApp1.csproj.CopyComplete
+C:\Users\abrah\Downloads\TEMP\airoplane-reservation-system\WpfApp1\obj\Debug\travel_details.g.cs
+C:\Users\abrah\Downloads\TEMP\airoplane-reservation-system\WpfApp1\obj\Debug\travel_details.baml

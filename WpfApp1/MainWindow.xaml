@@ -63,7 +63,7 @@
                    Text="USER NAME"/>
     
         <!-- User Name Text Box -->
-        <Border Grid.Row="2" CornerRadius="10" BorderBrush="black" BorderThickness="1" Background="white" Margin="75,50,125,26">
+        <Border Grid.Row="2" CornerRadius="10" BorderBrush="#b5b5b5" BorderThickness="1" Background="white" Margin="75,50,125,26">
             <TextBox x:Name="UsernameTextBox" BorderThickness="0" VerticalContentAlignment="center" Margin="3,3,3,3"/>
         </Border>
         <TextBox Grid.Row="2" x:Name="userNameError" BorderThickness="0" Margin="75,95,125,0"/>
@@ -76,7 +76,7 @@
                    Text="PASSWORD"/>
 
         <!-- Password Text Box -->
-        <Border Grid.Row="3" CornerRadius="10" BorderBrush="black" BorderThickness="1"  Margin="75,50,125,26">
+        <Border Grid.Row="3" CornerRadius="10" BorderBrush="#b5b5b5" BorderThickness="1"  Margin="75,50,125,26">
             <PasswordBox x:Name="PasswordBox" BorderThickness="0" VerticalContentAlignment="center" Margin="3,3,3,3"/>
         </Border>
         <TextBox Grid.Row="3" x:Name="passwordError" BorderThickness="0" Margin="75,96,125,0"/>
