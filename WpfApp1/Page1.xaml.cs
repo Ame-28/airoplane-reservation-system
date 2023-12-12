@@ -23,6 +23,8 @@ namespace WpfApp1
         public Page1()
         {
             InitializeComponent();
+            travel_details travel_Details = new travel_details();
+            Main_frame.Content = travel_Details;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
