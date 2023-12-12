@@ -47,3 +47,4 @@ WpfApp1/obj/Debug/App.g.cs
 *.force
 WpfApp1/obj/Debug/Register.g.cs
 WpfApp1/obj/Debug/Register.g.i.cs
+*.csproj
