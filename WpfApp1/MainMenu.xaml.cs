@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace ARS
 {
     /// <summary>
-    /// Interaction logic for Page1.xaml
+    /// Interaction logic for MainMenu.xaml
     /// </summary>
-    public partial class Page1 : Page
+    public partial class MainMenu : Page
     {
-        public Page1()
+        public MainMenu()
         {
             InitializeComponent();
             TravelDetails TravelDetails = new TravelDetails();

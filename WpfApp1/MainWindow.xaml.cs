@@ -55,7 +55,7 @@ namespace ARS
                 else
                 {
                     // Go to next page
-                    Page page = new Page1();
+                    Page page = new MainMenu();
                     this.Content = page;
                 }
             }
