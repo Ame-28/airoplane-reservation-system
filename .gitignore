@@ -40,3 +40,7 @@ WpfApp1/obj/Debug/travel_details.g.cs
 *.exe
 .vs/WpfApp1/v17/.suo
 *.exe
+WpfApp1/obj/Debug/Page1.g.cs
+WpfApp1/obj/Debug/App.g.cs
+*.lref
+*.config
