@@ -10,23 +10,28 @@
 
 
 
-    <Grid Background="brown">
+    <Grid Background="white">
         <Grid.RowDefinitions>
-            <RowDefinition Height="100*"/>
-            <RowDefinition Height="80*"/>
-            <RowDefinition Height="80*"/>
-            <RowDefinition Height="80*"/>
-            <RowDefinition Height="80*"/>
-            <RowDefinition Height="150"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="9*"/>
-            <ColumnDefinition Width="71*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TextBlock 
-           Margin="155,38,355,19"
-           FontSize="15" FontWeight="bold"
+        <TextBlock Grid.ColumnSpan="3" Grid.Row="0"
+           VerticalAlignment="Center" HorizontalAlignment="Center"
+           FontSize="20" FontWeight="bold"
            TextWrapping="Wrap"
-           Text="ENTER THE TRAVEL DETAILS" Grid.Column="1" Grid.Row="3"/>
+           Text="ENTER THE TRAVEL DETAILS"/>
+        
     </Grid>
 </Page>

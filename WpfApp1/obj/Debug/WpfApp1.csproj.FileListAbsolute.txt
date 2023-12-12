@@ -54,3 +54,5 @@ C:\Users\amels\Desktop\airport reservation system\WpfApp1\WpfApp1\airoplane-rese
 C:\Users\amels\Desktop\airport reservation system\WpfApp1\WpfApp1\airoplane-reservation-system\WpfApp1\obj\Debug\travel_details.g.cs
 C:\Users\amels\Desktop\airport reservation system\WpfApp1\WpfApp1\airoplane-reservation-system\WpfApp1\obj\Debug\travel_details.baml
 C:\Users\amels\Desktop\airport reservation system\WpfApp1\WpfApp1\airoplane-reservation-system\WpfApp1\obj\Debug\WpfApp1.csproj.CopyComplete
+C:\Users\abrah\Downloads\TEMP\airoplane-reservation-system\WpfApp1\obj\Debug\travel_details.g.cs
+C:\Users\abrah\Downloads\TEMP\airoplane-reservation-system\WpfApp1\obj\Debug\travel_details.baml
