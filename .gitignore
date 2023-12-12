@@ -44,3 +44,4 @@ WpfApp1/obj/Debug/Page1.g.cs
 WpfApp1/obj/Debug/App.g.cs
 *.lref
 *.config
+*.force
