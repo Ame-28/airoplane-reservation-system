@@ -23,8 +23,8 @@ namespace ARS
         public Page1()
         {
             InitializeComponent();
-            travel_details travel_Details = new travel_details();
-            Main_frame.Content = travel_Details;
+            TravelDetails TravelDetails = new TravelDetails();
+            Main_frame.Content = TravelDetails;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

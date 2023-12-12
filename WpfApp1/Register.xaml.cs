@@ -64,7 +64,7 @@ namespace ARS
                 mySQL.insertValues("customer", customerDetails);
                 if(MessageBox.Show("User has been registered!", "Successful", MessageBoxButton.OK)== MessageBoxResult.OK)
                 {
-                    // Go to travel_details page
+                    // Go to TravelDetails page
                 }
             }
             
