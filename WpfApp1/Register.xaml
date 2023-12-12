@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WpfApp1"
       mc:Ignorable="d" 
-      Height="600" Width="900"
+      Height="550" Width="900"
       Title="Register">
 
     <Grid Background="White">

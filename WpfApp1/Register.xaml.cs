@@ -25,6 +25,43 @@ namespace WpfApp1
             InitializeComponent();
         }
 
-        MainWindow
+        SQL mySQL = new SQL("localhost", "airlineDB", "root", "revival2017");
+
+        private void Register_Click(object sender, RoutedEventArgs e)
+        {
+            string firstName = FirstNameTextBox.Text;
+            string lastName = LastNameTextBox.Text;
+            string email = EmailTextBox.Text;
+            string dob = datePicker.Text;
+
+            // Validate values
+            if(!Validator.IsValidEmail(email))
+            {
+                MessageBox.Show("Invalid Email", "Invalid Field", MessageBoxButton.OK);
+            }
+            if (!Validator.IsValidUserName(firstName)||!Validator.IsValidUserName(lastName))
+            {
+                MessageBox.Show("Cannot contain numbers or be empty ", "Invalid Name", MessageBoxButton.OK);
+            }
+
+            // Store all the values
+            Dictionary<string,object> customerDetails = new Dictionary<string,object>();
+
+            customerDetails.Add("first_name", firstName);
+            customerDetails.Add("last_name", lastName);
+            customerDetails.Add("email", email);
+            customerDetails.Add("date_of_birth", dob);
+            
+            // Check if the user already exists
+            if(mySQL.checkValue("customer","email",email))
+            {
+                MessageBox.Show("This user already exists!", "User Exists", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else
+            {
+                mySQL.insertValues("customer", customerDetails);
+            }
+            
+        }
     }
 }
