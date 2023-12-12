@@ -9,6 +9,7 @@
       Title="Register">
 
     <Grid Background="White">
+        
         <!-- Define Columns & Rows -->
         <Grid.RowDefinitions>
             <RowDefinition Height="1.2*"/>

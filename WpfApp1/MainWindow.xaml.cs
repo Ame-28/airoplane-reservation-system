@@ -21,42 +21,49 @@ namespace ARS
     /// </summary>
     public partial class MainWindow : Window
     {
+        SQL mySQL = new SQL("localhost", "airlineDB", "root", "revival2017");
+        Logger myLog = new Logger("log.txt");
+
         public MainWindow()
         {
             InitializeComponent();
+            myLog.initLog();
         }
 
-        SQL mySQL = new SQL("localhost", "airlineDB", "root", "revival2017");
-        Logger myLog = new Logger("log.txt");
+
         
         private void SignIn_Click(object sender, RoutedEventArgs e)
         {
-            myLog.initLog();
+            // Clear all text
+            userNameError.Text = string.Empty;
+            passwordError.Text = string.Empty;
+            loginError.Text = string.Empty;
 
             // Get user name and password
             string userName = UsernameTextBox.Text;
             SecureString password = PasswordBox.SecurePassword;
 
-            // Check user name in DB
-            if(!mySQL.checkValue("customer", "first_name", userName))
+            // Check user name field
+            if (!Validator.IsValidUserName(userName))
             {
-                loginError.Text = "User not Found. Click here to register your account";
-                myLog.logError("User not Found. Click here to register your account");
+                userNameError.Text = "ERROR: The username is invalid\nDo not enter number or null characters";
+                myLog.logError("The username is invalid. Do not enter number or null characters");
             }
+
+            // Check password field
+            else if (password.Length == 0)
+            {
+                passwordError.Text = "ERROR: The password is empty";
+                myLog.logError("The password is empty");
+            }
+
+            // Check user name in DB
             else
             {
-                // Check user name field
-                if (!Validator.IsValidUserName(userName))
+                if (!mySQL.checkValue("customer", "first_name", userName))
                 {
-                    userNameError.Text = "ERROR: The username is invalid\nDo not enter number or null characters";
-                    myLog.logError("The username is invalid. Do not enter number or null characters");
-                }
-
-                // Check password field
-                else if (password.Length == 0)
-                {
-                    passwordError.Text = "ERROR: The password is empty";
-                    myLog.logError("The password is empty");
+                    loginError.Text = "User not Found. Click here to register your account";
+                    myLog.logError("User not Found. Click here to register your account");
                 }
                 else
                 {
