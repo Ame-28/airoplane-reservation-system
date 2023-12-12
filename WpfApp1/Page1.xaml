@@ -12,16 +12,16 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
-                        <!-- Add Radius -->
                         <Border x:Name="border" Background="White" CornerRadius="10" BorderBrush="Black" BorderThickness="1">
+                            <Border.Effect>
+                                <DropShadowEffect Color="Gray" BlurRadius="5" ShadowDepth="5" Opacity="0.5"/>
+                            </Border.Effect>
                             <ContentPresenter x:Name="contentPresenter" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                
                                 <Setter TargetName="border" Property="Background" Value="#2e395d"/>
                                 <Setter TargetName="contentPresenter" Property="TextElement.Foreground" Value="white"/>
-                                
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -90,6 +90,9 @@
                 Grid.Row="5" 
                 HorizontalAlignment="Center" VerticalAlignment="Center"                 
                 Background='white' Foreground="Black" Style="{StaticResource RoundedButtonStyle}"/>
+        <Border BorderBrush="#d1d0d0" BorderThickness="0,0,1,0" Grid.Row="1" Grid.RowSpan="5" Grid.Column="0"/>
+        <Frame x:Name="Main_frame" Grid.Row="1" Grid.RowSpan="5" Grid.Column="2" Background="black"></Frame>
+
 
 
 
