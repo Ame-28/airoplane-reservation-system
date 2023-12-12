@@ -100,5 +100,17 @@
         <Border Grid.Row="3" CornerRadius="10" BorderBrush="#b5b5b5" BorderThickness="1" HorizontalAlignment="Left" Background="white" Margin="273,50,0,10" Width="217">
             <TextBox x:Name="DOBTextBox" BorderThickness="0" VerticalContentAlignment="center" Margin="3,3,3,3"/>
         </Border>
+
+        <!-- Password Text Block -->
+        <TextBlock Grid.Row="4" 
+                   Margin="10,30,0,0"
+                   FontSize="15" FontWeight="bold"
+                   TextWrapping="Wrap"
+                   Text="PASSWORD"/>
+        <!-- Password Text Box -->
+        <Border Grid.Row="4" CornerRadius="10" BorderBrush="#b5b5b5" BorderThickness="1" HorizontalAlignment="Left" Background="white" Margin="10,50,0,10" Width="258">
+            <TextBox x:Name="PasswordTextBox" BorderThickness="0" VerticalContentAlignment="center" Margin="3,3,3,3"/>
+        </Border>
+
     </Grid>
 </Page>
