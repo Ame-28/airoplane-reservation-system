@@ -58,6 +58,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="SQL.cs" />
     <Compile Include="travel_details.xaml.cs">
       <DependentUpon>travel_details.xaml</DependentUpon>
     </Compile>
