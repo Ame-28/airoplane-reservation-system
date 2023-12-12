@@ -35,3 +35,8 @@ WpfApp1/obj/Debug/MainWindow.g.i.cs
 WpfApp1/obj/Debug/travel_details.g.i.cs
 WpfApp1/obj/Debug/travel_details.g.cs
 *.cache
+*.pdb
+*.exe
+*.exe
+.vs/WpfApp1/v17/.suo
+*.exe
