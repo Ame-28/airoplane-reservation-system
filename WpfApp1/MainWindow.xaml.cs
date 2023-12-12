@@ -57,7 +57,13 @@ namespace WpfApp1
                 }
             }
         }
-
+        
+        private void Register_Click(object sender, RoutedEventArgs e)
+        {
+            Page register = new Register();
+            this.Content = register;
+        }
+    
         public void validateUserName(string userName)
         {
             if(userName == string.Empty)
