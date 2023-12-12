@@ -42,19 +42,19 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width=".5*"/>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="200*"/>
+            <ColumnDefinition Width="259*" />
+            <ColumnDefinition Width="141*"/>
+            <ColumnDefinition Width="200*"/>
         </Grid.ColumnDefinitions>
         <TextBlock Grid.ColumnSpan="2"
                    VerticalAlignment="Center" HorizontalAlignment="Left"
                    FontSize="20" FontWeight="bold"
                    TextWrapping="Wrap"
                    Text="ENTER THE TRAVEL DETAILS"
-                   Margin="10"/>
-        <Border Grid.Row="1" Grid.ColumnSpan="2" BorderBrush="Gray" BorderThickness="1" CornerRadius="5" HorizontalAlignment="Left" VerticalAlignment="Top" Width="190" Height="30" Margin="10,0,0,0">
+                   Margin="10,0,0,0" Height="27" Width="266"/>
+        <Border Grid.ColumnSpan="2" BorderBrush="Gray" BorderThickness="1" CornerRadius="5" HorizontalAlignment="Left" VerticalAlignment="Top" Width="190" Height="30" Margin="10,111,0,0" Grid.RowSpan="2">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                 <RadioButton Content="ONE WAY" 
                      HorizontalAlignment="Left" VerticalAlignment="Center"
@@ -67,19 +67,18 @@
         </Border>
         <!-- Heading -->
         <TextBlock Grid.Row="1"
-                   Grid.ColumnSpan="2"
                    VerticalAlignment="Center" HorizontalAlignment="Left"
                    TextWrapping="Wrap"  
                    Text="FROM"                
                    Foreground="Black"  
                    FontSize="20" FontWeight="Bold"
-                   Margin="10,0,0,0"/>
+                   Margin="10,0,0,0" Height="26" Width="58"/>
         <TextBlock Grid.Row="1" Grid.Column="2"
                    VerticalAlignment="Center" HorizontalAlignment="Left"
                    TextWrapping="Wrap"  
                    Text="TO"                
                    Foreground="Black"  
-                   FontSize="20" FontWeight="Bold"/>
+                   FontSize="20" FontWeight="Bold" Height="26" Width="26"/>
 
         <!-- From_TextBox-->
         <TextBox x:Name="FromTextBox" 
@@ -89,29 +88,59 @@
                  Width="240" Height="50"
                  HorizontalAlignment="Left" VerticalAlignment="Bottom" 
                  VerticalContentAlignment="Center"
-                 Margin="10,70,0,0"
-                 FontSize="15"/>
+                 Margin="10,0,0,111"
+                 FontSize="15" Grid.RowSpan="2"/>
         <!-- To_TextBox -->
         <TextBox x:Name="ToTextBox"                     
-                 Grid.Row="1" Grid.Column="2"
-                 Grid.ColumnSpan="2"
+                 Grid.Row="1" Grid.Column="2"               
                  Style="{StaticResource RoundedTextBoxStyle}"                      
                  Width="240" Height="50"
-                 HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                 HorizontalAlignment="Center" VerticalAlignment="Top"
                  VerticalContentAlignment="Center"
-                 FontSize="15"/>
+                 FontSize="15" Margin="0,106,0,0" Grid.RowSpan="2"/>
 
         <!-- Swap Button -->
         <Button Grid.Row="1" Grid.Column="1" 
                 Height="26" 
                 Margin="164,118,0,0" 
                 HorizontalAlignment="Left" VerticalAlignment="Top" 
-                Click="Swap" >
+                Click="Swap" Width="26" >
             <Button.Template>
                 <ControlTemplate>
                     <Image Source="Images/two-way-arrows.png"/>
                 </ControlTemplate>
             </Button.Template>
         </Button>
+
+        <!-- Depart Date -->
+        <DatePicker x:Name="DepartDatePicker" 
+                    Grid.Row="2" 
+                    Grid.ColumnSpan="2"
+                    Height="50"
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Center" VerticalContentAlignment="Center"
+                    Margin="39,0,0,0"
+                    FontSize="15" Width="119"/>
+        <!-- Return Date -->
+        <DatePicker x:Name="ReturnDatePicker" 
+                    Grid.Row="2" 
+                    Grid.Column="1"
+                    Grid.ColumnSpan="2"
+                    Height="50"
+                    HorizontalAlignment="Left" VerticalAlignment="Center" 
+                    VerticalContentAlignment="Center"
+                    Margin="100,0,0,0"
+                    FontSize="15" Width="119"/>
+        
+        
+        <!-- Passenger TextBox-->
+        <TextBox x:Name="PassengersTextBox" 
+                 Grid.Row="2" 
+                 Grid.Column="2"               
+                 Style="{StaticResource RoundedTextBoxStyle}"
+                 Width="140" Height="50"
+                 HorizontalAlignment="Center" VerticalAlignment="Center" 
+                 VerticalContentAlignment="Center"                
+                 FontSize="15"/>
     </Grid>
 </Page>
