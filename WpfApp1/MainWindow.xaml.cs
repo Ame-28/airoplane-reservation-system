@@ -35,7 +35,7 @@ namespace WpfApp1
             SecureString password = PasswordBox.SecurePassword;
 
             // Check user name in DB
-            if(mySQL.checkValue("customer", "first_name", userName))
+            if(!mySQL.checkValue("customer", "first_name", userName))
             {
                 loginError.Text = "User not Found. Click here to register your account";
             }
