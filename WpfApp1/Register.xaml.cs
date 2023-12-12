@@ -35,13 +35,15 @@ namespace WpfApp1
             string dob = datePicker.Text;
 
             // Validate values
-            if(!Validator.IsValidEmail(email))
-            {
-                MessageBox.Show("Invalid Email", "Invalid Field", MessageBoxButton.OK);
-            }
-            if (!Validator.IsValidUserName(firstName)||!Validator.IsValidUserName(lastName))
+            if (!Validator.IsValidUserName(firstName) || !Validator.IsValidUserName(lastName))
             {
                 MessageBox.Show("Cannot contain numbers or be empty ", "Invalid Name", MessageBoxButton.OK);
+                return;
+            }
+            if (!Validator.IsValidEmail(email))
+            {
+                MessageBox.Show("Invalid Email", "Invalid Field", MessageBoxButton.OK);
+                return;
             }
 
             // Store all the values
@@ -60,7 +62,10 @@ namespace WpfApp1
             else
             {
                 mySQL.insertValues("customer", customerDetails);
-                MessageBox.Show("User has been registered!", "Successful", MessageBoxButton.OK);
+                if(MessageBox.Show("User has been registered!", "Successful", MessageBoxButton.OK)== MessageBoxResult.OK)
+                {
+                    // Go to travel_details page
+                }
             }
             
         }
