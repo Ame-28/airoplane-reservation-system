@@ -32,6 +32,17 @@
            FontSize="20" FontWeight="bold"
            TextWrapping="Wrap"
            Text="ENTER THE TRAVEL DETAILS"/>
-        
+        <Border Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" BorderBrush="Gray" BorderThickness="1" CornerRadius="5" Padding="5" Width="200" Height="30">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                <RadioButton Content="ONE WAY" 
+                     HorizontalAlignment="Left" VerticalAlignment="Center"
+                     Margin="5,0" FontWeight="Bold"/>
+                <RadioButton Content="ROUND TRIP" 
+                     HorizontalAlignment="Left" VerticalAlignment="Center"
+                     Margin="5,0" FontWeight="Bold"/>
+            </StackPanel>
+        </Border>
+
+
     </Grid>
 </Page>
