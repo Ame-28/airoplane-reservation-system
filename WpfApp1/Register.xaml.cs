@@ -60,6 +60,7 @@ namespace WpfApp1
             else
             {
                 mySQL.insertValues("customer", customerDetails);
+                MessageBox.Show("User has been registered!", "Successful", MessageBoxButton.OK);
             }
             
         }
