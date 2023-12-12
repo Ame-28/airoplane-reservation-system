@@ -107,7 +107,7 @@
                 Click="SignIn_Click"/>
         
         <!-- Login Error -->
-        <TextBox Grid.Row="4" HorizontalAlignment="Center" x:Name="loginError" BorderThickness="0" Height="20" Width="200" Margin="0,80,0,0"/>
+        <TextBox Grid.Row="4" HorizontalAlignment="Center" x:Name="loginError" BorderThickness="0" Height="20" Width="300" Margin="0,80,0,0"/>
 
     </Grid>
 </Window>
