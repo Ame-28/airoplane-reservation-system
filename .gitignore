@@ -32,3 +32,6 @@ WpfApp1/obj/Debug/MainWindow.g.i.cs
 *.exe
 *.pdb
 *.CopyComplete
+WpfApp1/obj/Debug/travel_details.g.i.cs
+WpfApp1/obj/Debug/travel_details.g.cs
+*.cache
