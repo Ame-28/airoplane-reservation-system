@@ -34,7 +34,6 @@
                     Height="410" Width="260">
                 <Image Height="400" Width="250" Source="Images/Poster.png"/>
             </Border>
-
         </Border>
 
         <!-- Define Headings -->

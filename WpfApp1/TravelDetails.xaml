@@ -166,5 +166,17 @@
                 Background="#374B68" Foreground="white" 
                 FontSize="20" FontWeight="bold"
                 Click="SearchFlights_Click"/>
+        
+        <!-- Image -->
+        <Border Grid.Column="3"
+                Grid.RowSpan="5" 
+                Background="#FFE0E0E0">
+            <Border CornerRadius="10"
+                    BorderThickness="0"
+                    Background="#FF095D80"
+                    Height="410" Width="260">
+                <Image Height="400" Width="250" Source="Images/Poster.png"/>
+            </Border>
+        </Border>       
     </Grid>
 </Page>
