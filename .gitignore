@@ -48,3 +48,7 @@ WpfApp1/obj/Debug/App.g.cs
 WpfApp1/obj/Debug/Register.g.cs
 WpfApp1/obj/Debug/Register.g.i.cs
 *.csproj
+WpfApp1/obj/Debug/TravelDetails.g.cs
+WpfApp1/obj/Debug/MainMenu.g.cs
+*.sln
+.vs/WpfApp1/v17/.suo
