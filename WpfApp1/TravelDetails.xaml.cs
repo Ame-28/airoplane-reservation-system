@@ -35,5 +35,10 @@ namespace ARS
             FromTextBox.Text = toPlace;
             ToTextBox.Text = fromPlace;
         }
+        private void SearchFlights_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        
     }
 }
