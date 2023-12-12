@@ -34,6 +34,7 @@ namespace WpfApp1
 
         private void SignIn_Click(object sender, RoutedEventArgs e)
         {
+            // Get user name and password
             string userName = UsernameTextBox.Text;
             SecureString password = PasswordBox.SecurePassword;
 
