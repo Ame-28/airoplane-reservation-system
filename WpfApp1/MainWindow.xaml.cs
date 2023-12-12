@@ -44,11 +44,11 @@ namespace WpfApp1
                 // Check user name field
                 if (!Validator.IsValidUserName(userName))
                 {
-                    userNameError.Text = "ERROR: This user name is invalid";
+                    userNameError.Text = "ERROR: The username is invalid\nDo not enter number or null characters";
                 }
 
                 // Check password field
-                if (password.Length == 0)
+                else if (password.Length == 0)
                 {
                     passwordError.Text = "ERROR: The password is empty";
                 }
@@ -65,18 +65,6 @@ namespace WpfApp1
         {
             Page register = new Register();
             this.Content = register;
-        }
-    
-        public void validateUserName(string userName)
-        {
-            if(userName == string.Empty)
-            {
-
-            }
-            if(userName.Any(char.IsDigit))
-            {
-                userNameError.Text = "ERROR: The username cannot be empty";
-            }
-        }
+        }  
     }
 }
