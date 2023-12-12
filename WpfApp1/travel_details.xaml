@@ -8,11 +8,25 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="travel_details">
 
-    <Grid Background="white">
+
+
+    <Grid Background="brown">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="150"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="9*"/>
+            <ColumnDefinition Width="71*"/>
+        </Grid.ColumnDefinitions>
         <TextBlock 
-           Margin="25,24,570,400"
+           Margin="155,38,355,19"
            FontSize="15" FontWeight="bold"
            TextWrapping="Wrap"
-           Text="ENTER THE TRAVEL DETAILS"/>
+           Text="ENTER THE TRAVEL DETAILS" Grid.Column="1" Grid.Row="3"/>
     </Grid>
 </Page>
