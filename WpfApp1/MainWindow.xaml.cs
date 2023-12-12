@@ -13,7 +13,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Dapper;
 
 namespace WpfApp1
 {
@@ -27,10 +26,7 @@ namespace WpfApp1
             InitializeComponent();
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            
-        }
+        SQL mySQL = new SQL("localhost", "airlineDB", "root", "revival2017");
 
         private void SignIn_Click(object sender, RoutedEventArgs e)
         {
@@ -38,21 +34,28 @@ namespace WpfApp1
             string userName = UsernameTextBox.Text;
             SecureString password = PasswordBox.SecurePassword;
 
-            // Check user name field
-            validateUserName(userName);
-
-            // Check password field
-            if(password.Length == 0)
+            // Check user name in DB
+            if(mySQL.checkValue("customer", "first_name", userName))
             {
-                passwordError.Text = "ERROR: The password is empty";
+                loginError.Text = "User not Found. Click here to register your account";
             }
             else
             {
-                // Store the username and password in database
-                Page page = new Page1();
-                this.Content = page;
-            }
+                // Check user name field
+                validateUserName(userName);
 
+                // Check password field
+                if (password.Length == 0)
+                {
+                    passwordError.Text = "ERROR: The password is empty";
+                }
+                else
+                {
+                    // Go to next page
+                    Page page = new Page1();
+                    this.Content = page;
+                }
+            }
         }
 
         public void validateUserName(string userName)
