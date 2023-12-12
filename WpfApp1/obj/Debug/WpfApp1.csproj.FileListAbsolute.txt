@@ -85,3 +85,5 @@ C:\Users\abrah\Downloads\TEMP\airoplane-reservation-system\WpfApp1\bin\Debug\Sys
 C:\Users\abrah\Downloads\TEMP\airoplane-reservation-system\WpfApp1\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\abrah\Downloads\TEMP\airoplane-reservation-system\WpfApp1\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\abrah\Downloads\TEMP\airoplane-reservation-system\WpfApp1\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\abrah\Downloads\TEMP\airoplane-reservation-system\WpfApp1\obj\Debug\Register.g.cs
+C:\Users\abrah\Downloads\TEMP\airoplane-reservation-system\WpfApp1\obj\Debug\Register.baml

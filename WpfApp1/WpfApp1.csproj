@@ -107,6 +107,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Register.xaml.cs">
+      <DependentUpon>Register.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SQL.cs" />
     <Compile Include="travel_details.xaml.cs">
       <DependentUpon>travel_details.xaml</DependentUpon>
@@ -124,6 +127,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Page1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Register.xaml">
+      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="travel_details.xaml">

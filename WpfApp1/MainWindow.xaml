@@ -104,7 +104,7 @@
                 Background="#374B68" Foreground="white" 
                 FontSize="20" FontWeight="bold"
                 Margin="200,0,0,0"
-                Click="SignIn_Click"/>
+                Click="Register_Click"/>
         
         <!-- Login Error -->
         <TextBox Grid.Row="4" HorizontalAlignment="Center" x:Name="loginError" BorderThickness="0" Height="20" Width="300" Margin="0,80,0,0"/>
