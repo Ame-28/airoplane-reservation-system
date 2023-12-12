@@ -12,30 +12,26 @@
 
     <Grid Background="white">
         <Grid.RowDefinitions>
-            <RowDefinition Height="100*"/>
-            <RowDefinition Height="80*"/>
-            <RowDefinition Height="80*"/>
-            <RowDefinition Height="80*"/>
-            <RowDefinition Height="80*"/>
-            <RowDefinition Height="150"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="7*"/>
-            <ColumnDefinition Width="153*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TextBlock 
-           Margin="15,31,405,21"
-           FontSize="15" FontWeight="bold"
+        <TextBlock Grid.ColumnSpan="3" Grid.Row="0"
+           VerticalAlignment="Center" HorizontalAlignment="Center"
+           FontSize="20" FontWeight="bold"
            TextWrapping="Wrap"
-           Text="ENTER THE TRAVEL DETAILS" Grid.Column="1" Grid.Row="0"/>
-
-        <RadioButton Content="ONE WAY" 
-             Grid.Row="1" Grid.Column="2" 
-             HorizontalAlignment="Left" VerticalAlignment="Center" 
-             Margin="10,0,0,0" Padding="0,0,1,0"/>
-        <RadioButton Content="ROUND TRIP" 
-             Grid.Row="1" Grid.Column="1" 
-             HorizontalAlignment="Left" VerticalAlignment="Center" 
-             Margin="81,0,0,0"/>
+           Text="ENTER THE TRAVEL DETAILS"/>
+        
     </Grid>
 </Page>
