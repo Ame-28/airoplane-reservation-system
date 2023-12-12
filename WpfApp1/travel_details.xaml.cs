@@ -24,5 +24,16 @@ namespace WpfApp1
         {
             InitializeComponent();
         }
+
+        private void Swap(object sender, RoutedEventArgs e)
+        {
+            // Store 'From' and 'To' place
+            string fromPlace = FromTextBox.Text;
+            string toPlace = ToTextBox.Text;
+
+            // Swap Text
+            FromTextBox.Text = toPlace;
+            ToTextBox.Text = fromPlace;
+        }
     }
 }

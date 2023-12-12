@@ -48,14 +48,14 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
-
         </Grid.ColumnDefinitions>
-        <TextBlock Grid.ColumnSpan="3"
-           VerticalAlignment="Center" HorizontalAlignment="Left"
-           FontSize="20" FontWeight="bold"
-           TextWrapping="Wrap"
-           Text="ENTER THE TRAVEL DETAILS" Margin="100,0,0,0"/>
-        <Border  Grid.Row="1" Grid.ColumnSpan="2" BorderBrush="Gray" BorderThickness="1" CornerRadius="5" HorizontalAlignment="Left" VerticalAlignment="Top" Width="190" Height="30" Margin="100,0,0,0">
+        <TextBlock Grid.ColumnSpan="2"
+                   VerticalAlignment="Center" HorizontalAlignment="Left"
+                   FontSize="20" FontWeight="bold"
+                   TextWrapping="Wrap"
+                   Text="ENTER THE TRAVEL DETAILS"
+                   Margin="10"/>
+        <Border Grid.Row="1" Grid.ColumnSpan="2" BorderBrush="Gray" BorderThickness="1" CornerRadius="5" HorizontalAlignment="Left" VerticalAlignment="Top" Width="190" Height="30" Margin="10,0,0,0">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                 <RadioButton Content="ONE WAY" 
                      HorizontalAlignment="Left" VerticalAlignment="Center"
@@ -66,32 +66,54 @@
                              FontWeight="Bold"/>
             </StackPanel>
         </Border>
-        <TextBlock Grid.Row="1" Grid.Column="1"
-                   VerticalAlignment="Bottom" HorizontalAlignment="Center"
+        <!-- Heading -->
+        <TextBlock Grid.Row="1"
+                   Grid.ColumnSpan="2"
+                   VerticalAlignment="Center" HorizontalAlignment="Left"
                    TextWrapping="Wrap"  
                    Text="FROM"                
                    Foreground="Black"  
-                   FontSize="20" FontWeight="Bold"/>
-        <Border Grid.Row="2" Grid.Column="1" 
-                HorizontalAlignment="Left" VerticalAlignment="Top" >
-            <TextBox x:Name="FromTextBox" 
-                     Style="{StaticResource RoundedTextBoxStyle}"
-                     Width="190" Height="40"/>
-        </Border>
-
-        <TextBlock Grid.Row="1" Grid.Column="2"
-                   VerticalAlignment="Bottom" HorizontalAlignment="Center"
+                   FontSize="20" FontWeight="Bold"
+                   Margin="10,0,0,0"/>
+        <TextBlock Grid.Row="1" Grid.Column="1"
+                   VerticalAlignment="Top" HorizontalAlignment="Left"
                    TextWrapping="Wrap"  
                    Text="TO"                
                    Foreground="Black"  
-                   FontSize="20" FontWeight="Bold"/>
-        <Border Grid.Row="2" Grid.Column="2" 
-                HorizontalAlignment="Right" 
-                VerticalAlignment="Top" >
-            <TextBox x:Name="ToTextBox1" 
-                     Style="{StaticResource RoundedTextBoxStyle}"
-                     Width="190" Height="40"/>
-        </Border>
-
+                   FontSize="20" FontWeight="Bold" 
+                   Margin="148,43,0,0"/>
+        
+        <!-- From_TextBox-->
+        <TextBox x:Name="FromTextBox" 
+                 Grid.Row="1" 
+                 Grid.RowSpan="2" Grid.ColumnSpan="2"
+                 Style="{StaticResource RoundedTextBoxStyle}"
+                 Width="190" Height="50"
+                 HorizontalAlignment="Left" VerticalAlignment="Top" 
+                 Margin="10,70,0,0"
+                 FontSize="15"/>
+        <!-- To_TextBox -->
+        <TextBox x:Name="ToTextBox"                     
+                 Grid.Row="1" Grid.Column="1"
+                 Grid.RowSpan="2" Grid.ColumnSpan="2"
+                 Style="{StaticResource RoundedTextBoxStyle}"                      
+                 Width="190" Height="50"
+                 HorizontalAlignment="Left" VerticalAlignment="Top"
+                 Margin="148,70,0,0"
+                 FontSize="15"/>
+        
+        <!-- Swap Button -->
+        <Button Grid.Row="1" Grid.Column="1"  
+                Grid.RowSpan="2" 
+                Height="26" 
+                Margin="112,80,0,0" 
+                HorizontalAlignment="Left" VerticalAlignment="Top" 
+                Click="Swap" >
+            <Button.Template>
+                <ControlTemplate>
+                    <Image Source="img/two-way-arrows.png"/>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
     </Grid>
 </Page>
