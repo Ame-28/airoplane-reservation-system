@@ -82,10 +82,12 @@
                 Width="190" Height="50" 
                 Margin="10,111,0,0">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                <RadioButton Content="ONE WAY" 
+                <RadioButton x:Name="OneWay" 
+                             Content="ONE WAY" 
                              HorizontalAlignment="Left" VerticalAlignment="Center"
                              Margin="5,0" FontWeight="Bold"/>
-                <RadioButton Content="ROUND TRIP" 
+                <RadioButton x:Name="RoundTrip"
+                             Content="ROUND TRIP" 
                              HorizontalAlignment="Left" VerticalAlignment="Center"
                              Margin="5,0" 
                              FontWeight="Bold"/>
@@ -143,7 +145,8 @@
                     HorizontalAlignment="Left" VerticalAlignment="Center" 
                     VerticalContentAlignment="Center"
                     Margin="100,0,0,0"
-                    FontSize="15" Width="119"/>
+                    FontSize="15" Width="119"
+                    IsEnabled="{Binding ElementName=RoundTrip, Path=IsChecked}"/>
           
         <!-- Passenger TextBox-->
         <TextBox x:Name="PassengersTextBox" 
