@@ -18,7 +18,7 @@ namespace WpfApp1
 
         public static bool IsValidUserName(string userName)
         {
-            return !string.IsNullOrWhiteSpace(userName) && userName.Length <= 20;
+            return !string.IsNullOrWhiteSpace(userName) && !userName.Any(char.IsDigit);
         }
     }
 }
