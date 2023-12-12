@@ -38,12 +38,10 @@ namespace WpfApp1
             SecureString password = PasswordBox.SecurePassword;
 
             // Check user name field
-            if (!validateUserName(userName))
-            {
-                userNameError.Text = "ERROR: The Username is invalid";
-            }
+            validateUserName(userName);
+
             // Check password field
-            else if(password.Length == 0)
+            if(password.Length == 0)
             {
                 passwordError.Text = "ERROR: The password is empty";
             }
@@ -56,17 +54,16 @@ namespace WpfApp1
 
         }
 
-        public bool validateUserName(string userName)
+        public void validateUserName(string userName)
         {
             if(userName == string.Empty)
             {
-                return false;
+                userNameError.Text = "ERROR: The username does not allow numbers";
             }
-            else if(userName.Any(char.IsDigit))
+            if(userName.Any(char.IsDigit))
             {
-                return false;
+                userNameError.Text = "ERROR: The username cannot be empty";
             }
-            else { return true; }
         }
     }
 }
