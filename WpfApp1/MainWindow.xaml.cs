@@ -27,9 +27,12 @@ namespace ARS
         }
 
         SQL mySQL = new SQL("localhost", "airlineDB", "root", "revival2017");
-
+        Logger myLog = new Logger("log.txt");
+        
         private void SignIn_Click(object sender, RoutedEventArgs e)
         {
+            myLog.initLog();
+
             // Get user name and password
             string userName = UsernameTextBox.Text;
             SecureString password = PasswordBox.SecurePassword;
@@ -38,6 +41,7 @@ namespace ARS
             if(!mySQL.checkValue("customer", "first_name", userName))
             {
                 loginError.Text = "User not Found. Click here to register your account";
+                myLog.logError("User not Found. Click here to register your account");
             }
             else
             {
@@ -45,15 +49,18 @@ namespace ARS
                 if (!Validator.IsValidUserName(userName))
                 {
                     userNameError.Text = "ERROR: The username is invalid\nDo not enter number or null characters";
+                    myLog.logError("The username is invalid. Do not enter number or null characters");
                 }
 
                 // Check password field
                 else if (password.Length == 0)
                 {
                     passwordError.Text = "ERROR: The password is empty";
+                    myLog.logError("The password is empty");
                 }
                 else
                 {
+                    myLog.logEvent($"{userName} signed in successfully");
                     // Go to next page
                     Page page = new MainMenu();
                     this.Content = page;
