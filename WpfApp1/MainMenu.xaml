@@ -91,10 +91,7 @@
                 HorizontalAlignment="Center" VerticalAlignment="Center"                 
                 Background='white' Foreground="Black" Style="{StaticResource RoundedButtonStyle}"/>
         <Border BorderBrush="#d1d0d0" BorderThickness="0,0,1,0" Grid.Row="1" Grid.RowSpan="5" Grid.Column="0"/>
+        
         <Frame x:Name="Main_frame" Grid.Row="1" Grid.RowSpan="5" Grid.Column="2" Background="black"></Frame>
-
-
-
-
     </Grid>
 </Page>

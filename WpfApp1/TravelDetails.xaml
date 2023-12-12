@@ -45,8 +45,8 @@
             <ColumnDefinition Width="100*"/>
             <ColumnDefinition Width="200*"/>
             <ColumnDefinition Width="259*" />
-            <ColumnDefinition Width="141*"/>
-            <ColumnDefinition Width="200*"/>
+
+            <ColumnDefinition Width="341*"/>
         </Grid.ColumnDefinitions>
         <TextBlock Grid.ColumnSpan="2"
                    VerticalAlignment="Center" HorizontalAlignment="Left"
@@ -141,8 +141,7 @@
                     VerticalContentAlignment="Center"
                     Margin="100,0,0,0"
                     FontSize="15" Width="119"/>
-        
-        
+          
         <!-- Passenger TextBox-->
         <TextBox x:Name="PassengersTextBox" 
                  Grid.Row="2" 
@@ -152,5 +151,17 @@
                  HorizontalAlignment="Center" VerticalAlignment="Center" 
                  VerticalContentAlignment="Center"                
                  FontSize="15"/>
+
+        <!-- Search Flights Button -->
+        <Button Grid.Row="3"
+                Grid.RowSpan="2"
+                Grid.ColumnSpan="3"
+                Height="40" Width="150" 
+                HorizontalAlignment="Center" VerticalAlignment="Center" 
+                x:Name="SearchFlightsButton" 
+                Content="Search Flights"
+                Background="#374B68" Foreground="white" 
+                FontSize="20" FontWeight="bold"
+                Click="SearchFlights_Click"/>
     </Grid>
 </Page>
