@@ -90,6 +90,7 @@
                  Style="{StaticResource RoundedTextBoxStyle}"
                  Width="190" Height="50"
                  HorizontalAlignment="Left" VerticalAlignment="Top" 
+                 VerticalContentAlignment="Center"
                  Margin="10,70,0,0"
                  FontSize="15"/>
         <!-- To_TextBox -->
@@ -99,6 +100,7 @@
                  Style="{StaticResource RoundedTextBoxStyle}"                      
                  Width="190" Height="50"
                  HorizontalAlignment="Left" VerticalAlignment="Top"
+                 VerticalContentAlignment="Center"
                  Margin="148,70,0,0"
                  FontSize="15"/>
         
