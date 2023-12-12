@@ -42,7 +42,10 @@ namespace WpfApp1
             else
             {
                 // Check user name field
-                validateUserName(userName);
+                if (!Validator.IsValidUserName(userName))
+                {
+                    userNameError.Text = "ERROR: This user name is invalid";
+                }
 
                 // Check password field
                 if (password.Length == 0)
@@ -68,7 +71,7 @@ namespace WpfApp1
         {
             if(userName == string.Empty)
             {
-                userNameError.Text = "ERROR: The username does not allow numbers";
+
             }
             if(userName.Any(char.IsDigit))
             {
