@@ -98,8 +98,9 @@
                    Text="DATE OF BIRTH" Grid.RowSpan="2"/>
         <!-- DOB Text Box -->
         <Border Grid.Row="3" CornerRadius="10" BorderBrush="#b5b5b5" BorderThickness="1" HorizontalAlignment="Left" Background="white" Margin="273,50,0,10" Width="217">
-            <TextBox x:Name="DOBTextBox" BorderThickness="0" VerticalContentAlignment="center" Margin="3,3,3,3"/>
+            <DatePicker x:Name="datePicker" BorderThickness="0" VerticalContentAlignment="center" Margin="3,3,3,3"/>
         </Border>
+        
 
         <!-- Password Text Block -->
         <TextBlock Grid.Row="4" 
