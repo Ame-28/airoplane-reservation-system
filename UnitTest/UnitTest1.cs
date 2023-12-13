@@ -1,4 +1,5 @@
 using ARS;
+using NUnit.Framework;
 
 namespace UnitTest
 {
@@ -7,7 +8,7 @@ namespace UnitTest
         [SetUp]
         public void Setup()
         {
-            
+            // Setup code if needed
         }
 
         [Test]
@@ -15,13 +16,12 @@ namespace UnitTest
         {
             // Assign 
             string userName = "Abraham";
-            
+
             // Act
             bool result = Validator.IsValidUserName(userName);
 
             // Assert
             Assert.IsTrue(result);
-
         }
 
         [Test]
@@ -29,7 +29,7 @@ namespace UnitTest
         {
             // Assign 
             string email = "joasdm@gmail.com";
-            
+
             // Act
             bool result = Validator.IsValidEmail(email);
 
@@ -42,7 +42,7 @@ namespace UnitTest
         {
             // Assign
             string user = "Abraham";
-            SQL testSQL = new SQL("localhost","airlinedb", "root", "revival2017");
+            SQL testSQL = new SQL("localhost", "airlinedb", "root", "revival2017");
 
             // Act
             bool result = testSQL.checkValue("customer", "first_name", user);
@@ -52,6 +52,27 @@ namespace UnitTest
         }
 
         [Test]
-        public void 
+        public void ValidLogin()
+        {
+            // Assign
+            string user = "Abraham";
+            string password = "hello1234";
+            SQL testSQL = new SQL("localhost", "airlinedb", "root", "revival2017");
+            bool result;
+            
+            // Act
+            if(Validator.IsValidUserName(user) && password != string.Empty) 
+            {
+                result = true;
+            }
+            else
+            {
+                result = false;
+            }
+ 
+            // Assert
+            Assert.IsTrue(result);
+        }
+
     }
 }
