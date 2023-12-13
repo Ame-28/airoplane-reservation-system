@@ -32,7 +32,7 @@ namespace ARS
             string firstName = FirstNameTextBox.Text;
             string lastName = LastNameTextBox.Text;
             string email = EmailTextBox.Text;
-            string dob = datePicker.Text;
+            string dob = datePicker.Text;         
 
             // Validate values
             if (!Validator.IsValidUserName(firstName) || !Validator.IsValidUserName(lastName))

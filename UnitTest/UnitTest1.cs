@@ -28,7 +28,7 @@ namespace UnitTest
         public void ValidateEmail()
         {
             // Assign 
-            string email = "joasdm@gmail.com";
+            string email = "johnsmith@gmail.com";
 
             // Act
             bool result = Validator.IsValidEmail(email);
@@ -74,7 +74,6 @@ namespace UnitTest
             Assert.IsTrue(result);
         }
 
-
         [Test]
         public void InvalidLogin()
         {
@@ -119,6 +118,33 @@ namespace UnitTest
 
             // Assert
             Assert.IsFalse(result);
+        }
+
+        [Test]
+        public void InvalidPassword()
+        {
+            // Assign
+            string password = "";
+            bool result;
+
+            // Act
+            if (password == string.Empty)
+            {
+                result = false;
+            }
+            else
+            {
+                result = false;
+            }
+
+            // Assert
+            Assert.IsFalse(result);
+        }
+
+        [Test]
+        public void ValidDOB()
+        {
+
         }
     }
 }
