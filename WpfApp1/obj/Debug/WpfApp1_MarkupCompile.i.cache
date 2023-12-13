@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\abrah\Downloads\TEMP\airoplane-reservation-system\WpfApp1\App.xaml
-4-150424120
+4653169384
 
-121601980155
+12292780355
 33-516000788
-MainWindow.xaml;MainMenu.xaml;Register.xaml;TravelDetails.xaml;
+Pages\MainWindow.xaml;Pages\MainMenu.xaml;Pages\Register.xaml;Pages\TravelDetails.xaml;
 
 True
 

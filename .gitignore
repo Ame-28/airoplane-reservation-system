@@ -53,3 +53,7 @@ WpfApp1/obj/Debug/MainMenu.g.cs
 *.sln
 .vs/WpfApp1/v17/.suo
 .vs/ARS/v17/.suo
+WpfApp1/obj/Debug/Pages/MainMenu.g.i.cs
+WpfApp1/obj/Debug/Pages/MainWindow.g.i.cs
+WpfApp1/obj/Debug/Pages/Register.g.i.cs
+WpfApp1/obj/Debug/Pages/TravelDetails.g.i.cs
