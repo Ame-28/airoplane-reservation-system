@@ -10,6 +10,7 @@ namespace UnitTest
         {
             // Setup code if needed
         }
+        SQL testSQL = new SQL("localhost", "airlinedb", "root", "revival2017");
 
         [Test]
         public void ValidateUserName()
@@ -42,7 +43,6 @@ namespace UnitTest
         {
             // Assign
             string user = "Abraham";
-            SQL testSQL = new SQL("localhost", "airlinedb", "root", "revival2017");
 
             // Act
             bool result = testSQL.checkValue("customer", "first_name", user);
@@ -57,7 +57,6 @@ namespace UnitTest
             // Assign
             string user = "Abraham";
             string password = "hello1234";
-            SQL testSQL = new SQL("localhost", "airlinedb", "root", "revival2017");
             bool result;
             
             // Act
@@ -80,7 +79,6 @@ namespace UnitTest
             // Assign
             string user = "Nobody";
             string password = "";
-            SQL testSQL = new SQL("localhost", "airlinedb", "root", "revival2017");
             bool result;
 
             // Act
@@ -103,7 +101,6 @@ namespace UnitTest
             // Assign
             string user = "";
             string password = "";
-            SQL testSQL = new SQL("localhost", "airlinedb", "root", "revival2017");
             bool result;
 
             // Act
@@ -142,9 +139,24 @@ namespace UnitTest
         }
 
         [Test]
-        public void ValidDOB()
+        public void AddedToDB()
         {
+            // Assign
+            Dictionary<string, object> vals = new Dictionary<string, object>
+            {
+                {"first_name", "Abraham"},
+                {"last_name", "Vijai"},
+                {"email", "abrahamvijai23@gmail.com"},
+                {"date_of_birth", "2023-11-28 00:00:00"}
+            };
+            bool result;
 
+            // Act
+            testSQL.insertValues("customer", vals);
+            result = testSQL.checkValue("customer", "email", vals["email"]);
+
+            // Assert
+            Assert.IsTrue(result);
         }
     }
 }
