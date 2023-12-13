@@ -23,17 +23,35 @@ namespace UnitTest
             Assert.IsTrue(result);
 
         }
+
         [Test]
         public void ValidateEmail()
         {
             // Assign 
-            string password = "johnsmith12@gmail.com";
+            string email = "joasdm@gmail.com";
             
             // Act
-            bool result = Validator.IsValidEmail(password);
+            bool result = Validator.IsValidEmail(email);
 
             // Assert
             Assert.IsTrue(result);
         }
+
+        [Test]
+        public void UserInDatabase()
+        {
+            // Assign
+            string user = "Abraham";
+            SQL testSQL = new SQL("localhost","airlinedb", "root", "revival2017");
+
+            // Act
+            bool result = testSQL.checkValue("customer", "first_name", user);
+
+            // Assert
+            Assert.IsTrue(!result);
+        }
+
+        [Test]
+        public void 
     }
 }

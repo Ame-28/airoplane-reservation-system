@@ -73,3 +73,4 @@ WpfApp1/obj/Debug/Pages/MainMenu.g.cs
 WpfApp1/obj/Debug/Pages/MainWindow.g.cs
 WpfApp1/obj/Debug/Pages/Register.g.cs
 WpfApp1/obj/Debug/Pages/TravelDetails.g.cs
+*.v2
