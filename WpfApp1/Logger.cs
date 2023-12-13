@@ -12,7 +12,7 @@ namespace ARS
     Class        : Logger
     Description  : Handles logging events and errors to a file.
     */
-    class Logger
+    public class Logger
     {
         public string FileName { get; set; }
 
