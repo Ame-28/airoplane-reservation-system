@@ -9,7 +9,7 @@
       Title="Register">
 
     <Grid Background="White">
-        
+
         <!-- Define Columns & Rows -->
         <Grid.RowDefinitions>
             <RowDefinition Height="1.2*"/>
@@ -23,7 +23,7 @@
             <ColumnDefinition/>
             <ColumnDefinition Width=".8*"/>
         </Grid.ColumnDefinitions>
-        
+
         <!-- Set Images -->
         <Image Grid.ColumnSpan="2" Source="/Images/header-image.png" Stretch="Fill"/>
         <Border Grid.Column="1" Grid.Row="1" 
@@ -79,7 +79,7 @@
         <Border Grid.Row="2" CornerRadius="10" BorderBrush="#b5b5b5" BorderThickness="1" HorizontalAlignment="Left" Background="white" Margin="273,50,0,10" Width="217">
             <TextBox x:Name="LastNameTextBox" BorderThickness="0" VerticalContentAlignment="center" Margin="3,3,3,3"/>
         </Border>
-        
+
         <!-- Email Text Block -->
         <TextBlock Grid.Row="3" 
                    Margin="10,30,0,0"
@@ -90,7 +90,7 @@
         <Border Grid.Row="3" CornerRadius="10" BorderBrush="#b5b5b5" BorderThickness="1" HorizontalAlignment="Left" Background="white" Margin="10,50,0,10" Width="258">
             <TextBox x:Name="EmailTextBox" BorderThickness="0" VerticalContentAlignment="center" Margin="3,3,3,3"/>
         </Border>
-        
+
         <!-- DOB Text Block -->
         <TextBlock Grid.Row="3" 
                    Margin="273,30,0,96"
@@ -101,7 +101,7 @@
         <Border Grid.Row="3" CornerRadius="10" BorderBrush="#b5b5b5" BorderThickness="1" HorizontalAlignment="Left" Background="white" Margin="273,50,0,10" Width="217">
             <DatePicker x:Name="datePicker" BorderThickness="0" VerticalContentAlignment="center" Margin="3,3,3,3"/>
         </Border>
-        
+
         <!-- Password Text Block -->
         <TextBlock Grid.Row="4" 
                    Margin="10,30,0,0"
@@ -112,7 +112,7 @@
         <Border Grid.Row="4" CornerRadius="10" BorderBrush="#b5b5b5" BorderThickness="1" HorizontalAlignment="Left" Background="white" Margin="10,50,0,10" Width="258">
             <TextBox x:Name="PasswordTextBox" BorderThickness="0" VerticalContentAlignment="center" Margin="3,3,3,3"/>
         </Border>
-        
+
         <!-- Register Button -->
         <Button Grid.Row="5" 
                 Height="40" Width="100" 
@@ -122,5 +122,6 @@
                 Background="#374B68" Foreground="white" 
                 FontSize="20" FontWeight="bold"
                 Click="Register_Click"/>
+
     </Grid>
 </Page>
