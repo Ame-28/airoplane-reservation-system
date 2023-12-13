@@ -1,3 +1,5 @@
+using ARS;
+
 namespace UnitTest
 {
     public class Tests
@@ -5,12 +7,33 @@ namespace UnitTest
         [SetUp]
         public void Setup()
         {
+            
         }
 
         [Test]
-        public void Test1()
+        public void ValidateUserName()
         {
-            Assert.Pass();
+            // Assign 
+            string userName = "Abraham";
+            
+            // Act
+            bool result = Validator.IsValidUserName(userName);
+
+            // Assert
+            Assert.IsTrue(result);
+
+        }
+        [Test]
+        public void ValidateEmail()
+        {
+            // Assign 
+            string password = "johnsmith12@gmail.com";
+            
+            // Act
+            bool result = Validator.IsValidEmail(password);
+
+            // Assert
+            Assert.IsTrue(result);
         }
     }
 }

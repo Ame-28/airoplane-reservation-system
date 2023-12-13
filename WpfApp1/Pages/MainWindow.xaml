@@ -21,7 +21,7 @@
         </Grid.ColumnDefinitions>
         
         <!-- Set Images -->
-        <Image Grid.ColumnSpan="2" Source="Images/header-image.png" Stretch="Fill"/>
+        <Image Grid.ColumnSpan="2" Source="/Images/header-image.png" Stretch="Fill"/>
         <Border Grid.Column="1" Grid.Row="1" 
                 Grid.RowSpan="4" 
                 Background="#FFE0E0E0">
@@ -29,7 +29,7 @@
                     BorderThickness="0"
                     Background="#FF095D80"
                     Height="410" Width="260">
-                <Image Height="400" Width="250" Source="Images/Poster.png"/>
+                <Image Height="400" Width="250" Source="/Images/Poster.png"/>
             </Border>
         </Border>
 

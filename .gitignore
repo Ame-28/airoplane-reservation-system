@@ -65,3 +65,11 @@ UnitTest/obj/Debug/net8.0/UnitTest.GlobalUsings.g.cs
 UnitTest/obj/Debug/net8.0/UnitTest.AssemblyInfo.cs
 UnitTest/obj/Debug/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs
 UnitTest/GlobalUsings.cs
+*.manifest
+*.testlog
+*.tmp
+*.BuildWithSkipAnalyzers
+WpfApp1/obj/Debug/Pages/MainMenu.g.cs
+WpfApp1/obj/Debug/Pages/MainWindow.g.cs
+WpfApp1/obj/Debug/Pages/Register.g.cs
+WpfApp1/obj/Debug/Pages/TravelDetails.g.cs
