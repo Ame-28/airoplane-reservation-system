@@ -57,3 +57,11 @@ WpfApp1/obj/Debug/Pages/MainMenu.g.i.cs
 WpfApp1/obj/Debug/Pages/MainWindow.g.i.cs
 WpfApp1/obj/Debug/Pages/Register.g.i.cs
 WpfApp1/obj/Debug/Pages/TravelDetails.g.i.cs
+*.editorconfig
+*.json
+*.props
+*.targets
+UnitTest/obj/Debug/net8.0/UnitTest.GlobalUsings.g.cs
+UnitTest/obj/Debug/net8.0/UnitTest.AssemblyInfo.cs
+UnitTest/obj/Debug/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs
+UnitTest/GlobalUsings.cs
