@@ -74,5 +74,30 @@ namespace UnitTest
             Assert.IsTrue(result);
         }
 
+
+        [Test]
+        public void InvalidLogin()
+        {
+            // Assign
+            string user = "Nobody";
+            string password = "";
+            SQL testSQL = new SQL("localhost", "airlinedb", "root", "revival2017");
+            bool result;
+
+            // Act
+            if (Validator.IsValidUserName(user) && password != string.Empty)
+            {
+                result = true;
+            }
+            else
+            {
+                result = false;
+            }
+
+            // Assert
+            Assert.IsFalse(result);
+        }
+
+
     }
 }
