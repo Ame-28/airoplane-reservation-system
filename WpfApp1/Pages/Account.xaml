@@ -55,14 +55,12 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="91*"/>
             <RowDefinition Height="108*"/>
-            <RowDefinition Height="110*"/>
-            <RowDefinition Height="91*"/>
-            <RowDefinition Height="91*"/>
+            <RowDefinition Height="292*"/>
+
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="79*"/>
-            <ColumnDefinition Width="355*"/>
-            <ColumnDefinition Width="71*" />
+            <ColumnDefinition Width="426*"/>
             <ColumnDefinition Width="205*"/>
         </Grid.ColumnDefinitions>
 
@@ -70,11 +68,11 @@
         <Button x:Name="DownloadLogButton" Grid.Row="1"               
             Grid.Column="3"
             Height="40" Width="150" 
-            HorizontalAlignment="Left" VerticalAlignment="Top" 
+            HorizontalAlignment="Center" VerticalAlignment="Center" 
             Content="DOWNLOAD LOG"
             Background="#374B68" Foreground="white" 
             FontSize="15" FontWeight="bold" 
-            Style="{StaticResource RoundedButtonStyle}" Margin="10,0,0,0" />
+            Style="{StaticResource RoundedButtonStyle}" />
         <TextBlock x:Name="MyAccounttitle" Grid.Column="1"
            VerticalAlignment="Bottom" HorizontalAlignment="Left"
            TextWrapping="Wrap"  
