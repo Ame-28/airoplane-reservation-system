@@ -75,3 +75,5 @@ WpfApp1/obj/Debug/Pages/Register.g.cs
 WpfApp1/obj/Debug/Pages/TravelDetails.g.cs
 *.v2
 *.bin
+AirlineDB/bin/Debug/AirlineDB.dacpac
+AirlineDB/obj/Debug/WPFAPP1.generated.sql
