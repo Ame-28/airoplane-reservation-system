@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfApp1.Pages;
 
 namespace ARS
 {
@@ -33,8 +34,13 @@ namespace ARS
         }
         private void ManageBooking_click(object sender, RoutedEventArgs e)
         {
-            //flightstatus TravelDetails = new T();
-            //Main_frame.Content = TravelDetails;
+            ManageBooking ManageBooking = new ManageBooking();
+            Main_frame.Content=ManageBooking;
+        }
+        private void AccountButton_clicked(object sender, RoutedEventArgs e)
+        {
+            Account AccountPage = new Account();
+            Main_frame.Content = AccountPage;
         }
         
     }

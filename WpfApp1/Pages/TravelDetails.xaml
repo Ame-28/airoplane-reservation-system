@@ -9,7 +9,32 @@
       Title="TravelDetails">
     <Page.Resources>
         <!-- Existing RoundedButtonStyle -->
-        <!-- ... -->
+
+        <Style x:Key="RoundedButtonStyle" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" Background="#2e395d" CornerRadius="10" BorderBrush="Black" BorderThickness="1">
+                            <Border.Effect>
+                                <DropShadowEffect Color="Gray" BlurRadius="5" ShadowDepth="5" Opacity="0.5"/>
+                            </Border.Effect>
+                            <ContentPresenter x:Name="contentPresenter" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#2e395d"/>
+                                <Setter TargetName="contentPresenter" Property="TextElement.Foreground" Value="yellow"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Width" Value="150"/>
+            <Setter Property="Height" Value="40"/>
+        </Style>
+
 
         <!-- Custom TextBox Style -->
         <Style x:Key="RoundedTextBoxStyle" TargetType="TextBox">
@@ -48,7 +73,7 @@
             <ColumnDefinition Width="259*" />
             <ColumnDefinition Width="341*"/>
         </Grid.ColumnDefinitions>
-        
+
         <!-- Define Headings -->
         <TextBlock Grid.ColumnSpan="2"
                    VerticalAlignment="Center" HorizontalAlignment="Left"
@@ -70,7 +95,7 @@
                    Text="TO"                
                    Foreground="Black"  
                    FontSize="20" FontWeight="Bold" Height="26" Width="28" Margin="10,0,0,0"/>
-        
+
         <!-- One Way & Round Trip -->
         <Border Grid.ColumnSpan="2" 
                 Grid.RowSpan="2"
@@ -135,7 +160,7 @@
                     VerticalAlignment="Center" VerticalContentAlignment="Center"
                     Margin="39,0,0,0"
                     FontSize="15" Width="119"/>
-        
+
         <!-- Return Date -->
         <DatePicker x:Name="ReturnDatePicker" 
                     Grid.Row="2" 
@@ -147,7 +172,7 @@
                     Margin="100,0,0,0"
                     FontSize="15" Width="119"
                     IsEnabled="{Binding ElementName=RoundTrip, Path=IsChecked}"/>
-          
+
         <!-- Passenger TextBox-->
         <TextBox x:Name="PassengersTextBox" 
                  Grid.Row="2" 
@@ -160,14 +185,14 @@
 
         <!-- Search Flights Button -->
         <Button Grid.Row="3"               
-                Grid.ColumnSpan="3"
+                Grid.ColumnSpan="2"
                 Height="40" Width="150" 
-                HorizontalAlignment="Center" VerticalAlignment="Center" 
+                HorizontalAlignment="Left" VerticalAlignment="Top" 
                 x:Name="SearchFlightsButton" 
-                Content="Search Flights"
+                Content="SEARCH FLIGHTS"
                 Background="#374B68" Foreground="white" 
-                FontSize="20" FontWeight="bold"
-                Click="SearchFlights_Click"/>
-             
+                FontSize="15" FontWeight="bold"
+                Click="SearchFlights_Click" Style="{StaticResource RoundedButtonStyle}" Grid.Column="1" Margin="102,15,0,0"/>
+
     </Grid>
 </Page>

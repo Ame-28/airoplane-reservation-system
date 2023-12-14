@@ -16,13 +16,18 @@ using System.Windows.Shapes;
 namespace WpfApp1.Pages
 {
     /// <summary>
-    /// Interaction logic for flightstatus.xaml
+    /// Interaction logic for ManageBooking.xaml
     /// </summary>
-    public partial class flightstatus : Page
+    public partial class ManageBooking : Page
     {
-        public flightstatus()
+        public ManageBooking()
         {
             InitializeComponent();
+        }
+
+        private void managebookTextarea_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }
