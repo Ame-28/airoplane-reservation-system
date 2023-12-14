@@ -21,7 +21,7 @@ namespace ARS
     /// </summary>
     public partial class MainWindow : Window
     {
-        SQL mySQL = new SQL("localhost", "airlineDB", "root", "revival2017");
+        SQL mySQL = new SQL("localhost", "airlinedb", "root", "1234");
         Logger myLog = new Logger("log.txt");
 
         public MainWindow()
