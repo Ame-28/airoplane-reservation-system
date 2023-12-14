@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows;
 using MySql.Data.MySqlClient;
 
 public class SQL
@@ -40,16 +41,16 @@ public class SQL
         }
     }
 
-    public List<Dictionary<string, object>> readValues(string tableName)
+    public Dictionary<string, object> readValues(string tableName, string condition)
     {
-        List<Dictionary<string, object>> records = new List<Dictionary<string, object>>();
+        Dictionary<string, object> record = new Dictionary<string, object>();
 
         using (MySqlConnection connection = new MySqlConnection(connectionString))
         {
             try
             {
                 connection.Open();
-                string query = $"SELECT * FROM {tableName}";
+                string query = $"SELECT * FROM {tableName} WHERE {condition} LIMIT 1";
 
                 using (MySqlCommand cmd = new MySqlCommand(query, connection))
                 {
@@ -57,16 +58,13 @@ public class SQL
                     {
                         if (reader.HasRows)
                         {
-                            while (reader.Read())
+                            reader.Read(); // Read the first (and only) row
+
+                            for (int i = 0; i < reader.FieldCount; i++)
                             {
-                                var record = new Dictionary<string, object>();
-                                for (int i = 0; i < reader.FieldCount; i++)
-                                {
-                                    string columnName = reader.GetName(i);
-                                    object value = reader.GetValue(i);
-                                    record[columnName] = value;
-                                }
-                                records.Add(record);
+                                string columnName = reader.GetName(i);
+                                object value = reader.IsDBNull(i) ? null : reader.GetValue(i);
+                                record[columnName] = value;
                             }
                         }
                         else
@@ -74,16 +72,21 @@ public class SQL
                             Console.WriteLine("No rows found.");
                         }
                     }
-
                 }
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine($"Error reading record: {ex.Message}");
+                // Handle MySQL-specific exceptions if needed
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error reading records: {ex.Message}");
+                Console.WriteLine($"Unexpected error: {ex.Message}");
+                // Handle other exceptions if needed
             }
         }
 
-        return records;
+        return record;
     }
 
     public void alterValues(string tableName, Dictionary<string, object> newValues, string condition)
