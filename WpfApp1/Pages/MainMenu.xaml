@@ -79,7 +79,7 @@
         <Button Content="MANAGE BOOKING" 
                 Grid.Row="3" 
                 HorizontalAlignment="Center" VerticalAlignment="Center"              
-                Background='white' Foreground="Black" Style="{StaticResource RoundedButtonStyle}" Click="Manage"/>
+                Background='white' Foreground="Black" Style="{StaticResource RoundedButtonStyle}" Click="ManageBooking_click"/>
         
         <Button Content="FLIGHT STATUS" 
                 Grid.Row="4" 
