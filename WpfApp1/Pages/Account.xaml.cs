@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfApp1.Pages
+namespace ARS.Pages
 {
     /// <summary>
     /// Interaction logic for Account.xaml
