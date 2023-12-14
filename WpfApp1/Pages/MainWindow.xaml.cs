@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Security;
 using System.Text;
@@ -21,7 +22,10 @@ namespace ARS
     /// </summary>
     public partial class MainWindow : Window
     {
-        SQL mySQL = new SQL("localhost", "airlinedb", "root", "1234");
+        SQL mySQL = new SQL(ConfigurationManager.AppSettings["server"],
+                            ConfigurationManager.AppSettings["database"],
+                            ConfigurationManager.AppSettings["userId"],
+                            ConfigurationManager.AppSettings["password"]);
         Logger myLog = new Logger("log.txt");
 
         public MainWindow()

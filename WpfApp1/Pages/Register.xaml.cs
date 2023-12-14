@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,7 +26,10 @@ namespace ARS
             InitializeComponent();
         }
 
-        SQL mySQL = new SQL("localhost", "airlineDB", "root", "revival2017");
+        SQL mySQL = new SQL(ConfigurationManager.AppSettings["server"],
+                            ConfigurationManager.AppSettings["database"],
+                            ConfigurationManager.AppSettings["userId"],
+                            ConfigurationManager.AppSettings["password"]);
 
         private void Register_Click(object sender, RoutedEventArgs e)
         {
