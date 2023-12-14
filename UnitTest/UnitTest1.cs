@@ -1,5 +1,6 @@
 using ARS;
 using NUnit.Framework;
+using NUnit.Framework.Internal;
 
 namespace UnitTest
 {
@@ -10,8 +11,7 @@ namespace UnitTest
         {
             // Setup code if needed
         }
-        SQL testSQL = new SQL("localhost", "airlinedb", "root", "revival2017");
-
+       
         [Test]
         public void ValidateUserName()
         {
@@ -43,6 +43,7 @@ namespace UnitTest
         {
             // Assign
             string user = "Abraham";
+            SQL testSQL = new SQL("localhost", "airlinedb", "root", "revival2017");
 
             // Act
             bool result = testSQL.checkValue("customer", "first_name", user);
@@ -125,7 +126,7 @@ namespace UnitTest
             bool result;
 
             // Act
-            if (password == string.Empty)
+            if (password == string.Empty )
             {
                 result = false;
             }
@@ -139,24 +140,39 @@ namespace UnitTest
         }
 
         [Test]
-        public void AddedToDB()
+        public void CreatedLogger()
         {
             // Assign
-            Dictionary<string, object> vals = new Dictionary<string, object>
-            {
-                {"first_name", "Abraham"},
-                {"last_name", "Vijai"},
-                {"email", "abrahamvijai23@gmail.com"},
-                {"date_of_birth", "2023-11-28 00:00:00"}
-            };
+            ARS.Logger logger = new ARS.Logger("testLog.txt");
             bool result;
 
             // Act
-            testSQL.insertValues("customer", vals);
-            result = testSQL.checkValue("customer", "email", vals["email"]);
-
+            logger.initLog();
+            result = true;
+            
             // Assert
             Assert.IsTrue(result);
+        }
+
+        [Test]
+        public void AddedToDB()
+        {
+            // Assign
+            Dictionary<string, object> customerDetails = new Dictionary<string, object>();
+
+            customerDetails.Add("first_name", "Mark");
+            customerDetails.Add("last_name", "Mylod");
+            customerDetails.Add("email", "mm123@gmail.com");
+            customerDetails.Add("date_of_birth", "2023-04-01"); // Replace with the actual date
+            bool result;
+            SQL testSQL = new SQL("localhost", "airlinedb", "root", "revival2017");
+
+            // Act
+            testSQL.insertValues("customer", customerDetails);
+            result = testSQL.checkValue("customer", "email", "mm123@gmail.com");
+
+            // Assert
+            Assert.IsFalse(result);
         }
     }
 }
