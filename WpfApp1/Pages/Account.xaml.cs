@@ -23,6 +23,9 @@ namespace ARS.Pages
         public Account()
         {
             InitializeComponent();
+            UserNameAccount.Text = DataStorage.UserName;
+            gmailAccount.Text = DataStorage.Email;
+            DOBAccount.Text = DataStorage.DOB;
         }
 
         private void BookingListTextBox_Scroll(object sender, System.Windows.Controls.Primitives.ScrollEventArgs e)
