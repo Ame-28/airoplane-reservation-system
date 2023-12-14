@@ -72,6 +72,9 @@ namespace ARS
                 else
                 {
                     myLog.logEvent($"{userName} signed in successfully");
+
+                    storeData(userName); // Store data temporarily
+
                     // Go to next page
                     Page page = new MainMenu();
                     this.Content = page;
@@ -84,5 +87,13 @@ namespace ARS
             Page register = new Register();
             this.Content = register;
         }  
+
+        public void storeData(string userName)
+        {
+            Dictionary<string, object> vals = mySQL.readValues("customer", $"FIRST_NAME = '{userName}'");
+            DataStorage.setData(vals["FIRST_NAME"].ToString() + " " + vals["LAST_NAME"].ToString(),
+                                vals["EMAIL"].ToString(),
+                                vals["DATE_OF_BIRTH"].ToString());
+        }
     }
 }
