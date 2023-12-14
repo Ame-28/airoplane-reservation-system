@@ -77,3 +77,23 @@ WpfApp1/obj/Debug/Pages/TravelDetails.g.cs
 *.bin
 AirlineDB/bin/Debug/AirlineDB.dacpac
 AirlineDB/obj/Debug/WPFAPP1.generated.sql
+<<<<<<< Updated upstream
+*.jfm
+*.dbmdl
+WpfApp1/obj/Debug/Flight_status.g.i.cs
+WpfApp1/obj/Debug/Pages/Flight_status.g.i.cs
+WpfApp1/obj/Debug/Pages/flightstatus.g.i.cs
+WpfApp1/obj/Debug/Pages/flightstatus.g.cs
+=======
+*.dbmdl
+*.jfm
+>>>>>>> Stashed changes
+WpfApp1/obj/Debug/Flight_status.g.i.cs
+WpfApp1/obj/Debug/Pages/Flight_status.g.i.cs
+WpfApp1/obj/Debug/Pages/flightstatus.g.cs
+WpfApp1/obj/Debug/Pages/flightstatus.g.i.cs
+WpfApp1/obj/Debug/Flight_status.g.i.cs
+WpfApp1/obj/Debug/Pages/Flight_status.g.i.cs
+WpfApp1/obj/Debug/Pages/flightstatus.g.cs
+WpfApp1/obj/Debug/Pages/flightstatus.g.i.cs
+WpfApp1/obj/Debug/Pages/Flight_status.g.i.cs
