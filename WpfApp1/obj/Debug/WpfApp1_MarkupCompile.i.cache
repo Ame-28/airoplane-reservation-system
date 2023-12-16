@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\amels\Desktop\AIR RESERVATION SYSTEM\airoplane-reservation-system\WpfApp1\App.xaml
-635469555
+8-1824633882
 
-14-1599570256
+16-5603791
 33-1731382452
-Pages\Account.xaml;Pages\MainWindow.xaml;Pages\MainMenu.xaml;Pages\ManageBooking.xaml;Pages\Register.xaml;Pages\TravelDetails.xaml;
+Pages\Account.xaml;Pages\FlightDetailsTag.xaml;Pages\FlightSearch1.xaml;Pages\MainWindow.xaml;Pages\MainMenu.xaml;Pages\ManageBooking.xaml;Pages\Register.xaml;Pages\TravelDetails.xaml;
 
 True
 
