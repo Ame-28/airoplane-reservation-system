@@ -3,6 +3,7 @@ using MySqlX.XDevAPI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Security;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,6 +42,10 @@ namespace ARS.Pages
             string userName = UsernameTextBox.Text;
             SecureString password = PasswordBox.SecurePassword;
 
+            // Hash and verify password
+            string passwordHash = mySQL.readValues("customer", $"first_name = '{userName}'")["PASSWORD"].ToString();
+            bool reverseHash = BCrypt.Net.BCrypt.Verify(SecureStringToString(password), passwordHash);
+
             // Check user name field
             if (!Validator.IsValidUserName(userName))
             {
@@ -54,7 +59,12 @@ namespace ARS.Pages
                 passwordError.Text = "ERROR: The password is empty";
                 Logger.logError("The password is empty");
             }
-
+            // Check if password is correct
+            else if (!reverseHash)
+            {
+                passwordError.Text = "Incorrect Password. Please try again.";
+                Logger.logError("Incorrect Password. Please try again.");
+            }
             // Check user name in DB
             else
             {
@@ -70,8 +80,15 @@ namespace ARS.Pages
                     storeData(userName); // Store data temporarily
 
                     // Go to next page
-                    Page page = new MainMenu();
-                    this.Content = page;
+                    MainWindow mainWindow = Window.GetWindow(this) as MainWindow;
+
+                    // Navigate to MainMenu.xaml on the main window's frame
+                    if (mainWindow != null)
+                    {
+                        mainWindow.MainPage_Frame.Navigate(new Uri("/Pages/MainMenu.xaml", UriKind.Relative));
+                    }
+
+
                 }
             }
         }
@@ -88,5 +105,20 @@ namespace ARS.Pages
                                 vals["EMAIL"].ToString(),
                                 vals["DATE_OF_BIRTH"].ToString());
         }
+
+        private string SecureStringToString(SecureString secureString)
+        {
+            IntPtr valuePtr = IntPtr.Zero;
+            try
+            {
+                valuePtr = Marshal.SecureStringToGlobalAllocUnicode(secureString);
+                return Marshal.PtrToStringUni(valuePtr);
+            }
+            finally
+            {
+                Marshal.ZeroFreeGlobalAllocUnicode(valuePtr);
+            }
+        }
+
     }
 }
