@@ -74,76 +74,78 @@
            VerticalAlignment="Center" HorizontalAlignment="Left"
            FontSize="20" FontWeight="bold"
            TextWrapping="Wrap"
-           Text="ENTER THE BOOKING DETAILS"
+           Text="ENTER BOOKING DETAILS"
            Margin="40,0,0,0" 
            Height="27" Width="266"/>
         <!--Textblock for Booking reference-->
         <TextBlock Grid.ColumnSpan="2"
-       VerticalAlignment="Center" HorizontalAlignment="Center"
-       TextWrapping="Wrap"  
-       Text="PNR/BOOKING REFERENCE"                
-       Foreground="Black"  
-       FontSize="15" FontWeight="Bold"
-        Height="18" Width="230" Grid.RowSpan="2"/>
+           VerticalAlignment="Center" HorizontalAlignment="Center"
+           TextWrapping="Wrap"  
+           Text="PNR/BOOKING REFERENCE"                
+           Foreground="Black"  
+           FontSize="15" FontWeight="Bold"
+            Height="18" Width="230" Grid.RowSpan="2"/>
+        
         <!--Textblock for email/last name-->
         <TextBlock Grid.Column="2" Grid.ColumnSpan="3"
-       VerticalAlignment="Top" HorizontalAlignment="Left"
-       TextWrapping="Wrap"  
-       Text="EMAIL/LAST NAME"                
-       Foreground="Black"  
-       FontSize="15" FontWeight="Bold" Height="18" Width="230"  Grid.Row="1"/>
+           VerticalAlignment="Top" HorizontalAlignment="Left"
+           TextWrapping="Wrap"  
+           Text="EMAIL/LAST NAME"                
+           Foreground="Black"  
+           FontSize="15" FontWeight="Bold" Height="18" Width="230"  Grid.Row="1"/>
 
         <TextBlock Grid.ColumnSpan="2" Grid.Row="1"
-       VerticalAlignment="Bottom" HorizontalAlignment="Left"
-       FontSize="10" 
-       TextWrapping="Wrap" 
-       Text="Booking reference:6 letters and/or Number(eg ABC123)"
-       Height="15" Width="250" Margin="40,0,0,37"/>
+           VerticalAlignment="Bottom" HorizontalAlignment="Left"
+           FontSize="10" 
+           TextWrapping="Wrap" 
+           Text="Booking reference:6 letters and/or Number(eg ABC123)"
+           Height="15" Width="250" Margin="40,0,0,37"/>
+        
         <TextBlock Grid.ColumnSpan="2" Grid.Row="1"
-       VerticalAlignment="bottom" HorizontalAlignment="Left"
-       FontSize="10" 
-       TextWrapping="Wrap" 
-       Text="PNR number:13 numbers(eg 1234567890123)"
-       Height="15" Width="250" Margin="40,0,0,22"/>
+           VerticalAlignment="bottom" HorizontalAlignment="Left"
+           FontSize="10" 
+           TextWrapping="Wrap" 
+           Text="PNR number:13 numbers(eg 1234567890123)"
+           Height="15" Width="250" Margin="40,0,0,22"/>
 
         <!-- Bookingreference TextBox-->
-        <TextBox x:Name="BookingreferenceTextBox" 
-     Grid.Row="1" 
-     Grid.ColumnSpan="2" Grid.Column="0"
-     Style="{StaticResource RoundedTextBoxStyle}"
-     Width="240" Height="50"
-     HorizontalAlignment="Center" VerticalAlignment="Top" 
-     VerticalContentAlignment="Center"
-     FontSize="15" Margin="0,28,0,0"/>
+        <TextBox x:Name="BookingreferenceCheckinTextBox" 
+             Grid.Row="1" 
+             Grid.ColumnSpan="2" Grid.Column="0"
+             Style="{StaticResource RoundedTextBoxStyle}"
+             Width="240" Height="50"
+             HorizontalAlignment="Center" VerticalAlignment="Top" 
+             VerticalContentAlignment="Center"
+             FontSize="15" Margin="0,28,0,0"/>
 
 
         <!-- Email TextBox -->
-        <TextBox x:Name="EmailTextBox"                     
-     Grid.Row="1" Grid.Column="1"                
-     Style="{StaticResource RoundedTextBoxStyle}"                      
-     Width="240" Height="50"
-     HorizontalAlignment="Left" VerticalAlignment="Top"
-     VerticalContentAlignment="Center"
-     FontSize="15"  Grid.ColumnSpan="3" Margin="200,31,0,0"/>
+        <TextBox x:Name="EmailcheckinTextBox"                     
+             Grid.Row="1" Grid.Column="1"                
+             Style="{StaticResource RoundedTextBoxStyle}"                      
+             Width="240" Height="50"
+             HorizontalAlignment="Left" VerticalAlignment="Top"
+             VerticalContentAlignment="Center"
+             FontSize="15"  Grid.ColumnSpan="3" Margin="200,31,0,0"/>
 
         <!--TextBox for managebookTextarea-->
-        <TextBox x:Name="managebookTextarea"                   
-     Grid.Row="2"               
-     Style="{StaticResource RoundedTextBoxStyle}"                      
-     Width="600" Height="110"
-     HorizontalAlignment="left" VerticalAlignment="Top"
-     VerticalContentAlignment="Center"
-     FontSize="15" Margin="50,78,0,0" Grid.ColumnSpan="4" Grid.RowSpan="2" Grid.Column="0" />
+        <TextBox x:Name="manageCheckInTextarea"                   
+             Grid.Row="2"               
+             Style="{StaticResource RoundedTextBoxStyle}"                      
+             Width="600" Height="110"
+             HorizontalAlignment="left" VerticalAlignment="Top"
+             VerticalContentAlignment="Center"
+             FontSize="15" Margin="50,78,0,0" Grid.ColumnSpan="4" Grid.RowSpan="2" Grid.Column="0" />
 
         <!-- Find Booking Button -->
         <Button x:Name="FindBookedFlightsButton" Grid.Row="1"               
-    Grid.ColumnSpan="2"
-    Height="40" Width="150" 
-    HorizontalAlignment="Left" VerticalAlignment="Top" 
-    Content="FIND BOOKING"
-    Background="#374B68" Foreground="white" 
-    FontSize="15" FontWeight="bold" 
-    Style="{StaticResource RoundedButtonStyle}" Margin="40,118,0,0" Grid.RowSpan="2"/>
+            Grid.ColumnSpan="2"
+            Height="40" Width="150" 
+            HorizontalAlignment="Left" VerticalAlignment="Top" 
+            Content="CHECK IN"
+            Background="#374B68" Foreground="white" 
+            FontSize="15" FontWeight="bold" 
+            Style="{StaticResource RoundedButtonStyle}" Margin="40,118,0,0" Grid.RowSpan="2"/>
 
     </Grid>
 </Page>
