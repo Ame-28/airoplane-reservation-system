@@ -98,9 +98,6 @@
         </Border>
         <TextBox Grid.Row="2" x:Name="passwordError" BorderThickness="0" Margin="75,96,125,0"/>
 
-        <!-- Forgot Password Text Block -->
-        <TextBlock Grid.Row="2" Margin="350,0,25,2" FontSize="12" Foreground="LightBlue" TextAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" Text="Forgot Passoword?" Height="21"/>
-
         <!-- Sign In Button -->
         <Button Grid.Row="4" 
         Height="40" Width="150" 
