@@ -146,7 +146,7 @@
                 Click="Swap" Width="26" >
             <Button.Template>
                 <ControlTemplate>
-                    <Image Source="Images/two-way-arrows.png"/>
+                    <Image Source="/Images/two-way-arrows.png"/>
                 </ControlTemplate>
             </Button.Template>
         </Button>
