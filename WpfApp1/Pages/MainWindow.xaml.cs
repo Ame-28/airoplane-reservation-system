@@ -22,10 +22,7 @@ namespace ARS
     /// </summary>
     public partial class MainWindow : Window
     {
-        SQL mySQL = new SQL(ConfigurationManager.AppSettings["server"],
-                            ConfigurationManager.AppSettings["database"],
-                            ConfigurationManager.AppSettings["userId"],
-                            ConfigurationManager.AppSettings["password"]);
+        SQL mySQL = new SQL();
         Logger myLog = new Logger("log.txt");
 
         public MainWindow()

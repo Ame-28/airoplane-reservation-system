@@ -11,7 +11,10 @@ public class SQL
 
     public SQL()
     {
-        connectionString = $"Server={ConfigurationManager.AppSettings["server"]};Database={ConfigurationManager.AppSettings["database"]};User ID={ConfigurationManager.AppSettings["userId"]};Password={ConfigurationManager.AppSettings["password"]};";    
+        connectionString = $"Server={ConfigurationManager.AppSettings["server"]};" +
+                            $"Database={ConfigurationManager.AppSettings["database"]};" +
+                            $"User ID={ConfigurationManager.AppSettings["userId"]};" +
+                            $"Password={ConfigurationManager.AppSettings["password"]};";    
     }
 
     public void insertValues(string tableName, Dictionary<string, object> values)
