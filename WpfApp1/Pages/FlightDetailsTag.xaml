@@ -12,9 +12,9 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
                         <Border x:Name="border" Background="#2e395d" CornerRadius="10" BorderBrush="Black" BorderThickness="1">
-                            <Border.Effect>
+                            <!--<Border.Effect>
                                 <DropShadowEffect Color="Gray" BlurRadius="5" ShadowDepth="5" Opacity="0.5"/>
-                            </Border.Effect>
+                            </Border.Effect>-->
                             <ContentPresenter x:Name="contentPresenter" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
                         <ControlTemplate.Triggers>
