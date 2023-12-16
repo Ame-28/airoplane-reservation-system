@@ -1,20 +1,11 @@
 ﻿using ARS.Pages;
 using System;
 using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
+using System.Runtime.InteropServices;
 using System.Security;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace ARS
 {
@@ -35,7 +26,7 @@ namespace ARS
             string firstName = FirstNameTextBox.Text;
             string lastName = LastNameTextBox.Text;
             string email = EmailTextBox.Text;
-            string dob = datePicker.Text;         
+            string dob = datePicker.Text;
 
             // Validate values
             if (!Validator.IsValidUserName(firstName) || !Validator.IsValidUserName(lastName))
@@ -51,10 +42,10 @@ namespace ARS
 
             // Hash and store password
             SecureString password = PasswordBox.SecurePassword;
-            string passwordHash = BCrypt.Net.BCrypt.HashPassword(password.ToString());
+            string passwordHash = BCrypt.Net.BCrypt.HashPassword(SecureStringToString(password));
 
             // Store all the values
-            Dictionary<string,object> customerDetails = new Dictionary<string, object>
+            Dictionary<string, object> customerDetails = new Dictionary<string, object>
             {
                 { "first_name", firstName },
                 { "last_name", lastName },
@@ -62,9 +53,9 @@ namespace ARS
                 { "email", email },
                 { "date_of_birth", dob }
             };
-            
+
             // Check if the user already exists
-            if(mySQL.checkValue("customer","email",email))
+            if (mySQL.checkValue("customer", "email", email))
             {
                 MessageBox.Show("This user already exists!", "User Exists", MessageBoxButton.OK, MessageBoxImage.Information);
             }
@@ -76,12 +67,26 @@ namespace ARS
                 // Insert values to temp storage
                 Customer.setData(firstName + " " + lastName, email, dob);
 
-                if(MessageBox.Show("User has been registered!", "Successful", MessageBoxButton.OK)== MessageBoxResult.OK)
-                {                 
-                    NavigationService.Navigate(new LoginPage());                   
+                if (MessageBox.Show("User has been registered!", "Successful", MessageBoxButton.OK) == MessageBoxResult.OK)
+                {
+                    NavigationService.Navigate(new LoginPage());
                 }
             }
-            
         }
+
+        private string SecureStringToString(SecureString secureString)
+        {
+            IntPtr valuePtr = IntPtr.Zero;
+            try
+            {
+                valuePtr = Marshal.SecureStringToGlobalAllocUnicode(secureString);
+                return Marshal.PtrToStringUni(valuePtr);
+            }
+            finally
+            {
+                Marshal.ZeroFreeGlobalAllocUnicode(valuePtr);
+            }
+        }
+
     }
 }
