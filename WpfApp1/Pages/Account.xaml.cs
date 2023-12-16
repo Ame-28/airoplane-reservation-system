@@ -61,11 +61,23 @@ namespace ARS.Pages
                     File.Copy(filePath, selectedFilePath, true);
 
                     MessageBox.Show("File downloaded successfully.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                    Logger.logEvent("File downloaded successfully.");
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show($"Error downloading file: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    Logger.logError($"Error downloading file: {ex.Message}");
                 }
+            }
+        }
+
+        private void LogOutButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = Window.GetWindow(this) as MainWindow;
+            // Go back to login page
+            if (mainWindow != null)
+            {
+                mainWindow.MainPage_Frame.Navigate(new Uri("/Pages/LoginPage.xaml", UriKind.Relative));
             }
         }
     }
