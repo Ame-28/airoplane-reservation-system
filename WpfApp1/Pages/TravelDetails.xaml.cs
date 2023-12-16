@@ -67,8 +67,8 @@ namespace ARS
                 flightDetailsTag.FromCode.Text = fromIATA.ToString();
                 var toIATA = sql.customQuery("SELECT DISTINCT iata_code FROM airport a LEFT JOIN route r ON a.airport_id = r.DEPARTURE_LOCATION_ID LEFT JOIN flight f ON r.route_id = f.route_id WHERE r.route_id = 1;")[0]["iata_code"];
                 flightDetailsTag.ToCode.Text = toIATA.ToString();
-                flightDetailsTag.Fromlocation.Text = sql.readValues("airport", $"IATA_CODE = '{fromIATA}'")["CITY"].ToString();
-                flightDetailsTag.Tolocation.Text = sql.readValues("airport", $"IATA_CODE = '{toIATA}'")["CITY"].ToString();
+                flightDetailsTag.FromLocation.Text = sql.readValues("airport", $"IATA_CODE = '{fromIATA}'")["CITY"].ToString();
+                flightDetailsTag.ToLocation.Text = sql.readValues("airport", $"IATA_CODE = '{toIATA}'")["CITY"].ToString();
 
             }
             NavigationService.Navigate(new FlightSearch1());
