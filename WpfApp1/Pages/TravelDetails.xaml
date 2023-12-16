@@ -154,16 +154,15 @@
         <!-- Depart Date -->
         <DatePicker x:Name="DepartDatePicker" 
                     Grid.Row="2" 
-                    Grid.ColumnSpan="2"
+                    
                     Height="50"
-                    HorizontalAlignment="Left" 
-                    VerticalAlignment="Center" VerticalContentAlignment="Center"
-                    Margin="39,0,0,0"
-                    FontSize="15" Width="119"/>
-        <TextBlock Grid.Row="2" Grid.ColumnSpan="2"
-                   HorizontalAlignment="Left" VerticalAlignment="Top"
+                    HorizontalAlignment="Center" VerticalAlignment="Center" 
+                    VerticalContentAlignment="Center"
+                    FontSize="15" Width="140"/>
+        <TextBlock Grid.Row="2" 
+                   HorizontalAlignment="Center" VerticalAlignment="Top"
+                   Margin="10"
                    FontSize="15" FontWeight="bold"
-                   Margin="55,5,0,0"
                    TextWrapping="Wrap"
                    Text="Depart Date"/>
 
@@ -172,16 +171,14 @@
                     Grid.Row="2" 
                     Grid.Column="1"
                     Height="50"
-                    HorizontalAlignment="Left" VerticalAlignment="Center" 
+                    HorizontalAlignment="Center" VerticalAlignment="Center" 
                     VerticalContentAlignment="Center"
-                    Margin="40,0,0,0"
                     FontSize="15" Width="119"
                     IsEnabled="{Binding ElementName=RoundTrip, Path=IsChecked}"/>
         <TextBlock Grid.Row="2" Grid.Column="1"
-                   Grid.ColumnSpan="2"
-                   HorizontalAlignment="Left" VerticalAlignment="Top"
+                   HorizontalAlignment="Center" VerticalAlignment="Top"
+                   Margin="10"
                    FontSize="15" FontWeight="bold"
-                   Margin="55,5,0,0"
                    TextWrapping="Wrap"
                    Text="Return Date"/>
 
@@ -195,10 +192,9 @@
                  VerticalContentAlignment="Center"                
                  FontSize="15"/>
         <TextBlock Grid.Row="2" Grid.Column="2"
-                   Grid.ColumnSpan="2"
-                   HorizontalAlignment="Left" VerticalAlignment="Top"
+                   HorizontalAlignment="Center" VerticalAlignment="Top"
+                   Margin="10"
                    FontSize="15" FontWeight="bold"
-                   Margin="40,5,0,0"
                    TextWrapping="Wrap"
                    Text="No. of Passengers"/>
         <!-- Search Flights Button -->
@@ -211,6 +207,5 @@
                 Background="#374B68" Foreground="white" 
                 FontSize="15" FontWeight="bold"
                 Click="SearchFlights_Click" Style="{StaticResource RoundedButtonStyle}" Grid.Column="1" Margin="102,15,0,0"/>
-
     </Grid>
 </Page>
