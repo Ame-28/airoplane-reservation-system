@@ -71,8 +71,9 @@ namespace ARS
 
                 if(MessageBox.Show("User has been registered!", "Successful", MessageBoxButton.OK)== MessageBoxResult.OK)
                 {
-                    Page page = new MainMenu();
-                    this.Content = page;
+                    
+                    NavigationService.Navigate(new MainMenu());
+                    
                 }
             }
             

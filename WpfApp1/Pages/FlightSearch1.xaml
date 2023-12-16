@@ -80,6 +80,12 @@
                 <local:FlightDetailsTag Margin="0,0,0,10" />
                 <!-- Margin at the bottom -->
                 <local:FlightDetailsTag Margin="0,0,0,10" />
+                <local:FlightDetailsTag Margin="0,0,0,10" />
+                <local:FlightDetailsTag Margin="0,0,0,10" />
+                <local:FlightDetailsTag Margin="0,0,0,10" />
+                <local:FlightDetailsTag Margin="0,0,0,10" />
+                <local:FlightDetailsTag Margin="0,0,0,10" />
+                <local:FlightDetailsTag Margin="0,0,0,10" />
             </StackPanel>
         </ScrollViewer>
 

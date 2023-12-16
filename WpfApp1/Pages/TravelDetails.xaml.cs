@@ -44,6 +44,7 @@ namespace ARS
             List<Dictionary<string, object>> flight = new List<Dictionary<string, object>>();
 
             SQL sql = new SQL();
+            // Validate fields
 
             // Get From and To details
             fromDetails = sql.readValues("airport", $"CITY = '{FromTextBox.Text}'");
@@ -64,8 +65,7 @@ namespace ARS
              * Populate the User Control with details
              * 
              */
-            FlightSearch1 page = new FlightSearch1();
-            this.Content = page;
+            NavigationService.Navigate(new FlightSearch1());
 
         }
 
