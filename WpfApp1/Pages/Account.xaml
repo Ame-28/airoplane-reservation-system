@@ -65,20 +65,21 @@
         </Grid.ColumnDefinitions>
 
 
-        <Button x:Name="DownloadLogButton" Grid.Row="1"               
-            Grid.Column="3"
-            Height="40" Width="150" 
-            HorizontalAlignment="Center" VerticalAlignment="Center" 
-            Content="DOWNLOAD LOG"
-            Background="#374B68" Foreground="white" 
-            FontSize="15" FontWeight="bold" 
-            Style="{StaticResource RoundedButtonStyle}" />
+        <Button x:Name="DownloadLogButton" Grid.Row="1"                
+                Grid.Column="3"
+                Height="40" Width="150" 
+                HorizontalAlignment="Center" VerticalAlignment="Center" 
+                Content="DOWNLOAD LOG"
+                Background="#374B68" Foreground="white" 
+                FontSize="15" FontWeight="bold" 
+                Style="{StaticResource RoundedButtonStyle}" />
         <TextBlock x:Name="MyAccounttitle" Grid.Column="1"
-           VerticalAlignment="Bottom" HorizontalAlignment="Left"
-           TextWrapping="Wrap"  
-           Text="MY ACCOUNT"                
-           Foreground="Black"  
-           FontSize="15"  Height="29" Width="340"  Grid.Row="0" Grid.ColumnSpan="2" Margin="0,0,0,33" FontWeight="Bold"/>
+                   VerticalAlignment="Center" HorizontalAlignment="Left"
+                   TextWrapping="Wrap"  
+                   Text="MY ACCOUNT"                
+                   Foreground="Black"  
+                   FontSize="35"  Width="340" 
+                   Grid.Row="0" FontWeight="Bold"/>
 
         <!--textbox for user name display-->
         <TextBlock x:Name="UserNameAccount" Grid.Column="1"
