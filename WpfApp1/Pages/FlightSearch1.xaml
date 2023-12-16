@@ -20,8 +20,6 @@
             <ColumnDefinition Width="73*"/>
             <ColumnDefinition Width="206*"/>
             <ColumnDefinition Width="85*"/>
-            <ColumnDefinition Width="99*"/>
-            <ColumnDefinition Width="102*"/>
 
 
         </Grid.ColumnDefinitions>
@@ -75,14 +73,8 @@
                 <Path Data="M0,0 L5,10 10,0 Z" Fill="Black" Stretch="Uniform" Width="10" Margin="2,0" VerticalAlignment="Center"/>
             </StackPanel>
         </Button>
-        <ScrollViewer Grid.Column="0" Grid.ColumnSpan="7" Grid.Row="3">
+        <ScrollViewer Grid.ColumnSpan="5" Grid.Row="2">
             <StackPanel>
-                <local:FlightDetailsTag Margin="0,0,0,10" />
-                <!-- Margin at the bottom -->
-                <local:FlightDetailsTag Margin="0,0,0,10" />
-                <local:FlightDetailsTag Margin="0,0,0,10" />
-                <local:FlightDetailsTag Margin="0,0,0,10" />
-                <local:FlightDetailsTag Margin="0,0,0,10" />
                 <local:FlightDetailsTag Margin="0,0,0,10" />
                 <local:FlightDetailsTag Margin="0,0,0,10" />
                 <local:FlightDetailsTag Margin="0,0,0,10" />
