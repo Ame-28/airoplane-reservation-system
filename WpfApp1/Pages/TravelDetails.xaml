@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ARS"
       mc:Ignorable="d" 
-      Height="600" Width="900"
+      Height="460" Width="729"
       Title="TravelDetails">
     <Page.Resources>
         <!-- Existing RoundedButtonStyle -->
@@ -58,14 +58,13 @@
             <RowDefinition/>
             <RowDefinition Height="1.4*"/>
             <RowDefinition />
-            <RowDefinition Height="2*"/>
+            <RowDefinition Height=".9*"/>
 
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="230*"/>
             <ColumnDefinition Width="230*"/>
             <ColumnDefinition Width="230*" />
-            <ColumnDefinition Width="341*"/>
         </Grid.ColumnDefinitions>
 
         <!-- Define Headings -->
@@ -88,7 +87,7 @@
                    TextWrapping="Wrap"  
                    Text="TO"                
                    Foreground="Black"  
-                   FontSize="20" FontWeight="Bold" Height="26" Width="28" Margin="121,0,0,0"/>
+                   FontSize="20" FontWeight="Bold" Height="26" Width="28" Margin="163,0,0,0"/>
 
         <!-- One Way & Round Trip -->
         <Border Grid.Row="1"
@@ -193,13 +192,13 @@
                    Text="No. of Passengers"/>
         <!-- Search Flights Button -->
         <Button Grid.Row="3"               
-                Grid.ColumnSpan="2"
+                Grid.ColumnSpan="3"
                 Height="40" Width="150" 
-                HorizontalAlignment="Left" VerticalAlignment="Top" 
+                HorizontalAlignment="Center" VerticalAlignment="Top" 
                 x:Name="SearchFlightsButton" 
                 Content="SEARCH FLIGHTS"
                 Background="#374B68" Foreground="white" 
                 FontSize="15" FontWeight="bold"
-                Click="SearchFlights_Click" Style="{StaticResource RoundedButtonStyle}" Grid.Column="1" Margin="102,15,0,0"/>
+                Click="SearchFlights_Click" Style="{StaticResource RoundedButtonStyle}"  Margin="0,15,0,0"/>
     </Grid>
 </Page>
