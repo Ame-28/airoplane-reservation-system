@@ -22,13 +22,15 @@ namespace ARS
     /// </summary>
     public partial class MainWindow : Window
     {
-        Logger myLog = new Logger("log.txt");
-
         public MainWindow()
         {
             InitializeComponent();
-            myLog.initLog();
 
+            // Initialize Log
+            Logger.FileName = "logFile.txt";
+            Logger.initLog();
+
+            // Initialize the MainPage_Frame content
             Pages.LoginPage loginPage = new Pages.LoginPage();
             MainPage_Frame.Content = loginPage;
         }       

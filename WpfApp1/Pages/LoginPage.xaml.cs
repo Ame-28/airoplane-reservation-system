@@ -24,8 +24,7 @@ namespace ARS.Pages
     public partial class LoginPage : Page
     {
         SQL mySQL = new SQL();
-        Logger myLog = new Logger("log.txt");
-
+        
         public LoginPage()
         {
             InitializeComponent();
@@ -46,14 +45,14 @@ namespace ARS.Pages
             if (!Validator.IsValidUserName(userName))
             {
                 userNameError.Text = "ERROR: The username is invalid\nDo not enter number or null characters";
-                myLog.logError("The username is invalid. Do not enter number or null characters");
+                Logger.logError("The username is invalid. Do not enter number or null characters");
             }
 
             // Check password field
             else if (password.Length == 0)
             {
                 passwordError.Text = "ERROR: The password is empty";
-                myLog.logError("The password is empty");
+                Logger.logError("The password is empty");
             }
 
             // Check user name in DB
@@ -62,11 +61,11 @@ namespace ARS.Pages
                 if (!mySQL.checkValue("customer", "first_name", userName))
                 {
                     loginError.Text = "User not Found. Click here to register your account";
-                    myLog.logError("User not Found. Click here to register your account");
+                    Logger.logError("User not Found. Click here to register your account");
                 }
                 else
                 {
-                    myLog.logEvent($"{userName} signed in successfully");
+                    Logger.logEvent($"{userName} signed in successfully");
 
                     storeData(userName); // Store data temporarily
 
