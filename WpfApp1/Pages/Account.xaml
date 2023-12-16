@@ -48,6 +48,31 @@
             <Setter Property="Width" Value="150"/>
             <Setter Property="Height" Value="40"/>
         </Style>
+        <Style x:Key="RoundedButtonStyleWithWhitebackground" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" Background="white" CornerRadius="10" BorderBrush="red" BorderThickness="1">
+                            <Border.Effect>
+                                <DropShadowEffect Color="Gray" BlurRadius="5" ShadowDepth="5" Opacity="0.5"/>
+                            </Border.Effect>
+                            <ContentPresenter x:Name="contentPresenter" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="red"/>
+                                <Setter TargetName="contentPresenter" Property="TextElement.Foreground" Value="white"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Width" Value="150"/>
+            <Setter Property="Height" Value="40"/>
+        </Style>
+
     </Page.Resources>
 
     <Grid Background="#f4f5f9">
@@ -79,9 +104,9 @@
             Height="40" Width="150" 
             HorizontalAlignment="Center" VerticalAlignment="Bottom" 
             Content="LOG OUT"
-            Background="white" Foreground="white" 
+            Foreground="red" 
             FontSize="15" FontWeight="bold" 
-            Style="{StaticResource RoundedButtonStyle}" />
+            Style="{StaticResource RoundedButtonStyleWithWhitebackground}" />
         
         <TextBlock x:Name="MyAccounttitle" Grid.Column="0" 
            VerticalAlignment="Bottom" HorizontalAlignment="Left"
