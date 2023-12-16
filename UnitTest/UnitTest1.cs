@@ -1,7 +1,3 @@
-using ARS;
-using NUnit.Framework;
-using NUnit.Framework.Internal;
-
 namespace UnitTest
 {
     public class Tests
@@ -52,7 +48,7 @@ namespace UnitTest
             Assert.IsTrue(!result);
         }
 
-        [Test]
+        [TestMethod]
         public void ValidLogin()
         {
             // Assign
