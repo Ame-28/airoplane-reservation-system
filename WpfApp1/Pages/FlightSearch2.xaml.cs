@@ -1,5 +1,4 @@
-﻿using ARS;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,19 +16,13 @@ using System.Windows.Shapes;
 namespace WpfApp1.Pages
 {
     /// <summary>
-    /// Interaction logic for FlightDetailsTag.xaml
+    /// Interaction logic for FlightSearch2.xaml
     /// </summary>
-    public partial class FlightDetailsTag : UserControl
+    public partial class FlightSearch2 : Page
     {
-        private MainMenu mainMenu;
-
-        public FlightDetailsTag()
+        public FlightSearch2()
         {
             InitializeComponent();
-           
         }
-       
-
-        
     }
 }

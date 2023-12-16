@@ -27,7 +27,7 @@ namespace ARS
             InitializeComponent();
             TravelDetails TravelDetails = new TravelDetails();
             Main_frame.Content = TravelDetails;
-        }
+        }  
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -51,7 +51,7 @@ namespace ARS
         private void FlightStatus_clicked(object sender, RoutedEventArgs e)
         {
                 FlightStatus flightStatus = new FlightStatus();
-            Main_frame.Content = flightStatus;
+                Main_frame.Content = flightStatus;
             
         }
         
