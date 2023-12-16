@@ -7,7 +7,28 @@
       mc:Ignorable="d" 
       d:DesignHeight="490" d:DesignWidth="710"
       Title="FlightSearch1">
-    <Grid Background="white">
+    <Page.Resources>
+        <Style x:Key="RoundedButtonStyle" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" Background="White" CornerRadius="10" BorderBrush="Black" BorderThickness="1">
+                            <Border.Effect>
+                                <DropShadowEffect Color="Gray" BlurRadius="5" ShadowDepth="5" Opacity="0.5"/>
+                            </Border.Effect>
+                            <ContentPresenter x:Name="contentPresenter" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                       
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Width" Value="150"/>
+            <Setter Property="Height" Value="40"/>
+        </Style>
+    </Page.Resources>
+    <Grid Background="#f4f4f8">
         <Grid.RowDefinitions>
             <RowDefinition Height="51*"/>
             <RowDefinition Height="35*"/>
@@ -25,7 +46,7 @@
 
 
         </Grid.ColumnDefinitions>
-        <Border Grid.ColumnSpan="8" Grid.RowSpan="1" Margin="0,0,0,0" BorderThickness="2" Background="Green">
+        <Border Grid.ColumnSpan="8" Grid.RowSpan="1" Margin="0,0,0,0" BorderThickness="2" Background="white">
             <Grid VerticalAlignment="Bottom">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
@@ -67,14 +88,18 @@
             </Grid>
 
         </Border>
-        <Button Width="120" Height="30" Margin="43,3,42,2" Grid.Column="3" Grid.Row="1">
+        
+        <Button Width="90" Height="25"  HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="1" Grid.Column="5" Style="{StaticResource RoundedButtonStyle}">
             <StackPanel Orientation="Horizontal">
+                <TextBlock Text="PRICE" VerticalAlignment="Center"/>
+                <Image Source="/Images/price_keys.png" Width="20" Height="20" Margin="0,0,5,0"/>
                 
-                <TextBlock Text="Price" VerticalAlignment="Center" Margin="5,0"/>
-                <Path Data="M0,10 L5,0 10,10 Z" Fill="Black" Stretch="Uniform" Width="10" Margin="2,0" VerticalAlignment="Center"/>
-                <Path Data="M0,0 L5,10 10,0 Z" Fill="Black" Stretch="Uniform" Width="10" Margin="2,0" VerticalAlignment="Center"/>
             </StackPanel>
         </Button>
+        
+
+
+
         <ScrollViewer Grid.Column="0" Grid.ColumnSpan="7" Grid.Row="3">
             <StackPanel>
                 <local:FlightDetailsTag Margin="0,0,0,10" />
