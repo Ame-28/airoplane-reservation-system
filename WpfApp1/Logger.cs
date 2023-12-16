@@ -26,7 +26,7 @@ namespace ARS
         {
             using (StreamWriter sw = File.CreateText(AppDomain.CurrentDomain.BaseDirectory + FileName))
             {
-                sw.WriteLine($"{DateTime.Now}: Log file created");
+                sw.WriteLine($"{DateTime.Now} [INTIALIZED]: Log file created");
             }
         }
 
@@ -42,7 +42,7 @@ namespace ARS
             {
                 using (StreamWriter sw = File.AppendText(AppDomain.CurrentDomain.BaseDirectory + FileName))
                 {
-                    sw.WriteLine($"{DateTime.Now}: {logMessage}");
+                    sw.WriteLine($"{DateTime.Now} [MESSAGE]: {logMessage}");
                 }
             }
             catch (Exception e)
@@ -61,7 +61,7 @@ namespace ARS
         {
             using (StreamWriter sw = File.AppendText(FileName))
             {
-                sw.WriteLine($"{DateTime.Now}: ERROR: {logMessage}");
+                sw.WriteLine($"{DateTime.Now} [ERROR]: {logMessage}");
             }
         }
 
