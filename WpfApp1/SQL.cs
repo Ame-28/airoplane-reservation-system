@@ -210,4 +210,49 @@ public class SQL
 
         return valueExists;
     }
+
+    public List<Dictionary<string, object>> customQuery(string query)
+    {
+        List<Dictionary<string, object>> records = new List<Dictionary<string, object>>();
+
+        using (MySqlConnection connection = new MySqlConnection(connectionString))
+        {
+            try
+            {
+                connection.Open();
+
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read()) // Iterate through all rows
+                        {
+                            Dictionary<string, object> record = new Dictionary<string, object>();
+
+                            for (int i = 0; i < reader.FieldCount; i++)
+                            {
+                                string columnName = reader.GetName(i);
+                                object value = reader.IsDBNull(i) ? null : reader.GetValue(i);
+                                record[columnName] = value;
+                            }
+
+                            records.Add(record); // Add the current row to the list
+                        }
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine($"Error executing custom query: {ex.Message}");
+                // Handle MySQL-specific exceptions if needed
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Unexpected error: {ex.Message}");
+                // Handle other exceptions if needed
+            }
+        }
+
+        return records;
+    }
 }
