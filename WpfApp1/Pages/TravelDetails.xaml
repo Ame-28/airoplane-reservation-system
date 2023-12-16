@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ARS"
       mc:Ignorable="d" 
-      Height="600" Width="900"
+      Height="460" Width="729"
       Title="TravelDetails">
     <Page.Resources>
         <!-- Existing RoundedButtonStyle -->
@@ -35,7 +35,6 @@
             <Setter Property="Height" Value="40"/>
         </Style>
 
-
         <!-- Custom TextBox Style -->
         <Style x:Key="RoundedTextBoxStyle" TargetType="TextBox">
             <Setter Property="Template">
@@ -53,25 +52,19 @@
         </Style>
     </Page.Resources>
 
-
-
-
-
-
     <Grid Background="white">
         <!-- Define Rows & Columns -->
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition Height="1.4*"/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition />
+            <RowDefinition Height=".9*"/>
+
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="100*"/>
-            <ColumnDefinition Width="200*"/>
-            <ColumnDefinition Width="259*" />
-            <ColumnDefinition Width="341*"/>
+            <ColumnDefinition Width="230*"/>
+            <ColumnDefinition Width="230*"/>
+            <ColumnDefinition Width="230*" />
         </Grid.ColumnDefinitions>
 
         <!-- Define Headings -->
@@ -89,23 +82,22 @@
                    Foreground="Black"  
                    FontSize="20" FontWeight="Bold"
                    Margin="10,0,0,0" Height="26" Width="58"/>
-        <TextBlock Grid.Row="1" Grid.Column="2"
+        <TextBlock Grid.Row="1" Grid.Column="1"
                    VerticalAlignment="Center" HorizontalAlignment="Left"
                    TextWrapping="Wrap"  
                    Text="TO"                
                    Foreground="Black"  
-                   FontSize="20" FontWeight="Bold" Height="26" Width="28" Margin="10,0,0,0"/>
+                   FontSize="20" FontWeight="Bold" Height="26" Width="28" Margin="163,0,0,0"/>
 
         <!-- One Way & Round Trip -->
-        <Border Grid.ColumnSpan="2" 
-                Grid.RowSpan="2"
+        <Border Grid.Row="1"
                 BorderBrush="Gray" 
                 BorderThickness="1" 
                 CornerRadius="5" 
                 HorizontalAlignment="Left" 
                 VerticalAlignment="Top" 
                 Width="190" Height="50" 
-                Margin="10,111,0,0">
+                Margin="10,0,0,0">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                 <RadioButton x:Name="OneWay" 
                              Content="ONE WAY" 
@@ -127,26 +119,27 @@
                  Width="240" Height="50"
                  HorizontalAlignment="Left" VerticalAlignment="Bottom" 
                  VerticalContentAlignment="Center"
-                 Margin="10,0,0,111"
-                 FontSize="15" Grid.RowSpan="2"/>
+                 Margin="10,0,0,0"
+                 FontSize="15" />
         <!-- To TextBox -->
         <TextBox x:Name="ToTextBox"                     
-                 Grid.Row="1" Grid.Column="2"               
+                 Grid.Row="1" Grid.Column="1"    
+                 Grid.ColumnSpan="2"
                  Style="{StaticResource RoundedTextBoxStyle}"                      
                  Width="240" Height="50"
-                 HorizontalAlignment="Center" VerticalAlignment="Top"
+                 HorizontalAlignment="Center" VerticalAlignment="Bottom"
                  VerticalContentAlignment="Center"
-                 FontSize="15" Margin="0,106,0,0" Grid.RowSpan="2"/>
+                 FontSize="15" Margin="80,0,0,0"/>
 
         <!-- Swap Button -->
         <Button Grid.Row="1" Grid.Column="1" 
                 Height="26" 
-                Margin="164,118,0,0" 
+                Margin="70,118,0,0" 
                 HorizontalAlignment="Left" VerticalAlignment="Top" 
                 Click="Swap" Width="26" >
             <Button.Template>
                 <ControlTemplate>
-                    <Image Source="Images/two-way-arrows.png"/>
+                    <Image Source="/Images/two-way-arrows.png"/>
                 </ControlTemplate>
             </Button.Template>
         </Button>
@@ -154,24 +147,33 @@
         <!-- Depart Date -->
         <DatePicker x:Name="DepartDatePicker" 
                     Grid.Row="2" 
-                    Grid.ColumnSpan="2"
+                    
                     Height="50"
-                    HorizontalAlignment="Left" 
-                    VerticalAlignment="Center" VerticalContentAlignment="Center"
-                    Margin="39,0,0,0"
-                    FontSize="15" Width="119"/>
+                    HorizontalAlignment="Center" VerticalAlignment="Center" 
+                    VerticalContentAlignment="Center"
+                    FontSize="15" Width="140"/>
+        <TextBlock Grid.Row="2" 
+                   HorizontalAlignment="Center" VerticalAlignment="Top"
+                   Margin="10"
+                   FontSize="15" FontWeight="bold"
+                   TextWrapping="Wrap"
+                   Text="Depart Date"/>
 
         <!-- Return Date -->
         <DatePicker x:Name="ReturnDatePicker" 
                     Grid.Row="2" 
                     Grid.Column="1"
-                    Grid.ColumnSpan="2"
                     Height="50"
-                    HorizontalAlignment="Left" VerticalAlignment="Center" 
+                    HorizontalAlignment="Center" VerticalAlignment="Center" 
                     VerticalContentAlignment="Center"
-                    Margin="100,0,0,0"
                     FontSize="15" Width="119"
                     IsEnabled="{Binding ElementName=RoundTrip, Path=IsChecked}"/>
+        <TextBlock Grid.Row="2" Grid.Column="1"
+                   HorizontalAlignment="Center" VerticalAlignment="Top"
+                   Margin="10"
+                   FontSize="15" FontWeight="bold"
+                   TextWrapping="Wrap"
+                   Text="Return Date"/>
 
         <!-- Passenger TextBox-->
         <TextBox x:Name="PassengersTextBox" 
@@ -182,17 +184,21 @@
                  HorizontalAlignment="Center" VerticalAlignment="Center" 
                  VerticalContentAlignment="Center"                
                  FontSize="15"/>
-
+        <TextBlock Grid.Row="2" Grid.Column="2"
+                   HorizontalAlignment="Center" VerticalAlignment="Top"
+                   Margin="10"
+                   FontSize="15" FontWeight="bold"
+                   TextWrapping="Wrap"
+                   Text="No. of Passengers"/>
         <!-- Search Flights Button -->
         <Button Grid.Row="3"               
-                Grid.ColumnSpan="2"
+                Grid.ColumnSpan="3"
                 Height="40" Width="150" 
-                HorizontalAlignment="Left" VerticalAlignment="Top" 
+                HorizontalAlignment="Center" VerticalAlignment="Top" 
                 x:Name="SearchFlightsButton" 
                 Content="SEARCH FLIGHTS"
                 Background="#374B68" Foreground="white" 
                 FontSize="15" FontWeight="bold"
-                Click="SearchFlights_Click" Style="{StaticResource RoundedButtonStyle}" Grid.Column="1" Margin="102,15,0,0"/>
-
+                Click="SearchFlights_Click" Style="{StaticResource RoundedButtonStyle}"  Margin="0,15,0,0"/>
     </Grid>
 </Page>
