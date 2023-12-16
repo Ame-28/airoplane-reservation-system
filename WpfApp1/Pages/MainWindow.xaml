@@ -94,65 +94,11 @@
                    FontSize="17" FontWeight="Bold"
                    Margin="1,40,1,1"
                    VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBlock Grid.Row="1" 
-                   TextWrapping="Wrap" 
-                   Text="LOGIN TO AEROVISTA RESERVATION SYSTEM" 
-                   FontSize="25" FontWeight="Bold"
-                   TextAlignment="Center" 
-                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <!-- User Name TextBlock -->
-        <TextBlock Grid.Row="2" 
-                   Margin="75,28,75,66"
-                   FontSize="15" FontWeight="bold"
-                   TextWrapping="Wrap"
-                   Text="USER NAME"/>
 
-        <!-- User Name Text Box -->
-        <Border Grid.Row="2" CornerRadius="10" BorderBrush="#b5b5b5" BorderThickness="1" Background="white" Margin="75,50,125,26">
-            <TextBox x:Name="UsernameTextBox" BorderThickness="0" VerticalContentAlignment="center" Margin="3,3,3,3"/>
-        </Border>
-        <TextBox Grid.Row="2" x:Name="userNameError" BorderThickness="0" Margin="75,95,125,0"/>
-
-        <!-- Password Text Block -->
-        <TextBlock Grid.Row="3" 
-                   Margin="75,28,75,66"
-                   FontSize="15" FontWeight="bold"
-                   TextWrapping="Wrap"
-                   Text="PASSWORD"/>
-
-        <!-- Password Text Box -->
-        <Border Grid.Row="3" CornerRadius="10" BorderBrush="#b5b5b5" BorderThickness="1"  Margin="75,50,125,26">
-            <PasswordBox x:Name="PasswordBox" BorderThickness="0" VerticalContentAlignment="center" Margin="3,3,3,3"/>
-        </Border>
-        <TextBox Grid.Row="3" x:Name="passwordError" BorderThickness="0" Margin="75,96,125,0"/>
-
-        <!-- Forgot Password Text Block -->
-        <TextBlock Grid.Row="3" Margin="350,0,25,2" FontSize="12" Foreground="LightBlue" TextAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" Text="Forgot Passoword?" Height="21"/>
-
-        <!-- Sign In Button -->
-        <Button Grid.Row="4" 
-                Height="40" Width="150" 
-                VerticalAlignment="Center" 
-                x:Name="SignIn" 
-                Content="SIGN IN" 
-                Background="#374B68" Foreground="white" 
-                FontSize="15" FontWeight="bold"
-                Margin="0,0,200,0"
-                Click="SignIn_Click"  Style="{StaticResource RoundedButtonStyle}"/>
-
-        <!-- Register Button -->
-        <Button Grid.Row="4" 
-                Height="40" Width="150" 
-                VerticalAlignment="Center" 
-                x:Name="Register" 
-                Content="REGISTER"
-                Background="#374B68" Foreground="white" 
-                FontSize="15" FontWeight="bold"
-                Margin="200,0,0,0"
-                Click="Register_Click" Style="{StaticResource RoundedButtonStyle}"/>
-
-        <!-- Login Error -->
-        <TextBox Grid.Row="4" HorizontalAlignment="Center" x:Name="loginError" BorderThickness="0" Height="20" Width="300" Margin="0,80,0,0"/>
-
+        <!-- Set Frame -->
+        <Frame x:Name="MainPage_Frame"              
+               Grid.Row="1"
+               Grid.RowSpan="4"
+               NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

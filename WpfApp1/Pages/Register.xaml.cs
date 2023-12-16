@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ARS.Pages;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
@@ -70,10 +71,8 @@ namespace ARS
                 Customer.setData(firstName + " " + lastName, email, dob);
 
                 if(MessageBox.Show("User has been registered!", "Successful", MessageBoxButton.OK)== MessageBoxResult.OK)
-                {
-                    
-                    NavigationService.Navigate(new MainMenu());
-                    
+                {                 
+                    NavigationService.Navigate(new LoginPage());                   
                 }
             }
             
