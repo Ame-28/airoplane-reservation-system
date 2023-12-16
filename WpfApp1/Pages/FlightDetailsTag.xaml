@@ -119,7 +119,7 @@
             <!-- PRICE-->
             <TextBlock x:Name="Price"
         FontSize="14" FontWeight="bold" TextAlignment="Center"
-        TextWrapping="Wrap" VerticalAlignment="TOP" 
+        TextWrapping="Wrap" VerticalAlignment="TOP" HorizontalAlignment="Center"
         Text="$100" Grid.Row="1" Grid.Column="5"  Height="18" />
          <!--button for book flight-->
         <Button Grid.Row="1" Grid.Column="6"
