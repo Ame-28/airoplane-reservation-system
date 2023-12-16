@@ -39,12 +39,24 @@ namespace ARS
         {
             Dictionary<string, object> fromDetails = new Dictionary<string, object>();
             Dictionary<string, object> toDetails = new Dictionary<string, object>();
+            Dictionary<string, object> route = new Dictionary<string, object>();
+            List<Dictionary<string, object>> flight = new List<Dictionary<string, object>>();
+
             SQL sql = new SQL();
 
             // Get From and To details
             fromDetails = sql.readValues("airport", $"CITY = '{FromTextBox.Text}'");
             toDetails = sql.readValues("airport", $"CITY = '{ToTextBox.Text}'");
-
+            route = sql.readValues("route", $"DEPARTURE_LOCATION_ID = {fromDetails["AIRPORT_ID"]} AND ARRIVAL_LOCATION_ID = {toDetails["AIRPORT_ID"]}");
+            flight = sql.readValues("flight", $"ROUTE_ID = {route["ROUTE_ID"]}",true);
+            /*
+             * Get the following details
+             * IATA from code
+             * IATA to code
+             * Duration
+             * Departure time
+             * Arrival time
+             */
         }
 
     }
