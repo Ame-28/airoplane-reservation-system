@@ -77,7 +77,7 @@
        Text="ACCESS A FLIGHT BOOKING"
        Margin="40,0,0,0" 
        Height="27" Width="266"/>
-
+        <!-- checkbox-->
         <Border Grid.ColumnSpan="2" Grid.Row="0" 
         Grid.RowSpan="2"
         BorderBrush="Gray" 
@@ -99,7 +99,7 @@
                      FontWeight="Bold"/>
             </StackPanel>
         </Border>
-        <!--Textblock for Booking reference-->
+        <!--Textblock for Flight Number-->
         <TextBlock Grid.ColumnSpan="2"
        VerticalAlignment="Top" HorizontalAlignment="Left"
        TextWrapping="Wrap"  
@@ -124,7 +124,7 @@
 
 
         <!-- FlightNumber TextBox-->
-        <TextBox x:Name="BookingreferenceTextBox" 
+        <TextBox x:Name="FlightNumberTextBox" 
          Grid.Row="1" 
          Grid.ColumnSpan="2" Grid.Column="0"
          Style="{StaticResource RoundedTextBoxStyle}"
@@ -145,7 +145,7 @@
          FontSize="15"  Grid.ColumnSpan="3" Margin="200,62,0,0"/>
 
         <!--TextBox for FindFlightbookTextarea-->
-        <TextBox x:Name="manageFlightTextarea"                   
+        <TextBox x:Name="FlightStatusTextarea"                   
          Grid.Row="2"               
          Style="{StaticResource RoundedTextBoxStyle}"                      
          Width="600" Height="110"
