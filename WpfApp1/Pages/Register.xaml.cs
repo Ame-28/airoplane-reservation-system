@@ -1,18 +1,11 @@
-﻿using System;
+﻿using ARS.Pages;
+using System;
 using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.InteropServices;
+using System.Security;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace ARS
 {
@@ -26,17 +19,14 @@ namespace ARS
             InitializeComponent();
         }
 
-        SQL mySQL = new SQL(ConfigurationManager.AppSettings["server"],
-                            ConfigurationManager.AppSettings["database"],
-                            ConfigurationManager.AppSettings["userId"],
-                            ConfigurationManager.AppSettings["password"]);
+        SQL mySQL = new SQL();
 
         private void Register_Click(object sender, RoutedEventArgs e)
         {
             string firstName = FirstNameTextBox.Text;
             string lastName = LastNameTextBox.Text;
             string email = EmailTextBox.Text;
-            string dob = datePicker.Text;         
+            string dob = datePicker.Text;
 
             // Validate values
             if (!Validator.IsValidUserName(firstName) || !Validator.IsValidUserName(lastName))
@@ -50,16 +40,22 @@ namespace ARS
                 return;
             }
 
-            // Store all the values
-            Dictionary<string,object> customerDetails = new Dictionary<string,object>();
+            // Hash and store password
+            SecureString password = PasswordBox.SecurePassword;
+            string passwordHash = BCrypt.Net.BCrypt.HashPassword(SecureStringToString(password));
 
-            customerDetails.Add("first_name", firstName);
-            customerDetails.Add("last_name", lastName);
-            customerDetails.Add("email", email);
-            customerDetails.Add("date_of_birth", dob);
-            
+            // Store all the values
+            Dictionary<string, object> customerDetails = new Dictionary<string, object>
+            {
+                { "first_name", firstName },
+                { "last_name", lastName },
+                { "password", passwordHash},
+                { "email", email },
+                { "date_of_birth", dob }
+            };
+
             // Check if the user already exists
-            if(mySQL.checkValue("customer","email",email))
+            if (mySQL.checkValue("customer", "email", email))
             {
                 MessageBox.Show("This user already exists!", "User Exists", MessageBoxButton.OK, MessageBoxImage.Information);
             }
@@ -69,15 +65,28 @@ namespace ARS
                 mySQL.insertValues("customer", customerDetails);
 
                 // Insert values to temp storage
-                DataStorage.setData(firstName + " " + lastName, email, dob);
+                Customer.setData(firstName + " " + lastName, email, dob);
 
-                if(MessageBox.Show("User has been registered!", "Successful", MessageBoxButton.OK)== MessageBoxResult.OK)
+                if (MessageBox.Show("User has been registered!", "Successful", MessageBoxButton.OK) == MessageBoxResult.OK)
                 {
-                    Page page = new MainMenu();
-                    this.Content = page;
+                    NavigationService.Navigate(new LoginPage());
                 }
             }
-            
         }
+
+        private string SecureStringToString(SecureString secureString)
+        {
+            IntPtr valuePtr = IntPtr.Zero;
+            try
+            {
+                valuePtr = Marshal.SecureStringToGlobalAllocUnicode(secureString);
+                return Marshal.PtrToStringUni(valuePtr);
+            }
+            finally
+            {
+                Marshal.ZeroFreeGlobalAllocUnicode(valuePtr);
+            }
+        }
+
     }
 }
