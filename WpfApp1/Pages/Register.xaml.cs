@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
+using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -48,11 +49,16 @@ namespace ARS
                 return;
             }
 
+            // Hash and store password
+            SecureString password = PasswordBox.SecurePassword;
+            string passwordHash = BCrypt.Net.BCrypt.HashPassword(password.ToString());
+
             // Store all the values
             Dictionary<string,object> customerDetails = new Dictionary<string, object>
             {
                 { "first_name", firstName },
                 { "last_name", lastName },
+                { "password", passwordHash},
                 { "email", email },
                 { "date_of_birth", dob }
             };
