@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfApp1.Pages;
 
 namespace ARS
 {
@@ -57,6 +58,15 @@ namespace ARS
              * Departure time
              * Arrival time
              */
+
+            /*
+             * Go to FlightSearch1.xaml
+             * Populate the User Control with details
+             * 
+             */
+            FlightSearch1 page = new FlightSearch1();
+            this.Content = page;
+
         }
 
     }
