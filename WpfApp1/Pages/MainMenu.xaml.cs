@@ -45,9 +45,16 @@ namespace ARS
         }
         private void SearchFlights_clicked(object sender, RoutedEventArgs e)
         {
-                FlightSearch1 tag = new FlightSearch1();
-                Main_frame.Content =tag;
+            FlightSearch1 tag = new FlightSearch1();
+            Main_frame.Content = tag;
         }
+        private void FlightStatus_clicked(object sender, RoutedEventArgs e)
+        {
+                FlightStatus flightStatus = new FlightStatus();
+            Main_frame.Content = flightStatus;
+            
+        }
+        
 
 
     }

@@ -84,7 +84,7 @@
         <Button Content="FLIGHT STATUS" 
                 Grid.Row="4" 
                 HorizontalAlignment="Center" VerticalAlignment="Center"                
-                Background='white' Foreground="Black" Style="{StaticResource RoundedButtonStyle}"/>
+                Background='white' Foreground="Black" Style="{StaticResource RoundedButtonStyle}" Click="FlightStatus_clicked"/>
         
         <Button Content="ACCOUNTS" 
                 Grid.Row="5" 
