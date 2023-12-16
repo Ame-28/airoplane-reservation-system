@@ -69,7 +69,7 @@ namespace ARS
                 mySQL.insertValues("customer", customerDetails);
 
                 // Insert values to temp storage
-                DataStorage.setData(firstName + " " + lastName, email, dob);
+                Customer.setData(firstName + " " + lastName, email, dob);
 
                 if(MessageBox.Show("User has been registered!", "Successful", MessageBoxButton.OK)== MessageBoxResult.OK)
                 {

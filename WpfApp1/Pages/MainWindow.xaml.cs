@@ -91,7 +91,7 @@ namespace ARS
         public void storeData(string userName)
         {
             Dictionary<string, object> vals = mySQL.readValues("customer", $"FIRST_NAME = '{userName}'");
-            DataStorage.setData(vals["FIRST_NAME"].ToString() + " " + vals["LAST_NAME"].ToString(),
+            Customer.setData(vals["FIRST_NAME"].ToString() + " " + vals["LAST_NAME"].ToString(),
                                 vals["EMAIL"].ToString(),
                                 vals["DATE_OF_BIRTH"].ToString());
         }

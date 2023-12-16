@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ARS
 {
-    public static class DataStorage
+    public static class Customer
     {
         public static string UserName { get; set; }
         public static string Email { get; set; }
