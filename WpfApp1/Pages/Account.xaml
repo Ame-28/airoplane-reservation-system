@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ARS.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="490" d:DesignWidth="710"
+      Height="460" Width="729"
       Title="Account">
 
     <Page.Resources>
@@ -72,7 +72,8 @@
                 Content="DOWNLOAD LOG"
                 Background="#374B68" Foreground="white" 
                 FontSize="15" FontWeight="bold" 
-                Style="{StaticResource RoundedButtonStyle}" />
+                Style="{StaticResource RoundedButtonStyle}" 
+                Click="DownloadLogButton_Click"/>
         <TextBlock x:Name="MyAccounttitle" Grid.Column="1"
                    VerticalAlignment="Center" HorizontalAlignment="Left"
                    TextWrapping="Wrap"  
@@ -93,13 +94,13 @@
            TextWrapping="Wrap"  
            Text="user@gmail.com"                
            Foreground="Black"  
-           FontSize="15"  Height="19" Width="340"  Grid.Row="1" Margin="0,30,0,0"   />
+           FontSize="15"  Height="19" Width="340"  Grid.Row="1" Margin="0,35,0,0"   />
         <TextBlock x:Name="DOBAccount" Grid.Column="1"
            VerticalAlignment="Bottom" HorizontalAlignment="Left"
            TextWrapping="Wrap"  
            Text="DOB:224523"                
            Foreground="Black"  
-           FontSize="15"  Height="29" Width="340"  Grid.Row="1" Margin="0,0,0,33"   />
+           FontSize="15"  Height="29" Width="340"  Grid.Row="1" Margin="0,0,0,10"   />
 
         <TextBox x:Name="BookingListTextBox" 
              Grid.Row="2"

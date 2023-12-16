@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Configuration;
 
 namespace ARS.Pages
 {
@@ -31,6 +34,39 @@ namespace ARS.Pages
         private void BookingListTextBox_Scroll(object sender, System.Windows.Controls.Primitives.ScrollEventArgs e)
         {
 
+        }
+
+        private void DownloadLogButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Path to your text file
+            string filePath = ConfigurationManager.AppSettings["logFileName"];
+
+            // Create a SaveFileDialog
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.FileName = ConfigurationManager.AppSettings["logFileName"];
+            saveFileDialog.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+
+            // Show the dialog and get the result
+            bool? result = saveFileDialog.ShowDialog();
+
+            // Process the result
+            if (result == true)
+            {
+                try
+                {
+                    // Get the selected file path
+                    string selectedFilePath = saveFileDialog.FileName;
+
+                    // Copy the file to the selected path
+                    File.Copy(filePath, selectedFilePath, true);
+
+                    MessageBox.Show("File downloaded successfully.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error downloading file: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
         }
     }
 }

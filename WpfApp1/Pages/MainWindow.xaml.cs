@@ -27,7 +27,7 @@ namespace ARS
             InitializeComponent();
 
             // Initialize Log
-            Logger.FileName = "logFile.txt";
+            Logger.FileName = ConfigurationManager.AppSettings["logFileName"];
             Logger.initLog();
 
             // Initialize the MainPage_Frame content
