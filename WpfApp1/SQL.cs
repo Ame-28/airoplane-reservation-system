@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Windows;
 using MySql.Data.MySqlClient;
@@ -8,9 +9,12 @@ public class SQL
 {
     private readonly string connectionString;
 
-    public SQL(string server, string database, string userId, string password)
+    public SQL()
     {
-        connectionString = $"Server={server};Database={database};User ID={userId};Password={password};";
+        connectionString = $"Server={ConfigurationManager.AppSettings["server"]};" +
+                            $"Database={ConfigurationManager.AppSettings["database"]};" +
+                            $"User ID={ConfigurationManager.AppSettings["userId"]};" +
+                            $"Password={ConfigurationManager.AppSettings["password"]};";    
     }
 
     public void insertValues(string tableName, Dictionary<string, object> values)

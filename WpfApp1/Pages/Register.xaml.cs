@@ -26,10 +26,7 @@ namespace ARS
             InitializeComponent();
         }
 
-        SQL mySQL = new SQL(ConfigurationManager.AppSettings["server"],
-                            ConfigurationManager.AppSettings["database"],
-                            ConfigurationManager.AppSettings["userId"],
-                            ConfigurationManager.AppSettings["password"]);
+        SQL mySQL = new SQL();
 
         private void Register_Click(object sender, RoutedEventArgs e)
         {
@@ -69,7 +66,7 @@ namespace ARS
                 mySQL.insertValues("customer", customerDetails);
 
                 // Insert values to temp storage
-                DataStorage.setData(firstName + " " + lastName, email, dob);
+                Customer.setData(firstName + " " + lastName, email, dob);
 
                 if(MessageBox.Show("User has been registered!", "Successful", MessageBoxButton.OK)== MessageBoxResult.OK)
                 {

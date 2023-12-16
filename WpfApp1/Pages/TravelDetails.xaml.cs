@@ -24,7 +24,7 @@ namespace ARS
         {
             InitializeComponent();
         }
-        //hello
+
         private void Swap(object sender, RoutedEventArgs e)
         {
             // Store 'From' and 'To' place
@@ -37,8 +37,15 @@ namespace ARS
         }
         private void SearchFlights_Click(object sender, RoutedEventArgs e)
         {
+            Dictionary<string, object> fromDetails = new Dictionary<string, object>();
+            Dictionary<string, object> toDetails = new Dictionary<string, object>();
+            SQL sql = new SQL();
+
+            // Get From and To details
+            fromDetails = sql.readValues("airport", $"CITY = '{FromTextBox.Text}'");
+            toDetails = sql.readValues("airport", $"CITY = '{ToTextBox.Text}'");
 
         }
-        
+
     }
 }

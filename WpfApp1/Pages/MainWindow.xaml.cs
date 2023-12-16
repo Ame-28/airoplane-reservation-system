@@ -22,10 +22,7 @@ namespace ARS
     /// </summary>
     public partial class MainWindow : Window
     {
-        SQL mySQL = new SQL(ConfigurationManager.AppSettings["server"],
-                            ConfigurationManager.AppSettings["database"],
-                            ConfigurationManager.AppSettings["userId"],
-                            ConfigurationManager.AppSettings["password"]);
+        SQL mySQL = new SQL();
         Logger myLog = new Logger("log.txt");
 
         public MainWindow()
@@ -91,7 +88,7 @@ namespace ARS
         public void storeData(string userName)
         {
             Dictionary<string, object> vals = mySQL.readValues("customer", $"FIRST_NAME = '{userName}'");
-            DataStorage.setData(vals["FIRST_NAME"].ToString() + " " + vals["LAST_NAME"].ToString(),
+            Customer.setData(vals["FIRST_NAME"].ToString() + " " + vals["LAST_NAME"].ToString(),
                                 vals["EMAIL"].ToString(),
                                 vals["DATE_OF_BIRTH"].ToString());
         }
