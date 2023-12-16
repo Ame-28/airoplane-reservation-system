@@ -39,7 +39,7 @@ namespace UnitTest
         {
             // Assign
             string user = "Abraham";
-            SQL testSQL = new SQL("localhost", "airlinedb", "root", "revival2017");
+            SQL testSQL = new SQL();
 
             // Act
             bool result = testSQL.checkValue("customer", "first_name", user);
@@ -161,7 +161,7 @@ namespace UnitTest
             customerDetails.Add("email", "mm123@gmail.com");
             customerDetails.Add("date_of_birth", "2023-04-01"); // Replace with the actual date
             bool result;
-            SQL testSQL = new SQL("localhost", "airlinedb", "root", "revival2017");
+            SQL testSQL = new SQL();
 
             // Act
             testSQL.insertValues("customer", customerDetails);

@@ -37,12 +37,13 @@
         <Border.Effect>
             <DropShadowEffect BlurRadius="10" ShadowDepth="5" Opacity="0.5" Color="Gray" />
         </Border.Effect>
+        
+        <!-- Define Headings-->
         <Grid Background="white">
             <Grid.RowDefinitions>
                 <RowDefinition Height="23*"/>
                 <RowDefinition Height="17*"/>
                 <RowDefinition Height="10*"/>
-
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="118*"/>
@@ -52,87 +53,94 @@
                 <ColumnDefinition Width="119*"/>
                 <ColumnDefinition Width="44*"/>
                 <ColumnDefinition Width="92*"/>
-
             </Grid.ColumnDefinitions>
-
-
 
             <!--from code,location and time-->
             <TextBlock x:Name="FromCode" 
-       VerticalAlignment="Top" HorizontalAlignment="Center"
-       FontSize="20" FontWeight="bold"
-       TextWrapping="Wrap"
-       Text="YYN"  TextAlignment="Center"
-       Height="27" Width="50" Grid.Row="0" Margin="0,19,0,0" />
-            <TextBlock x:Name="Fromlocation" 
-       VerticalAlignment="Top" HorizontalAlignment="Center"
-       FontSize="10" FontWeight="bold" 
-       TextWrapping="Wrap"
-       Text="TORONTO" TextAlignment="Center"
-       Height="15" Width="110" Grid.Row="1"/>
-            <TextBlock x:Name="FromTime" HorizontalAlignment="Center"
-        FontSize="10" FontWeight="bold"
-        TextWrapping="Wrap" TextAlignment="Center"
-        Text="00:00" Width="50" Grid.Row="1" Margin="0,15,0,4"/>
+                       VerticalAlignment="Center" HorizontalAlignment="Center"
+                       FontSize="20" FontWeight="bold"
+                       TextWrapping="Wrap"
+                       Text="YYN"  TextAlignment="Center"
+                       Height="27" Width="50"/>
+            <TextBlock x:Name="FromLocation" 
+                       VerticalAlignment="Top" HorizontalAlignment="Center"
+                       FontSize="10" FontWeight="bold" 
+                       TextWrapping="Wrap"
+                       Text="TORONTO" TextAlignment="Center"
+                       Grid.Row="1"/>
+            <TextBlock x:Name="FromTime" 
+                       VerticalAlignment="Bottom" HorizontalAlignment="Center"
+                       FontSize="10" FontWeight="bold"
+                       TextWrapping="Wrap" TextAlignment="Center"
+                       Text="00:00" Grid.Row="1" />
 
             <!--total duration-->
-            <TextBlock x:Name="arrowLeft" HorizontalAlignment="Left" VerticalAlignment="Top"
-            FontSize="10" FontWeight="bold" 
-            TextWrapping="Wrap"
-            Text="---------------" TextAlignment="Center" Width="65" Height="10" Grid.Row="1" Grid.Column="1" />
-            <TextBlock x:Name="arrowTime" HorizontalAlignment="Center" VerticalAlignment="Top"
-     FontSize="10" FontWeight="bold" 
-     TextWrapping="Wrap"
-     Text="00:00" TextAlignment="Center" Width="40" Height="13" Grid.Row="1" Grid.Column="1"  />
+            <TextBlock x:Name="arrowLeft" 
+                       HorizontalAlignment="Left" VerticalAlignment="Center"
+                       FontSize="10" FontWeight="bold" 
+                       TextWrapping="Wrap"
+                       Text="---------------" TextAlignment="Center" 
+                       Grid.Row="1" Grid.Column="1" />
+            <TextBlock x:Name="arrowTime" 
+                       VerticalAlignment="Center"
+                       FontSize="10" FontWeight="bold" 
+                       TextWrapping="Wrap"
+                       Text="00:00" TextAlignment="Center"
+                       Grid.Row="1" Grid.Column="1"  />
 
-            <TextBlock x:Name="arrowRight" HorizontalAlignment="Right" VerticalAlignment="Top"
-     FontSize="10" FontWeight="bold" 
-     TextWrapping="Wrap"
-     Text="----------------" TextAlignment="Center" Width="65" Height="10" Grid.Row="1" Grid.Column="1"/>
+            <TextBlock x:Name="arrowRight" 
+                       HorizontalAlignment="Right" VerticalAlignment="Center"
+                       FontSize="10" FontWeight="bold" 
+                       TextWrapping="Wrap"
+                       Text="---------------" TextAlignment="Center" 
+                       Grid.Row="1" Grid.Column="1" />
 
             <!--To code,location and time-->
             <TextBlock x:Name="ToCode" 
-       VerticalAlignment="Top" HorizontalAlignment="Center"
-       FontSize="20" FontWeight="bold"
-       TextWrapping="Wrap" TextAlignment="Center"
-       Text="IND" 
-       Height="27" Width="50" Grid.Row="0" Grid.Column="2" Margin="0,19,0,0" />
-
-            <TextBlock x:Name="Tolocation" 
-       VerticalAlignment="Top" HorizontalAlignment="Center"
-       FontSize="10" FontWeight="bold" 
-       TextWrapping="Wrap"
-       Text="India" TextAlignment="Center"
-       Height="15" Width="110" Grid.Row="1" Grid.Column="2"/>
-
-            <TextBlock x:Name="ToTime"
-        FontSize="10" FontWeight="bold" TextAlignment="Center"
-        TextWrapping="Wrap"
-        Text="00:00" Grid.Row="1" Grid.Column="2" Margin="34,15,33,4"/>
-            <!--class types-->
+                       Grid.Column="2"
+                       VerticalAlignment="Center" HorizontalAlignment="Center"
+                       FontSize="20" FontWeight="bold"
+                       TextWrapping="Wrap"
+                       Text="IND"  TextAlignment="Center"
+                       Height="27" Width="50"/>
+            <TextBlock x:Name="ToLocation" 
+                       VerticalAlignment="Top" HorizontalAlignment="Center"
+                       FontSize="10" FontWeight="bold" 
+                       TextWrapping="Wrap"
+                       Text="INDIA" TextAlignment="Center"
+                       Grid.Row="1" Grid.Column="2"/>
+            <TextBlock x:Name="ToTime" 
+                       VerticalAlignment="Bottom" HorizontalAlignment="Center"
+                       FontSize="10" FontWeight="bold"
+                       TextWrapping="Wrap" TextAlignment="Center"
+                       Text="00:00" 
+                       Grid.Row="1" Grid.Column="2"/>
+            
+            <!--Class Text-->
             <TextBlock x:Name="Class"
-        FontSize="15" FontWeight="bold" TextAlignment="Center" 
-        TextWrapping="Wrap" VerticalAlignment="Top" 
-        Text="ECONOMY"  Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="2" Height="20" Margin="136,0,0,0"/>
+                       FontSize="15" FontWeight="bold" 
+                       TextAlignment="Center" TextWrapping="Wrap" 
+                       VerticalAlignment="Center" 
+                       Text="ECONOMY"  
+                       Grid.Row="1" Grid.Column="4"/>
             <!--int price = // fetch the value from DataSet
     Price.Text = "Price: $" + price.ToString();-->
-            <!-- PRICE-->
+            <!-- Price Text-->
             <TextBlock x:Name="Price"
-        FontSize="14" FontWeight="bold" TextAlignment="Center"
-        TextWrapping="Wrap" VerticalAlignment="TOP" 
-        Text="$100" Grid.Row="1" Grid.Column="5"  Height="18" />
-         <!--button for book flight-->
-        <Button Grid.Row="1" Grid.Column="6"
-            Height="25" Width="70"
-            HorizontalAlignment="Center" VerticalAlignment="Top" 
-            x:Name="RegisterButton" 
-            Content="BOOK FLIGHT"
-            Background="#374B68" Foreground="white" 
-            FontSize="10" FontWeight="bold"
-            Style="{StaticResource RoundedButtonStyle}"/>
-
-
-
+                       FontSize="15" FontWeight="bold" 
+                       TextAlignment="Center" TextWrapping="Wrap" 
+                       VerticalAlignment="Center" 
+                       Text="100$"  
+                       Grid.Row="1" Grid.Column="5"/>
+            <!-- Book Flight Button -->
+            <Button Grid.Row="1" Grid.Column="6"
+                    Height="25" Width="70"
+                    VerticalAlignment="Center" 
+                    x:Name="RegisterButton" 
+                    Content="BOOK FLIGHT"
+                    Background="#374B68" Foreground="white" 
+                    FontSize="10" FontWeight="bold"
+                    Style="{StaticResource RoundedButtonStyle}"/>
         </Grid>
     </Border>
     

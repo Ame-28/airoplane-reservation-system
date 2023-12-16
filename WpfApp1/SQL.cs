@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Windows;
 using MySql.Data.MySqlClient;
@@ -8,9 +9,12 @@ public class SQL
 {
     private readonly string connectionString;
 
-    public SQL(string server, string database, string userId, string password)
+    public SQL()
     {
-        connectionString = $"Server={server};Database={database};User ID={userId};Password={password};";
+        connectionString = $"Server={ConfigurationManager.AppSettings["server"]};" +
+                            $"Database={ConfigurationManager.AppSettings["database"]};" +
+                            $"User ID={ConfigurationManager.AppSettings["userId"]};" +
+                            $"Password={ConfigurationManager.AppSettings["password"]};";    
     }
 
     public void insertValues(string tableName, Dictionary<string, object> values)
@@ -50,7 +54,7 @@ public class SQL
             try
             {
                 connection.Open();
-                string query = $"SELECT * FROM {tableName} WHERE {condition} LIMIT 1";
+                string query = $"SELECT * FROM {tableName} WHERE {condition} LIMIT 1;";
 
                 using (MySqlCommand cmd = new MySqlCommand(query, connection))
                 {
@@ -88,6 +92,58 @@ public class SQL
 
         return record;
     }
+
+    public List<Dictionary<string, object>> readValues(string tableName, string condition, bool limitToOne = false)
+    {
+        List<Dictionary<string, object>> records = new List<Dictionary<string, object>>();
+
+        using (MySqlConnection connection = new MySqlConnection(connectionString))
+        {
+            try
+            {
+                connection.Open();
+                string query = $"SELECT * FROM {tableName} WHERE {condition}";
+
+                if (limitToOne)
+                    query += " LIMIT 1";
+
+                query += ";";
+
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read()) // Iterate through all rows
+                        {
+                            Dictionary<string, object> record = new Dictionary<string, object>();
+
+                            for (int i = 0; i < reader.FieldCount; i++)
+                            {
+                                string columnName = reader.GetName(i);
+                                object value = reader.IsDBNull(i) ? null : reader.GetValue(i);
+                                record[columnName] = value;
+                            }
+
+                            records.Add(record); // Add the current row to the list
+                        }
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine($"Error reading records: {ex.Message}");
+                // Handle MySQL-specific exceptions if needed
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Unexpected error: {ex.Message}");
+                // Handle other exceptions if needed
+            }
+        }
+
+        return records;
+    }
+
 
     public void alterValues(string tableName, Dictionary<string, object> newValues, string condition)
     {
@@ -153,5 +209,50 @@ public class SQL
         }
 
         return valueExists;
+    }
+
+    public List<Dictionary<string, object>> customQuery(string query)
+    {
+        List<Dictionary<string, object>> records = new List<Dictionary<string, object>>();
+
+        using (MySqlConnection connection = new MySqlConnection(connectionString))
+        {
+            try
+            {
+                connection.Open();
+
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read()) // Iterate through all rows
+                        {
+                            Dictionary<string, object> record = new Dictionary<string, object>();
+
+                            for (int i = 0; i < reader.FieldCount; i++)
+                            {
+                                string columnName = reader.GetName(i);
+                                object value = reader.IsDBNull(i) ? null : reader.GetValue(i);
+                                record[columnName] = value;
+                            }
+
+                            records.Add(record); // Add the current row to the list
+                        }
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine($"Error executing custom query: {ex.Message}");
+                // Handle MySQL-specific exceptions if needed
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Unexpected error: {ex.Message}");
+                // Handle other exceptions if needed
+            }
+        }
+
+        return records;
     }
 }

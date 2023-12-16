@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ARS.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="490" d:DesignWidth="710"
+      Height="460" Width="729"
       Title="Account">
 
     <Page.Resources>
@@ -65,20 +65,31 @@
         </Grid.ColumnDefinitions>
 
 
-        <Button x:Name="DownloadLogButton" Grid.Row="1"               
-            Grid.Column="3"
-            Height="40" Width="150" 
-            HorizontalAlignment="Center" VerticalAlignment="Center" 
-            Content="DOWNLOAD LOG"
-            Background="#374B68" Foreground="white" 
-            FontSize="15" FontWeight="bold" 
-            Style="{StaticResource RoundedButtonStyle}" />
+        <Button x:Name="DownloadLogButton" Grid.Row="1"                
+                Grid.Column="2"
+                Height="40" Width="150" 
+                HorizontalAlignment="Center" VerticalAlignment="Center" 
+                Content="DOWNLOAD LOG"
+                Background="#374B68" Foreground="white" 
+                FontSize="15" FontWeight="bold" 
+                Style="{StaticResource RoundedButtonStyle}" 
+                Click="DownloadLogButton_Click"/>
+        <Button x:Name="LogOutButton"                 
+                Grid.Column="2"
+                Height="50" Width="100" 
+                HorizontalAlignment="Center" VerticalAlignment="Center" 
+                Content="LOG OUT"
+                Background="#374B68" Foreground="white" 
+                FontSize="15" FontWeight="bold" 
+                Style="{StaticResource RoundedButtonStyle}" 
+                Click="LogOutButton_Click"/>
         <TextBlock x:Name="MyAccounttitle" Grid.Column="1"
-           VerticalAlignment="Bottom" HorizontalAlignment="Left"
-           TextWrapping="Wrap"  
-           Text="MY ACCOUNT"                
-           Foreground="Black"  
-           FontSize="15"  Height="29" Width="340"  Grid.Row="0" Grid.ColumnSpan="2" Margin="0,0,0,33" FontWeight="Bold"/>
+                   VerticalAlignment="Center" HorizontalAlignment="Left"
+                   TextWrapping="Wrap"  
+                   Text="MY ACCOUNT"                
+                   Foreground="Black"  
+                   FontSize="35"  Width="340" 
+                   Grid.Row="0" FontWeight="Bold"/>
 
         <!--textbox for user name display-->
         <TextBlock x:Name="UserNameAccount" Grid.Column="1"
@@ -92,22 +103,22 @@
            TextWrapping="Wrap"  
            Text="user@gmail.com"                
            Foreground="Black"  
-           FontSize="15"  Height="19" Width="340"  Grid.Row="1" Margin="0,30,0,0"   />
+           FontSize="15"  Height="19" Width="340"  Grid.Row="1" Margin="0,35,0,0"   />
         <TextBlock x:Name="DOBAccount" Grid.Column="1"
            VerticalAlignment="Bottom" HorizontalAlignment="Left"
            TextWrapping="Wrap"  
            Text="DOB:224523"                
            Foreground="Black"  
-           FontSize="15"  Height="29" Width="340"  Grid.Row="1" Margin="0,0,0,33"   />
+           FontSize="15"  Height="29" Width="340"  Grid.Row="1" Margin="0,0,0,10"   />
 
         <TextBox x:Name="BookingListTextBox" 
-             Grid.Row="2" Grid.RowSpan="6"
-             Grid.ColumnSpan="4" Grid.Column="0"
+             Grid.Row="2"
+             Grid.ColumnSpan="2" Grid.Column="1"
              Style="{StaticResource RoundedTextBoxStyle}"
-             Width="650" Height="250" 
-             HorizontalAlignment="Center" VerticalAlignment="Center" 
+             Width="603" Height="250" 
+             HorizontalAlignment="Left" VerticalAlignment="Top" 
              VerticalContentAlignment="Center"
-             FontSize="15"/>  
+             FontSize="15"/>
 
     </Grid>
 

@@ -22,78 +22,17 @@ namespace ARS
     /// </summary>
     public partial class MainWindow : Window
     {
-        SQL mySQL = new SQL(ConfigurationManager.AppSettings["server"],
-                            ConfigurationManager.AppSettings["database"],
-                            ConfigurationManager.AppSettings["userId"],
-                            ConfigurationManager.AppSettings["password"]);
-        Logger myLog = new Logger("log.txt");
-
         public MainWindow()
         {
             InitializeComponent();
-            myLog.initLog();
-        }
 
+            // Initialize Log
+            Logger.FileName = ConfigurationManager.AppSettings["logFileName"];
+            Logger.initLog();
 
-        
-        private void SignIn_Click(object sender, RoutedEventArgs e)
-        {
-            // Clear all text
-            userNameError.Text = string.Empty;
-            passwordError.Text = string.Empty;
-            loginError.Text = string.Empty;
-
-            // Get user name and password
-            string userName = UsernameTextBox.Text;
-            SecureString password = PasswordBox.SecurePassword;
-
-            // Check user name field
-            if (!Validator.IsValidUserName(userName))
-            {
-                userNameError.Text = "ERROR: The username is invalid\nDo not enter number or null characters";
-                myLog.logError("The username is invalid. Do not enter number or null characters");
-            }
-
-            // Check password field
-            else if (password.Length == 0)
-            {
-                passwordError.Text = "ERROR: The password is empty";
-                myLog.logError("The password is empty");
-            }
-
-            // Check user name in DB
-            else
-            {
-                if (!mySQL.checkValue("customer", "first_name", userName))
-                {
-                    loginError.Text = "User not Found. Click here to register your account";
-                    myLog.logError("User not Found. Click here to register your account");
-                }
-                else
-                {
-                    myLog.logEvent($"{userName} signed in successfully");
-
-                    storeData(userName); // Store data temporarily
-
-                    // Go to next page
-                    Page page = new MainMenu();
-                    this.Content = page;
-                }
-            }
-        }
-        
-        private void Register_Click(object sender, RoutedEventArgs e)
-        {
-            Page register = new Register();
-            this.Content = register;
-        }  
-
-        public void storeData(string userName)
-        {
-            Dictionary<string, object> vals = mySQL.readValues("customer", $"FIRST_NAME = '{userName}'");
-            DataStorage.setData(vals["FIRST_NAME"].ToString() + " " + vals["LAST_NAME"].ToString(),
-                                vals["EMAIL"].ToString(),
-                                vals["DATE_OF_BIRTH"].ToString());
-        }
+            // Initialize the MainPage_Frame content
+            Pages.LoginPage loginPage = new Pages.LoginPage();
+            MainPage_Frame.Content = loginPage;
+        }       
     }
 }
