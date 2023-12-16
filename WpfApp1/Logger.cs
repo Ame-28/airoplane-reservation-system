@@ -12,20 +12,9 @@ namespace ARS
     Class        : Logger
     Description  : Handles logging events and errors to a file.
     */
-    public class Logger
+    public static class Logger
     {
-        public string FileName { get; set; }
-
-        /*
-        Method name  : Logger()
-        Description  : Constructor for the Logger class.
-        Parameters   : string name - Name of the log file.
-        Return value : void
-        */
-        public Logger(string name)
-        {
-            FileName = name;
-        }
+        public static string FileName { get; set; }
 
         /*
         Method name  : initLog()
@@ -33,11 +22,11 @@ namespace ARS
         Parameters   : string[] args - Array of command line arguments
         Return value : void
         */
-        public void initLog()
+        public static void initLog()
         {
             using (StreamWriter sw = File.CreateText(AppDomain.CurrentDomain.BaseDirectory + FileName))
             {
-                sw.WriteLine($"{DateTime.Now}: Log file created");
+                sw.WriteLine($"{DateTime.Now} [INTIALIZED]: Log file created");
             }
         }
 
@@ -47,13 +36,13 @@ namespace ARS
         Parameters   : Logger logMessage - The message to be logged.
         Return value : void
         */
-        public void logEvent(string logMessage)
+        public static void logEvent(string logMessage)
         {
             try
             {
                 using (StreamWriter sw = File.AppendText(AppDomain.CurrentDomain.BaseDirectory + FileName))
                 {
-                    sw.WriteLine($"{DateTime.Now}: {logMessage}");
+                    sw.WriteLine($"{DateTime.Now} [MESSAGE]: {logMessage}");
                 }
             }
             catch (Exception e)
@@ -68,11 +57,11 @@ namespace ARS
         Parameters   : logMessage - The error message to be logged.
         Return value : void
         */
-        public void logError(string logMessage)
+        public static void logError(string logMessage)
         {
             using (StreamWriter sw = File.AppendText(FileName))
             {
-                sw.WriteLine($"{DateTime.Now}: ERROR: {logMessage}");
+                sw.WriteLine($"{DateTime.Now} [ERROR]: {logMessage}");
             }
         }
 
