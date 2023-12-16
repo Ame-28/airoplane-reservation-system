@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfApp1.Pages
+namespace ARS.Pages
 {
     /// <summary>
     /// Interaction logic for Account.xaml
@@ -23,6 +23,9 @@ namespace WpfApp1.Pages
         public Account()
         {
             InitializeComponent();
+            UserNameAccount.Text = DataStorage.UserName;
+            gmailAccount.Text = DataStorage.Email;
+            DOBAccount.Text = DataStorage.DOB;
         }
 
         private void BookingListTextBox_Scroll(object sender, System.Windows.Controls.Primitives.ScrollEventArgs e)
