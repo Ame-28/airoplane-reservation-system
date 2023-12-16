@@ -48,12 +48,13 @@ namespace ARS
             }
 
             // Store all the values
-            Dictionary<string,object> customerDetails = new Dictionary<string,object>();
-
-            customerDetails.Add("first_name", firstName);
-            customerDetails.Add("last_name", lastName);
-            customerDetails.Add("email", email);
-            customerDetails.Add("date_of_birth", dob);
+            Dictionary<string,object> customerDetails = new Dictionary<string, object>
+            {
+                { "first_name", firstName },
+                { "last_name", lastName },
+                { "email", email },
+                { "date_of_birth", dob }
+            };
             
             // Check if the user already exists
             if(mySQL.checkValue("customer","email",email))
