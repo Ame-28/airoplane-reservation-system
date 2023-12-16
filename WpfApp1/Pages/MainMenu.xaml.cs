@@ -55,6 +55,12 @@ namespace ARS
             
         }
         
+        private void CheckIn_clicked(object sender, RoutedEventArgs e)
+        {
+            CheckIn CheckIn = new CheckIn();
+            Main_frame.Content = CheckIn;
+
+        }
 
 
     }

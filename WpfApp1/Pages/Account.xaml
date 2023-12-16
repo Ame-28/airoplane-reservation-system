@@ -68,17 +68,27 @@
         <Button x:Name="DownloadLogButton" Grid.Row="1"               
             Grid.Column="3"
             Height="40" Width="150" 
-            HorizontalAlignment="Center" VerticalAlignment="Center" 
+            HorizontalAlignment="Center" VerticalAlignment="Top" 
             Content="DOWNLOAD LOG"
             Background="#374B68" Foreground="white" 
             FontSize="15" FontWeight="bold" 
             Style="{StaticResource RoundedButtonStyle}" />
-        <TextBlock x:Name="MyAccounttitle" Grid.Column="1"
+
+        <Button x:Name="LogOutButton" Grid.Row="1"               
+            Grid.Column="3"
+            Height="40" Width="150" 
+            HorizontalAlignment="Center" VerticalAlignment="Bottom" 
+            Content="LOG OUT"
+            Background="white" Foreground="white" 
+            FontSize="15" FontWeight="bold" 
+            Style="{StaticResource RoundedButtonStyle}" />
+        
+        <TextBlock x:Name="MyAccounttitle" Grid.Column="0" 
            VerticalAlignment="Bottom" HorizontalAlignment="Left"
            TextWrapping="Wrap"  
-           Text="MY ACCOUNT"                
-           Foreground="Black"  
-           FontSize="15"  Height="29" Width="340"  Grid.Row="0" Grid.ColumnSpan="2" Margin="0,0,0,33" FontWeight="Bold"/>
+           Text="MY ACCOUNT" TextAlignment="Center"                
+           Foreground="Black"  Background="White" 
+           FontSize="15"  Height="29" Width="710"  Grid.Row="0" Grid.ColumnSpan="3" Margin="0,0,0,33" FontWeight="Bold"/>
 
         <!--textbox for user name display-->
         <TextBlock x:Name="UserNameAccount" Grid.Column="1"
@@ -107,7 +117,8 @@
              Width="650" Height="250" 
              HorizontalAlignment="Center" VerticalAlignment="Center" 
              VerticalContentAlignment="Center"
-             FontSize="15"/>  
+             FontSize="15"/>
+       
 
     </Grid>
 
