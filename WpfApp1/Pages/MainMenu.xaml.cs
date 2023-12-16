@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ARS.Pages;
+using WpfApp1.Pages;
 
 namespace ARS
 {
@@ -42,6 +43,12 @@ namespace ARS
             Account AccountPage = new Account();
             Main_frame.Content = AccountPage;
         }
-        
+        private void SearchFlights_clicked(object sender, RoutedEventArgs e)
+        {
+                FlightSearch1 tag = new FlightSearch1();
+                Main_frame.Content =tag;
+        }
+
+
     }
 }

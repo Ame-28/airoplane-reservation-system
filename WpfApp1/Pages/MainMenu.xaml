@@ -70,7 +70,7 @@
         <Button Content="SEARCH FLIGHTS" 
                 Grid.Row="1" 
                 HorizontalAlignment="Center" VerticalAlignment="Center"                  
-                Background='white' Foreground="Black" Style="{StaticResource RoundedButtonStyle}"/>
+                Background='white' Foreground="Black" Style="{StaticResource RoundedButtonStyle}" Click="SearchFlights_clicked"/>
         
         <Button Content="CHECK-IN" Grid.Row="2" 
                 HorizontalAlignment="Center" VerticalAlignment="Center"                
