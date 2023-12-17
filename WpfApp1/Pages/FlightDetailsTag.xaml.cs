@@ -59,10 +59,8 @@ namespace ARS
 
             Ticket.Duration = Duration.Text;
             Ticket.PassengerCount = Convert.ToInt32(PassengerCount.Text);
-            //Ticket.GrandTotal = Convert.ToInt32(Price.Text);
             Ticket.GrandTotal = Price.Text;
-            //Ticket.TicketPrice = Ticket.GrandTotal / Ticket.PassengerCount;
-            Ticket.TicketPrice = 123;
+            Ticket.TicketPrice = 123; //fix this
         }
     }
 }

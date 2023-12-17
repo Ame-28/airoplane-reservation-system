@@ -109,19 +109,25 @@
 
 
             <!--added button for price sort-->
-            <Button Width="90" Height="25"  HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="1" Grid.Column="5" Style="{StaticResource RoundedButtonStyle}">
+            <Button Width="90" Height="25" 
+                    VerticalAlignment="Center" 
+                    Grid.Row="1" Grid.Column="5" 
+                    Style="{StaticResource RoundedButtonStyle}">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="PRICE" VerticalAlignment="Center"/>
-                    <Image Source="/Images/price_keys.png" Width="20" Height="20" Margin="0,0,5,0"/>
+                    <Image Source="/Images/price_keys.png" Width="20" Height="20" Margin="20,0,5,0"/>
 
                 </StackPanel>
             </Button>
         
             <!--added button for time sort-->
-            <Button Width="90" Height="25"  HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="1" Grid.Column="6" Style="{StaticResource RoundedButtonStyle}">
+            <Button Width="90" Height="25"  
+                    VerticalAlignment="Center" 
+                    Grid.Row="1" Grid.Column="6" 
+                    Style="{StaticResource RoundedButtonStyle}">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="TIME" VerticalAlignment="Center"/>
-                    <Image Source="/Images/price_keys.png" Width="20" Height="20" Margin="0,0,5,0"/>
+                    <Image Source="/Images/price_keys.png" Width="20" Height="20" Margin="20,0,5,0"/>
 
                 </StackPanel>
             </Button>
