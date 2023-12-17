@@ -39,9 +39,12 @@ namespace ARS
                 // Add the new instance to the StackPanel
                 i.Margin = new Thickness(0, 0, 0, 10);
                 flightStack.Children.Add(i);
-            }              
-        }
 
-        //public 
+                // Populate header details
+                FromCode.Text = i.FromCode.Text;
+                ToCode.Text = i.ToCode.Text;
+                PassengerCount.Text = i.PassengerCount.Text; 
+            }
+        }
     }
 }
