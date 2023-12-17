@@ -81,12 +81,10 @@ public class SQL
             catch (MySqlException ex)
             {
                 Console.WriteLine($"Error reading record: {ex.Message}");
-                // Handle MySQL-specific exceptions if needed
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Unexpected error: {ex.Message}");
-                // Handle other exceptions if needed
             }
         }
 
@@ -132,12 +130,10 @@ public class SQL
             catch (MySqlException ex)
             {
                 Console.WriteLine($"Error reading records: {ex.Message}");
-                // Handle MySQL-specific exceptions if needed
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Unexpected error: {ex.Message}");
-                // Handle other exceptions if needed
             }
         }
 
@@ -244,12 +240,10 @@ public class SQL
             catch (MySqlException ex)
             {
                 Console.WriteLine($"Error executing custom query: {ex.Message}");
-                // Handle MySQL-specific exceptions if needed
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Unexpected error: {ex.Message}");
-                // Handle other exceptions if needed
             }
         }
 
