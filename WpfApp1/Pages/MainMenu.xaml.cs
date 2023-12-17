@@ -50,9 +50,8 @@ namespace ARS
         }
         private void FlightStatus_clicked(object sender, RoutedEventArgs e)
         {
-                FlightStatus flightStatus = new FlightStatus();
-                Main_frame.Content = flightStatus;
-            
+            FlightStatus flightStatus = new FlightStatus();
+            Main_frame.Content = flightStatus;           
         }
         
         private void CheckIn_clicked(object sender, RoutedEventArgs e)

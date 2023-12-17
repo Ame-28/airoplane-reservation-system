@@ -59,7 +59,6 @@
             <RowDefinition Height="1.4*"/>
             <RowDefinition />
             <RowDefinition Height=".9*"/>
-
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="230*"/>
@@ -121,6 +120,7 @@
                  VerticalContentAlignment="Center"
                  Margin="10,0,0,0"
                  FontSize="15" />
+        
         <!-- To TextBox -->
         <TextBox x:Name="ToTextBox"                     
                  Grid.Row="1" Grid.Column="1"    
