@@ -30,7 +30,10 @@ namespace ARS
         }
 
         private void BookButton_Click(object sender, RoutedEventArgs e)
-        {
+        {           
+            // Populate Ticket
+            populateTicket();
+
             // Find the parent window or page
             var parentWindow = Window.GetWindow(this); // For UserControl inside a Window
 
@@ -42,6 +45,24 @@ namespace ARS
                 // Navigate to the desired page
                 frame.NavigationService.Navigate(new Uri("/Pages/FlightSearch2.xaml", UriKind.Relative));
             }
+        }
+
+        public void populateTicket()
+        {
+            Ticket.FromCode = FromCode.Text;
+            Ticket.FromLocation = FromLocation.Text;
+            Ticket.FromTime = DepartureTime.Text;
+
+            Ticket.ToCode = ToCode.Text;
+            Ticket.ToLocation = ToLocation.Text;
+            Ticket.ToTime = ArrivalTime.Text;
+
+            Ticket.Duration = Duration.Text;
+            Ticket.PassengerCount = Convert.ToInt32(PassengerCount.Text);
+            //Ticket.GrandTotal = Convert.ToInt32(Price.Text);
+            Ticket.GrandTotal = Price.Text;
+            //Ticket.TicketPrice = Ticket.GrandTotal / Ticket.PassengerCount;
+            Ticket.TicketPrice = 123;
         }
     }
 }
