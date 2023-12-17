@@ -199,6 +199,7 @@
                 Content="SEARCH FLIGHTS"
                 Background="#374B68" Foreground="white" 
                 FontSize="15" FontWeight="bold"
-                Click="SearchFlights_Click" Style="{StaticResource RoundedButtonStyle}"  Margin="0,15,0,0"/>
+                Click="SearchFlights_Click" Style="{StaticResource RoundedButtonStyle}"  
+                Margin="0,15,0,0"/>
     </Grid>
 </Page>

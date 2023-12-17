@@ -61,18 +61,18 @@ namespace ARS
             foreach (var i in flights)
             {
                 FlightDetailsTag flightDetailsTag = new FlightDetailsTag();
-                
+                Random radnom = new Random();
+
                 // Populate flight tag
                 flightDetailsTag.FromCode.Text = fromAirport.IATACode;
                 flightDetailsTag.ToCode.Text = toAirport.IATACode;
                 flightDetailsTag.FromLocation.Text = fromAirport.AirportCity;
                 flightDetailsTag.ToLocation.Text = toAirport.AirportCity;
-                //flightDetailsTag.DepartureTime.Text = Flight.DepartureTime.TimeOfDay.ToString();
-                flightDetailsTag.DepartureTime.Text = generateRandomTime();
-                flightDetailsTag.ArrivalTime.Text = generateRandomTime();
-                //flightDetailsTag.ArrivalTime.Text = Flight.ArrivalTime.TimeOfDay.ToString();
+                flightDetailsTag.DepartureTime.Text = generateRandomTime(random);
+                flightDetailsTag.ArrivalTime.Text = generateRandomTime(random);
                 flightDetailsTag.Duration.Text = $"{calculateDuration(flightDetailsTag.DepartureTime.Text, flightDetailsTag.ArrivalTime.Text)} hrs";
-                flightDetailsTag.Price.Text = $"{random.Next(100, 500)}$";
+                flightDetailsTag.Price.Text = $"{Convert.ToInt32(PassengersTextBox.Text) * random.Next(100, 500)}$";
+                flightDetailsTag.PassengerCount.Text = PassengersTextBox.Text;
                 
                 // Add flight tag to list
                 allFlights.Add(flightDetailsTag);
@@ -112,10 +112,8 @@ namespace ARS
             return sql.readValues("flight", $"ROUTE_ID = {Route.RouteID}", false);
         }
 
-        public static string generateRandomTime()
+        public string generateRandomTime(Random random)
         {
-            Random random = new Random();
-
             // Generate a random hour between 0 and 23
             int randomHour = random.Next(0, 24);
 
