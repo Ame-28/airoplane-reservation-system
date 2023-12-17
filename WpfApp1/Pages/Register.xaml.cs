@@ -30,11 +30,13 @@ namespace ARS
             // Validate values
             if (!Validator.IsValidUserName(firstName) || !Validator.IsValidUserName(lastName))
             {
+                Logger.logError("Name cannot contain numbers or be empty");
                 MessageBox.Show("Cannot contain numbers or be empty ", "Invalid Name", MessageBoxButton.OK);
                 return;
             }
             if (!Validator.IsValidEmail(email))
             {
+                Logger.logError("Invalid Email");
                 MessageBox.Show("Invalid Email", "Invalid Field", MessageBoxButton.OK);
                 return;
             }
@@ -56,6 +58,7 @@ namespace ARS
             // Check if the user already exists
             if (mySQL.checkValue("customer", "email", email))
             {
+                Logger.logError("This user already exists!");
                 MessageBox.Show("This user already exists!", "User Exists", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             else
@@ -68,6 +71,7 @@ namespace ARS
 
                 if (MessageBox.Show("User has been registered!", "Successful", MessageBoxButton.OK) == MessageBoxResult.OK)
                 {
+                    Logger.logEvent("User has been registered!");
                     NavigationService.Navigate(new LoginPage());
                 }
             }

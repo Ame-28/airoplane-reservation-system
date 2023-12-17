@@ -29,27 +29,32 @@ namespace ARS
 
         private void ManageBooking_click(object sender, RoutedEventArgs e)
         {
+            Logger.logNavigation("Navigated to Manage Booking Page");
             ManageBooking ManageBooking = new ManageBooking();
             Main_frame.Content = ManageBooking;
         }
         private void AccountButton_clicked(object sender, RoutedEventArgs e)
         {
+            Logger.logNavigation("Navigated to Account Page");
             Account AccountPage = new Account();
             Main_frame.Content = AccountPage;
         }
         private void SearchFlights_clicked(object sender, RoutedEventArgs e)
         {
+            Logger.logNavigation("Navigated to Flight Search Page");
             TravelDetails tag = new TravelDetails();
             Main_frame.Content = tag;
         }
         private void FlightStatus_clicked(object sender, RoutedEventArgs e)
         {
+            Logger.logNavigation("Navigated to Flight Status Page");
             FlightStatus flightStatus = new FlightStatus();
             Main_frame.Content = flightStatus;           
         }
         
         private void CheckIn_clicked(object sender, RoutedEventArgs e)
         {
+            Logger.logNavigation("Navigated to Check in Page");
             CheckIn CheckIn = new CheckIn();
             Main_frame.Content = CheckIn;
         }

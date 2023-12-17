@@ -91,6 +91,7 @@ namespace ARS
                         // Navigate to MainMenu.xaml on the main window's frame
                         if (mainWindow != null)
                         {
+                            Logger.logNavigation("Navigated to Main Menu");
                             mainWindow.MainPage_Frame.Navigate(new Uri("/Pages/MainMenu.xaml", UriKind.Relative));
                         }
                     }
@@ -101,6 +102,7 @@ namespace ARS
 
         private void Register_Click(object sender, RoutedEventArgs e)
         {
+            Logger.logNavigation("Navigated to Registration page");
             NavigationService.Navigate(new Register());
         }
 

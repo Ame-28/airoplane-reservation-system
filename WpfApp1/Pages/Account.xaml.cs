@@ -31,11 +31,6 @@ namespace ARS
             DOBAccount.Text = Customer.DOB;
         }
 
-        private void BookingListTextBox_Scroll(object sender, System.Windows.Controls.Primitives.ScrollEventArgs e)
-        {
-
-        }
-
         private void DownloadLogButton_Click(object sender, RoutedEventArgs e)
         {
             // Path to your text file
@@ -74,9 +69,11 @@ namespace ARS
         private void LogOutButton_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = Window.GetWindow(this) as MainWindow;
+            
             // Go back to login page
             if (mainWindow != null)
             {
+                Logger.logEvent("User logged out");
                 mainWindow.MainPage_Frame.Navigate(new Uri("/Pages/LoginPage.xaml", UriKind.Relative));
             }
         }

@@ -30,6 +30,7 @@ namespace ARS
 
         private void GoBack_Click(object sender, RoutedEventArgs e)
         {
+            Logger.logNavigation("Navigated to back");
             NavigationService.GoBack();
         }
 
@@ -48,6 +49,7 @@ namespace ARS
             }
             else
             {
+                BookText.Text = "Booking not found!";
                 Logger.logError("Booking not found!");
             }
         }

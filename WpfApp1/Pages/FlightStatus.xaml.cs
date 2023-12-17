@@ -31,7 +31,6 @@ namespace ARS
             if(mySQL.checkValue("flight", "flight_no", FlightNumberTextBox.Text))
             {
                 Dictionary<string, object> flightDeets = mySQL.readValues("flight", $"flight_no = {FlightNumberTextBox.Text}");
-                Logger.logEvent("Booking found!");
 
                 // Print the details to textbox
                 foreach (var kvp in flightDeets)

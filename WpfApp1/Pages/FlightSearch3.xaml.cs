@@ -38,7 +38,7 @@ namespace ARS
         {
             BookingTime.Text = $"Your booking has been confirmed at {DateTime.Now}";
             BookingID.Text = $"Your Booking ID is 1";
-            Logger.logEvent($"Your booking has been confirmed");
+            Logger.logEvent("Your booking has been confirmed");
         }
 
         public void cancelled()
@@ -49,16 +49,18 @@ namespace ARS
             BookingTime.Text = string.Empty;
 
             confirmText.Text = "YOUR BOOKING HAS BEEN CANCELLED!";
-            Logger.logEvent($"Your booking has been cancelled");
+            Logger.logEvent("Your booking has been cancelled");
         }
 
         private void ManageBooking_Click(object sender, RoutedEventArgs e)
         {
+            Logger.logNavigation("Navigated to Manage Booking page");
             NavigationService.Navigate(new Uri("/Pages/ManageBooking.xaml", UriKind.Relative));
         }
 
         private void GoBack_Click(object sender, RoutedEventArgs e)
         {
+            Logger.logNavigation("Navigated to back");
             NavigationService.GoBack();
         }
     }

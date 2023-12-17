@@ -43,21 +43,24 @@ namespace ARS
 
             PassengerCount.Text = mySQL.readValues("ticket", $"CUSTOMER_NAME = '{Customer.UserName}'")["PassengerCount"].ToString();
 
-            TotalAmount.Text = $"{mySQL.readValues("ticket", $"CUSTOMER_NAME = '{Customer.UserName}'")["GrandTotal"]}"; //fix this
+            TotalAmount.Text = $"{mySQL.readValues("ticket", $"CUSTOMER_NAME = '{Customer.UserName}'")["GrandTotal"]}"; 
         }
 
         private void CheckoutButton_Click(object sender, RoutedEventArgs e)
         {
+            Logger.logNavigation("Navigated to Checkout page");
             NavigationService.Navigate(new FlightSearch3(true));
         }
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
+            Logger.logEvent("Canclled booking");
             NavigationService.Navigate(new FlightSearch3(false));
         }
 
         private void GoBack_Click(object sender, RoutedEventArgs e)
         {
+            Logger.logNavigation("Navigated back");
             NavigationService.GoBack();
         }
     }

@@ -30,6 +30,7 @@ namespace ARS
         {
             InitializeComponent();
             populateFlightTag(flights);
+
         }
 
         public void populateFlightTag(List<FlightDetailsTag> flights)
@@ -45,10 +46,13 @@ namespace ARS
                 ToCode.Text = i.ToCode.Text;
                 PassengerCount.Text = i.PassengerCount.Text;
             }
+
+            Logger.logEvent("Loaded flight details");
         }
 
         private void GoBack_Click(object sender, RoutedEventArgs e)
         {
+            Logger.logNavigation("Navigated back");
             NavigationService.GoBack();
         }
     }
