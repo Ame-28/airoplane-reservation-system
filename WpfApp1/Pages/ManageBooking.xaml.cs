@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,9 +26,30 @@ namespace ARS
             InitializeComponent();
         }
 
-        private void managebookTextarea_TextChanged(object sender, TextChangedEventArgs e)
-        {
+        SQL mySQL = new SQL();
 
+        private void GoBack_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
+        }
+
+        private void FindBookedFlightsButton_Click(object sender, RoutedEventArgs e)
+        {
+            if(mySQL.checkValue("Ticket", "TicketID", BookingIDTextBox.Text))
+            {
+                Dictionary<string,object> bookingDeets = mySQL.readValues("ticket", $"TicketID = {BookingIDTextBox.Text}");
+                Logger.logEvent("Booking found!");
+
+                // Print the details to textbox
+                foreach (var kvp in bookingDeets)
+                {
+                    BookText.AppendText($"{kvp.Key}: {kvp.Value}\n"); 
+                }
+            }
+            else
+            {
+                Logger.logError("Booking not found!");
+            }
         }
     }
 }
