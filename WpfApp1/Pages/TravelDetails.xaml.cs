@@ -60,7 +60,6 @@ namespace ARS
             foreach (var i in flights)
             {
                 FlightDetailsTag flightDetailsTag = new FlightDetailsTag();
-                Random radnom = new Random();
 
                 // Populate flight tag
                 flightDetailsTag.FromCode.Text = fromAirport.IATACode;

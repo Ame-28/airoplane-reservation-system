@@ -140,7 +140,6 @@ public class SQL
         return records;
     }
 
-
     public void alterValues(string tableName, Dictionary<string, object> newValues, string condition)
     {
         using (MySqlConnection connection = new MySqlConnection(connectionString))

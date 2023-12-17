@@ -19,7 +19,7 @@ namespace ARS
         // Passenger details
         public static int PassengerCount { get; set; }
 
-        // Price of one ticket details
+        public static string TicketID { get; set; }
         public static int TicketPrice { get; set; }
 
         // Grand Total Attributes
