@@ -81,7 +81,7 @@
                        TextWrapping="Wrap"
                        Text="---------------" TextAlignment="Center" 
                        Grid.Row="1" Grid.Column="1" />
-            <TextBlock x:Name="arrowTime" 
+            <TextBlock x:Name="Duration" 
                        VerticalAlignment="Center"
                        FontSize="10" FontWeight="bold" 
                        TextWrapping="Wrap"
