@@ -31,7 +31,7 @@ namespace ARS
             Logger.initLog();
 
             // Initialize the MainPage_Frame content
-            Pages.LoginPage loginPage = new Pages.LoginPage();
+            LoginPage loginPage = new LoginPage();
             MainPage_Frame.Content = loginPage;
         }       
     }

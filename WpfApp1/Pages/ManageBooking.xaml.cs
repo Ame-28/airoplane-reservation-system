@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ARS.Pages
+namespace ARS
 {
     /// <summary>
     /// Interaction logic for ManageBooking.xaml

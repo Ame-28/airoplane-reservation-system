@@ -16,7 +16,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Configuration;
 
-namespace ARS.Pages
+namespace ARS
 {
     /// <summary>
     /// Interaction logic for Account.xaml

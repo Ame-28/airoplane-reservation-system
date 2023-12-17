@@ -21,8 +21,6 @@ namespace ARS
     /// </summary>
     public partial class FlightDetailsTag : UserControl
     {
-        private MainMenu mainMenu;
-
         public FlightDetailsTag()
         {
             InitializeComponent();
