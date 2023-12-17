@@ -106,13 +106,7 @@
            Foreground="Black"  
            FontSize="15" FontWeight="Bold"
             Height="18" Width="230" Margin="40,37,0,0" Grid.Row="1"/>
-        <!--Textblock for DepartDATE-->
-        <TextBlock Grid.Column="1" Grid.ColumnSpan="3"
-           VerticalAlignment="Top" HorizontalAlignment="Left"
-           TextWrapping="Wrap"  
-           Text="DEPARTURE DATE"                
-           Foreground="Black"  
-           FontSize="15" FontWeight="Bold" Height="18" Width="230"  Grid.Row="1" Margin="200,37,0,0"/>
+
 
         <TextBlock Grid.ColumnSpan="2" Grid.Row="1"
            VerticalAlignment="Bottom" HorizontalAlignment="Left"
@@ -134,14 +128,7 @@
 
 
 
-        <!-- Departure Date TextBox -->
-        <TextBox x:Name="EmailTextBox"                     
-         Grid.Row="1" Grid.Column="1"                
-         Style="{StaticResource RoundedTextBoxStyle}"                      
-         Width="240" Height="50"
-         HorizontalAlignment="Left" VerticalAlignment="Top"
-         VerticalContentAlignment="Center"
-         FontSize="15"  Grid.ColumnSpan="3" Margin="200,62,0,0"/>
+
 
         <!--TextBox for FindFlightbookTextarea-->
         <TextBox x:Name="FlightStatusTextarea"                   
@@ -155,11 +142,11 @@
         <!-- Find Flight Button -->
         <Button x:Name="FindFlightButton" Grid.Row="2"               
             Grid.ColumnSpan="2"
-            Height="40" Width="NaN" VerticalAlignment="Top" 
+            Height="40" VerticalAlignment="Top" 
             Content="FIND FLIGHT"
             Background="#374B68" Foreground="white" 
             FontSize="15" FontWeight="bold" 
-            Style="{StaticResource RoundedButtonStyle}" Margin="40,14,110,0"/>
+            Style="{StaticResource RoundedButtonStyle}" Margin="40,14,110,0" Click="FindFlightButton_Click"/>
 
     </Grid>
 </Page>

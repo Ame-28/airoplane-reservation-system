@@ -24,7 +24,7 @@ namespace ARS
         {
             InitializeComponent();
 
-            if(isConfirmed )
+            if(isConfirmed)
             {
                 confirmed();
             }
