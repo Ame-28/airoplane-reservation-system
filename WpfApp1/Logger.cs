@@ -65,6 +65,13 @@ namespace ARS
             }
         }
 
+        public static void logNavigation(string logMessage)
+        {
+            using (StreamWriter sw = File.AppendText(FileName))
+            {
+                sw.WriteLine($"{DateTime.Now} [NAVIGATION]: {logMessage}");
+            }
+        }
     }
 }
 
