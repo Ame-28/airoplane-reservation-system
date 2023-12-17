@@ -7,13 +7,14 @@
       mc:Ignorable="d" 
       d:DesignHeight="490" d:DesignWidth="710"
       Title="FlightSearch1">
+    
     <Page.Resources>
         <Style x:Key="RoundedButtonStyle" TargetType="Button">
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
                         <Border x:Name="border" Background="White" CornerRadius="10" BorderBrush="#adadadad" BorderThickness="1">
-                            
+
                             <ContentPresenter x:Name="contentPresenter" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
                         <ControlTemplate.Triggers>
@@ -30,15 +31,13 @@
             <Setter Property="Width" Value="150"/>
             <Setter Property="Height" Value="40"/>
         </Style>
-        
-
     </Page.Resources>
+    
     <Grid Background="#f4f4f8">
         <Grid.RowDefinitions>
             <RowDefinition Height="51*"/>
             <RowDefinition Height="35*"/>
             <RowDefinition Height="404*"/>
-
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="73*"/>
@@ -48,117 +47,91 @@
             <ColumnDefinition Width="85*"/>
             <ColumnDefinition Width="99*"/>
             <ColumnDefinition Width="102*"/>
-
-
         </Grid.ColumnDefinitions>
 
-        <Border Grid.ColumnSpan="8" Grid.RowSpan="1" Grid.Column="0" Margin="0,0,0,0" BorderThickness="2" Background="white">
 
-            <Grid VerticalAlignment="Bottom">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                </Grid.ColumnDefinitions>
-                
-                <!--go back button-->
-                <Button Width="40" Height="25"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0" Background="white" BorderThickness="0">
-                    <Button.Style>
-                        <Style TargetType="Button">
-                            <Setter Property="Template">
-                                <Setter.Value>
-                                    <ControlTemplate TargetType="Button">
-                                        <Border x:Name="border" Background="{TemplateBinding Background}" CornerRadius="10" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
-                                            
-                                            <ContentPresenter x:Name="contentPresenter" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                        </Border>
+            <!--go back button-->
+            <Button Width="40" Height="25"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0" Background="white" BorderThickness="0">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border x:Name="border" Background="{TemplateBinding Background}" CornerRadius="10" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
 
-                                        <ControlTemplate.Triggers>
-                                            <Trigger Property="IsMouseOver" Value="True">
-                                                <Setter Property="Cursor" Value="Hand"/>
-                                            </Trigger>
-                                        </ControlTemplate.Triggers>
-                                    </ControlTemplate>
-                                </Setter.Value>
-                            </Setter>
-                        </Style>
-                    </Button.Style>
-                    <StackPanel Orientation="Horizontal">
-                        <Image Source="/Images/goBack.png" Width="20" Height="20" Margin="0,0,5,0"/>
+                                        <ContentPresenter x:Name="contentPresenter" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
 
-                    </StackPanel>
-                </Button>
-                <!--airoplane image-->
-                <Image Source="/Images/airplane.png"  
-                       Grid.Column="1" Height="20" Margin="48,12,233,6" RenderTransformOrigin="-1.124,0.907"/>
-                
-                <!-- To code TextBlock-->
-                <TextBlock x:Name="FromCode" 
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Cursor" Value="Hand"/>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+                <StackPanel Orientation="Horizontal">
+                <Image Source="/Images/goBack.png" Width="20" Height="20" Margin="0,0,5,0"/>
+            </StackPanel>
+            </Button>
+        
+            <!--airoplane image-->
+            <Image Source="/Images/airplane.png"  
+                   Grid.Column="1" Grid.ColumnSpan="2"
+                   Height="20"/>
+
+            <!-- To code TextBlock-->
+            <TextBlock x:Name="FromCode" 
                     FontSize="15" FontWeight="Bold"
                     TextWrapping="Wrap"
                     Text="YYN" TextAlignment="Center"
-                    Height="25" Width="43" RenderTransformOrigin="0.591,1.588" Margin="2,11,259,2" Grid.Column="1" />
-                
-                <!-- From code TextBlock-->
-                <TextBlock x:Name="ToCode" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top"
-                    FontSize="15" FontWeight="Bold"
-                    TextWrapping="Wrap"
-                    Text="IND" TextAlignment="Center"
-                    Height="24" Width="30" Margin="74,11,0,0" RenderTransformOrigin="-0.407,0.683"/>
-                
-                <!-- | design left-->
-                <TextBlock x:Name="DateLeftDesign" Grid.Column="1" HorizontalAlignment="Right"
-                    FontSize="15" FontWeight="Bold"
-                    TextWrapping="Wrap"
-                    Text="|" TextAlignment="Center" Width="6" Margin="0,10,188,-10"/>
-                
-                <!-- Date TextBox-->
-                <TextBlock x:Name="Date" Grid.Column="1" HorizontalAlignment="Left"
-                    FontSize="12" FontWeight="Bold"
-                    TextWrapping="Wrap"
-                    Text="00-00-00" TextAlignment="Center" Width="57" Margin="116,14,0,6"/>
-                
-                <!-- | design right-->
-                <TextBlock x:Name="DateRightDesign" Grid.Column="1" HorizontalAlignment="Right"
-                     FontSize="15" FontWeight="Bold"
-                     TextWrapping="Wrap"
-                     Text="|" TextAlignment="Center" Width="4" Margin="0,11,121,-11"/>
-                
-                <!-- user image-->
-                <Image Source="/Images/user.png" Width="20" Height="13" Grid.Column="1" Margin="185,14,98,11"/>
-                <!-- TextBlock for passenger count-->
-                <TextBlock x:Name="PassangerCount" Grid.Column="1"
-                     FontSize="15" FontWeight="Bold"
-                     TextWrapping="Wrap"
-                     Text="1" TextAlignment="Center" Height="20" Margin="206,10,65,8"/>
+                    Height="25" Width="43" Grid.Column="1" />
+    
+             <!-- From code TextBlock-->
+             <TextBlock x:Name="ToCode" 
+                        FontSize="15" FontWeight="Bold"
+                        TextWrapping="Wrap"
+                        Text="IND" TextAlignment="Center"
+                        Height="25" Width="43" 
+                        Grid.Column="2" />
 
-            </Grid>
+            <!-- User Image-->
+            <Image Source="/Images/user.png" Height="13" Grid.Column="3" HorizontalAlignment="Left"/>
+    
+            <!-- TextBlock for passenger count-->
+            <TextBlock x:Name="PassangerCount" Grid.Column="3"
+                       FontSize="15" FontWeight="Bold"
+                       TextWrapping="Wrap"
+                       HorizontalAlignment="Left"
+                       Text="1" TextAlignment="Center" Height="20" Margin="15"/>
 
-        </Border>
+
+            <!--added button for price sort-->
+            <Button Width="90" Height="25"  HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="1" Grid.Column="5" Style="{StaticResource RoundedButtonStyle}">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="PRICE" VerticalAlignment="Center"/>
+                    <Image Source="/Images/price_keys.png" Width="20" Height="20" Margin="0,0,5,0"/>
+
+                </StackPanel>
+            </Button>
         
-        <!--added button for price sort-->
-        <Button Width="90" Height="25"  HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="1" Grid.Column="5" Style="{StaticResource RoundedButtonStyle}">
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="PRICE" VerticalAlignment="Center"/>
-                <Image Source="/Images/price_keys.png" Width="20" Height="20" Margin="0,0,5,0"/>
+            <!--added button for time sort-->
+            <Button Width="90" Height="25"  HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="1" Grid.Column="6" Style="{StaticResource RoundedButtonStyle}">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="TIME" VerticalAlignment="Center"/>
+                    <Image Source="/Images/price_keys.png" Width="20" Height="20" Margin="0,0,5,0"/>
 
-            </StackPanel>
-        </Button>
+                </StackPanel>
+            </Button>
         
-        <!--added button for time sort-->
-        <Button Width="90" Height="25"  HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="1" Grid.Column="6" Style="{StaticResource RoundedButtonStyle}">
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="TIME" VerticalAlignment="Center"/>
-                <Image Source="/Images/price_keys.png" Width="20" Height="20" Margin="0,0,5,0"/>
-
-            </StackPanel>
-        </Button>
-        
-        <ScrollViewer Grid.Column="0" Grid.ColumnSpan="7" Grid.Row="3">
-            <StackPanel x:Name ="flightStack">
-                <!--<local:FlightDetailsTag Margin="0,0,0,10" />
-                <local:FlightDetailsTag Margin="0,0,0,10" />-->
-            </StackPanel>
-        </ScrollViewer>
+            <ScrollViewer Grid.Column="0" Grid.ColumnSpan="7" Grid.Row="3">
+                <StackPanel x:Name ="flightStack">
+                    <!--<local:FlightDetailsTag Margin="0,0,0,10" />
+                    <local:FlightDetailsTag Margin="0,0,0,10" />-->
+                </StackPanel>
+            </ScrollViewer>
 
     </Grid>
 
