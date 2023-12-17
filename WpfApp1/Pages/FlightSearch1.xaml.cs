@@ -43,9 +43,8 @@ namespace ARS
                 // Populate header details
                 FromCode.Text = i.FromCode.Text;
                 ToCode.Text = i.ToCode.Text;
-                PassengerCount.Text = i.PassengerCount.Text; 
+                PassengerCount.Text = i.PassengerCount.Text;
             }
         }
-
     }
 }

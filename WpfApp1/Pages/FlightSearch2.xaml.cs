@@ -23,6 +23,27 @@ namespace ARS
         public FlightSearch2()
         {
             InitializeComponent();
+            loadData();
+        }
+
+        public void loadData()
+        {
+            // Load data into XAML elements
+            FromCode.Text = Ticket.FromCode;
+            FromLocation.Text = Ticket.FromLocation;
+            FromTime.Text = Ticket.FromTime;
+
+            ToCode.Text = Ticket.ToCode;
+            ToLocation.Text = Ticket.ToLocation;
+            ToTime.Text = Ticket.ToTime;
+
+            Duration.Text = Ticket.Duration;
+
+            PassengerCount.Text = Ticket.PassengerCount.ToString();
+
+            TicketPrice.Text = $"{Ticket.TicketPrice}$"; 
+
+            TotalAmount.Text = $"{Ticket.GrandTotal}"; //fix this
         }
     }
 }

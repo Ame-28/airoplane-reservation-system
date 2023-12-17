@@ -181,7 +181,7 @@
                 <!--Grand Total Attributes-->
                 <TextBlock x:Name="LineToSeperate" 
                            FontSize="10" FontWeight="Bold"
-                           Text="-------------------------------------------------------------" TextAlignment="Center"
+                           Text="------------------------------------------------------------" TextAlignment="Center"
                            Grid.Row="1" Grid.ColumnSpan="2" 
                            VerticalAlignment="Bottom" HorizontalAlignment="Left" 
                            Margin="16,0,0,0"/>
