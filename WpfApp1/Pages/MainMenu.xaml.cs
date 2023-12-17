@@ -27,10 +27,6 @@ namespace ARS
             Main_frame.Content = TravelDetails;
         }  
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
         private void ManageBooking_click(object sender, RoutedEventArgs e)
         {
             ManageBooking ManageBooking = new ManageBooking();
@@ -56,7 +52,6 @@ namespace ARS
         {
             CheckIn CheckIn = new CheckIn();
             Main_frame.Content = CheckIn;
-
         }
 
 
