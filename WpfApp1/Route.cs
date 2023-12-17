@@ -8,6 +8,7 @@ namespace ARS
 {
     public static class Route
     {
+        public static int RouteID { get; set; }
         public static string FromIATA { get; set; }
         public static string FromCity { get; set; }
         public static string ToIATA { get; set; }
