@@ -46,5 +46,10 @@ namespace ARS
                 PassengerCount.Text = i.PassengerCount.Text;
             }
         }
+
+        private void GoBack_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
+        }
     }
 }
