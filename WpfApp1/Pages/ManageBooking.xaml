@@ -4,13 +4,13 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
-      Height="600" Width="900"
+      Height="460" Width="729"
       Title="ManageBooking">
 
 
     <Page.Resources>
-       
-        
+
+
 
         <!-- Custom TextBox Style -->
         <Style x:Key="RoundedTextBoxStyle" TargetType="TextBox">
@@ -70,7 +70,7 @@
         </Grid.ColumnDefinitions>
 
         <!-- Define Headings -->
-        <TextBlock Grid.ColumnSpan="3"
+        <TextBlock Grid.ColumnSpan="2" Grid.Column="1"
            VerticalAlignment="Center" HorizontalAlignment="Left"
            FontSize="20" FontWeight="bold"
            TextWrapping="Wrap"
@@ -81,59 +81,58 @@
         <TextBlock Grid.ColumnSpan="2"
            VerticalAlignment="Center" HorizontalAlignment="Center"
            TextWrapping="Wrap"  
-           Text="PNR/BOOKING REFERENCE"                
+           Text="BOOKING ID"                
            Foreground="Black"  
            FontSize="15" FontWeight="Bold"
             Height="18" Width="230" Grid.RowSpan="2"/>
         <!--Textblock for email/last name-->
-        <TextBlock Grid.Column="2" Grid.ColumnSpan="3"
-           VerticalAlignment="Top" HorizontalAlignment="Left"
-           TextWrapping="Wrap"  
-           Text="EMAIL/LAST NAME"                
-           Foreground="Black"  
-           FontSize="15" FontWeight="Bold" Height="18" Width="230"  Grid.Row="1"/>
-
-        <TextBlock Grid.ColumnSpan="2" Grid.Row="1"
-           VerticalAlignment="Bottom" HorizontalAlignment="Left"
-           FontSize="10" 
-           TextWrapping="Wrap" 
-           Text="Booking reference:6 letters and/or Number(eg ABC123)"
-           Height="15" Width="250" Margin="40,0,0,37"/>
-        <TextBlock Grid.ColumnSpan="2" Grid.Row="1"
-           VerticalAlignment="bottom" HorizontalAlignment="Left"
-           FontSize="10" 
-           TextWrapping="Wrap" 
-           Text="PNR number:13 numbers(eg 1234567890123)"
-           Height="15" Width="250" Margin="40,0,0,22"/>
+        <TextBlock Grid.Column="2" Grid.Row="1"
+                   Grid.ColumnSpan="2"
+                   VerticalAlignment="Top" HorizontalAlignment="Left"
+                   TextWrapping="Wrap"  
+                   Text="USERNAME/FIRST NAME"                
+                   Foreground="Black"  
+                   FontSize="15" FontWeight="Bold" 
+                   Margin="10,0,0,0"/>
 
         <!-- Bookingreference TextBox-->
-        <TextBox x:Name="BookingreferenceTextBox" 
+        <TextBox x:Name="BookingIDTextBox" 
          Grid.Row="1" 
          Grid.ColumnSpan="2" Grid.Column="0"
          Style="{StaticResource RoundedTextBoxStyle}"
          Width="240" Height="50"
          HorizontalAlignment="Center" VerticalAlignment="Top" 
          VerticalContentAlignment="Center"
-         FontSize="15" Margin="0,28,0,0"/>
+         FontSize="15" Margin="0,30,0,0" />
 
+        <!-- Go Back Button -->
+        <Button Height="26" 
+                x:Name="GoBack"               
+                Click="GoBack_Click">
+            <Button.Template>
+                <ControlTemplate>
+                    <Image Source="/Images/goBack.png"/>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
 
         <!-- Email TextBox -->
         <TextBox x:Name="EmailTextBox"                     
-         Grid.Row="1" Grid.Column="1"                
+         Grid.Row="1" Grid.Column="2"                
          Style="{StaticResource RoundedTextBoxStyle}"                      
          Width="240" Height="50"
          HorizontalAlignment="Left" VerticalAlignment="Top"
          VerticalContentAlignment="Center"
-         FontSize="15"  Grid.ColumnSpan="3" Margin="200,31,0,0"/>
+         FontSize="15"  Grid.ColumnSpan="3" Margin="10,30,0,0"/>
 
         <!--TextBox for managebookTextarea-->
-        <TextBox x:Name="managebookTextarea"                   
+        <TextBox x:Name="BookText"                   
          Grid.Row="2"               
          Style="{StaticResource RoundedTextBoxStyle}"                      
-         Width="600" Height="110"
-         HorizontalAlignment="left" VerticalAlignment="Top"
-         VerticalContentAlignment="Center"
-         FontSize="15" Margin="50,78,0,0" Grid.ColumnSpan="4" Grid.RowSpan="2" Grid.Column="0" />
+         Width="600" Height="170"
+         HorizontalAlignment="Left" VerticalAlignment="Top"
+         VerticalContentAlignment="Top"
+         FontSize="15" Margin="50,78,0,0" Grid.ColumnSpan="4" Grid.RowSpan="3" Grid.Column="0" />
 
         <!-- Find Booking Button -->
         <Button x:Name="FindBookedFlightsButton" Grid.Row="1"               
@@ -143,7 +142,7 @@
         Content="FIND BOOKING"
         Background="#374B68" Foreground="white" 
         FontSize="15" FontWeight="bold" 
-        Style="{StaticResource RoundedButtonStyle}" Margin="40,118,0,0" Grid.RowSpan="2"/>
+        Style="{StaticResource RoundedButtonStyle}" Margin="40,118,0,0" Grid.RowSpan="2" Click="FindBookedFlightsButton_Click"/>
 
     </Grid>
 </Page>

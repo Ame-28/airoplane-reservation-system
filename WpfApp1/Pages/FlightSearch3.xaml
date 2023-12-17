@@ -73,13 +73,34 @@
                 Margin="0,0,10,10"
                 Style="{StaticResource RoundedButtonStyle}"
                 Click="ManageBooking_Click"/>
+
+        <!-- Go Back Button -->
+        <Button Height="26" 
+                x:Name="GoBack"               
+                Click="GoBack_Click"
+                HorizontalAlignment="Left" VerticalAlignment="Top"
+                Margin="20,20,0,0">
+            <Button.Template>
+                <ControlTemplate>
+                    <Image Source="/Images/goBack.png"/>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
         
         <!-- Booking Time -->
         <TextBlock Grid.Column="1"
-                   Text="booking time" TextWrapping="Wrap"
+                   Text="" TextWrapping="Wrap"
                    x:Name="BookingTime"
                    VerticalAlignment="Center" HorizontalAlignment="Center"
                    FontSize="15"
                    Margin="0,200,0,0"/>
+        
+        <!-- Booking ID -->
+        <TextBlock Grid.Column="1"
+                   Text="" TextWrapping="Wrap"
+                   x:Name="BookingID"
+                   VerticalAlignment="Bottom" HorizontalAlignment="Center"
+                   FontSize="20" FontWeight="Bold"
+                   Margin="0,0,0,50"/>
     </Grid>
 </Page>
