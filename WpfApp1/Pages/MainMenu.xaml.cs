@@ -53,7 +53,5 @@ namespace ARS
             CheckIn CheckIn = new CheckIn();
             Main_frame.Content = CheckIn;
         }
-
-
     }
 }

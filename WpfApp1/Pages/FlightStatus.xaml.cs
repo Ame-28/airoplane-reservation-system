@@ -25,9 +25,30 @@ namespace ARS
             InitializeComponent();
         }
 
-        private void RoundTrip_Checked(object sender, RoutedEventArgs e)
+        private void FindFlightButton_Click(object sender, RoutedEventArgs e)
         {
+            SQL mySQL = new SQL();
+            if(mySQL.checkValue("flight", "flight_no", FlightNumberTextBox.Text))
+            {
+                Dictionary<string, object> flightDeets = mySQL.readValues("flight", $"flight_no = {FlightNumberTextBox.Text}");
+                Logger.logEvent("Booking found!");
 
+                // Print the details to textbox
+                foreach (var kvp in flightDeets)
+                {
+                    FlightStatusTextarea.AppendText($"{kvp.Key}: {kvp.Value}\n");
+                }
+
+                // Log event
+                Logger.logEvent("Flight found!");
+            }
+            else
+            {
+                FlightStatusTextarea.Text = "Flight not found. Check your flight number and try again";
+
+                // Log error
+                Logger.logError("Flight not found");
+            }
         }
     }
 }
