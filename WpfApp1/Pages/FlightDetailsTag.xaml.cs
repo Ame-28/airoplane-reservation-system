@@ -31,7 +31,17 @@ namespace ARS
 
         private void BookButton_Click(object sender, RoutedEventArgs e)
         {
+            // Find the parent window or page
+            var parentWindow = Window.GetWindow(this); // For UserControl inside a Window
 
+            if (parentWindow != null)
+            {
+                // Access the Frame in the parent window or page
+                var frame = ((MainWindow)parentWindow).MainPage_Frame; // Adjust type accordingly
+
+                // Navigate to the desired page
+                frame.NavigationService.Navigate(new Uri("/Pages/FlightSearch2.xaml", UriKind.Relative));
+            }
         }
     }
 }
