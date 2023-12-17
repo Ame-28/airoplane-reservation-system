@@ -33,6 +33,8 @@ namespace ARS.Pages
 
         private void SignIn_Click(object sender, RoutedEventArgs e)
         {
+            string passwordHash;
+            bool reverseHash = false;
             // Clear all text
             userNameError.Text = string.Empty;
             passwordError.Text = string.Empty;
@@ -42,32 +44,23 @@ namespace ARS.Pages
             string userName = UsernameTextBox.Text;
             SecureString password = PasswordBox.SecurePassword;
 
-            // Hash and verify password
-            string passwordHash = mySQL.readValues("customer", $"first_name = '{userName}'")["PASSWORD"].ToString();
-            bool reverseHash = BCrypt.Net.BCrypt.Verify(SecureStringToString(password), passwordHash);
+
 
             // Check user name field
             if (!Validator.IsValidUserName(userName))
             {
-                userNameError.Text = "ERROR: The username is invalid\nDo not enter number or null characters";
+                userNameError.Text = "ERROR: The username is invalid. Do not enter number or null characters";
                 Logger.logError("The username is invalid. Do not enter number or null characters");
             }
-
             // Check password field
             else if (password.Length == 0)
             {
                 passwordError.Text = "ERROR: The password is empty";
                 Logger.logError("The password is empty");
             }
-            // Check if password is correct
-            else if (!reverseHash)
+            else //if (Validator.IsValidUserName(userName) && password.Length != 0)
             {
-                passwordError.Text = "Incorrect Password. Please try again.";
-                Logger.logError("Incorrect Password. Please try again.");
-            }
-            // Check user name in DB
-            else
-            {
+                // Check user name in DB
                 if (!mySQL.checkValue("customer", "first_name", userName))
                 {
                     loginError.Text = "User not Found. Click here to register your account";
@@ -75,22 +68,40 @@ namespace ARS.Pages
                 }
                 else
                 {
-                    Logger.logEvent($"{userName} signed in successfully");
+                    // Hash and verify password
+                    passwordHash = mySQL.readValues("customer", $"first_name = '{userName}'")["PASSWORD"].ToString();
+                    reverseHash = BCrypt.Net.BCrypt.Verify(SecureStringToString(password), passwordHash);
 
-                    storeData(userName); // Store data temporarily
-
-                    // Go to next page
-                    MainWindow mainWindow = Window.GetWindow(this) as MainWindow;
-
-                    // Navigate to MainMenu.xaml on the main window's frame
-                    if (mainWindow != null)
+                    // Check if password is correct
+                    if (!reverseHash)
                     {
-                        mainWindow.MainPage_Frame.Navigate(new Uri("/Pages/MainMenu.xaml", UriKind.Relative));
+                        passwordError.Text = "Incorrect Password. Please try again.";
+                        Logger.logError("Incorrect Password. Please try again.");
+                    }
+                    else
+                    {
+                        Logger.logEvent($"{userName} signed in successfully");
+
+                        storeData(userName); // Store data temporarily
+
+                        // Go to next page
+                        MainWindow mainWindow = Window.GetWindow(this) as MainWindow;
+
+                        // Navigate to MainMenu.xaml on the main window's frame
+                        if (mainWindow != null)
+                        {
+                            mainWindow.MainPage_Frame.Navigate(new Uri("/Pages/MainMenu.xaml", UriKind.Relative));
+                        }
                     }
 
-
                 }
+
+
+
             }
+
+            
+           
         }
 
         private void Register_Click(object sender, RoutedEventArgs e)
