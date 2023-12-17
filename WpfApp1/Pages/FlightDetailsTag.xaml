@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ARS"
              mc:Ignorable="d" 
-             d:DesignHeight="90" d:DesignWidth="710">
+             d:DesignHeight="100" d:DesignWidth="710">
     <UserControl.Resources>
         <Style x:Key="RoundedButtonStyle" TargetType="Button">
             <Setter Property="Template">
@@ -51,7 +51,7 @@
                 <ColumnDefinition Width="118*"/>
                 <ColumnDefinition Width="136*"/>
                 <ColumnDefinition Width="119*"/>
-                <ColumnDefinition Width="44*"/>
+                <ColumnDefinition Width="70*"/>
                 <ColumnDefinition Width="92*"/>
             </Grid.ColumnDefinitions>
 
@@ -79,7 +79,7 @@
                        HorizontalAlignment="Left" VerticalAlignment="Center"
                        FontSize="10" FontWeight="bold" 
                        TextWrapping="Wrap"
-                       Text="---------------" TextAlignment="Center" 
+                       Text="------------" TextAlignment="Center" 
                        Grid.Row="1" Grid.Column="1" />
             <TextBlock x:Name="Duration" 
                        VerticalAlignment="Center"
@@ -92,7 +92,7 @@
                        HorizontalAlignment="Right" VerticalAlignment="Center"
                        FontSize="10" FontWeight="bold" 
                        TextWrapping="Wrap"
-                       Text="---------------" TextAlignment="Center" 
+                       Text="------------" TextAlignment="Center" 
                        Grid.Row="1" Grid.Column="1" />
 
             <!-- To code,location and time -->
@@ -123,8 +123,7 @@
                        VerticalAlignment="Center" 
                        Text="ECONOMY"  
                        Grid.Row="1" Grid.Column="4"/>
-            <!--int price = // fetch the value from DataSet
-    Price.Text = "Price: $" + price.ToString();-->
+
             <!-- Price Text-->
             <TextBlock x:Name="Price"
                        FontSize="15" FontWeight="bold" 
@@ -141,6 +140,21 @@
                     Background="#374B68" Foreground="white" 
                     FontSize="10" FontWeight="bold"
                     Style="{StaticResource RoundedButtonStyle}"/>
+            
+            <!-- User Image-->
+            <Image Source="/Images/user.png" Height="13" 
+                   Grid.Column="3" Grid.Row="1" 
+                   HorizontalAlignment="Right"/>
+
+            <!-- TextBlock for passenger count-->
+            <TextBlock x:Name="PassengerCount" 
+                       Grid.Column="3" Grid.Row="1"
+                       FontSize="15" FontWeight="Bold"
+                       TextWrapping="Wrap"
+                       HorizontalAlignment="Right"
+                       Text="1" 
+                       Height="20" Margin="0,0,20,0"/>
+
         </Grid>
     </Border>
 

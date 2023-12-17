@@ -35,6 +35,7 @@ namespace ARS.Pages
         {
             string passwordHash;
             bool reverseHash = false;
+
             // Clear all text
             userNameError.Text = string.Empty;
             passwordError.Text = string.Empty;
@@ -58,7 +59,7 @@ namespace ARS.Pages
                 passwordError.Text = "ERROR: The password is empty";
                 Logger.logError("The password is empty");
             }
-            else //if (Validator.IsValidUserName(userName) && password.Length != 0)
+            else 
             {
                 // Check user name in DB
                 if (!mySQL.checkValue("customer", "first_name", userName))
