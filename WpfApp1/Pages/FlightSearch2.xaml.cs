@@ -26,24 +26,26 @@ namespace ARS
             loadData();
         }
 
+        SQL mySQL = new SQL();
+
         public void loadData()
         {
             // Load data into XAML elements
-            FromCode.Text = Ticket.FromCode;
-            FromLocation.Text = Ticket.FromLocation;
-            FromTime.Text = Ticket.FromTime;
+            FromCode.Text = mySQL.readValues("ticket", $"CUSTOMER_NAME = '{Customer.UserName}'")["FromCode"].ToString();
+            FromLocation.Text = mySQL.readValues("ticket", $"CUSTOMER_NAME = '{Customer.UserName}'")["FromLocation"].ToString();
+            FromTime.Text = mySQL.readValues("ticket", $"CUSTOMER_NAME = '{Customer.UserName}'")["FromTime"].ToString();
 
-            ToCode.Text = Ticket.ToCode;
-            ToLocation.Text = Ticket.ToLocation;
-            ToTime.Text = Ticket.ToTime;
+            ToCode.Text = mySQL.readValues("ticket", $"CUSTOMER_NAME = '{Customer.UserName}'")["ToCode"].ToString();
+            ToLocation.Text = mySQL.readValues("ticket", $"CUSTOMER_NAME = '{Customer.UserName}'")["ToLocation"].ToString();
+            ToTime.Text = mySQL.readValues("ticket", $"CUSTOMER_NAME = '{Customer.UserName}'")["ToTime"].ToString();
 
-            Duration.Text = Ticket.Duration;
+            Duration.Text = mySQL.readValues("ticket", $"CUSTOMER_NAME = '{Customer.UserName}'")["Duration"].ToString();
 
-            PassengerCount.Text = Ticket.PassengerCount.ToString();
+            PassengerCount.Text = mySQL.readValues("ticket", $"CUSTOMER_NAME = '{Customer.UserName}'")["PassengerCount"].ToString();
 
-            TicketPrice.Text = $"{Ticket.TicketPrice}$"; 
+            //TicketPrice.Text = $"{mySQL.readValues("ticket", $"CUSTOMER_NAME = '{Customer.UserName}'")["TicketPrice"]}$"; 
 
-            TotalAmount.Text = $"{Ticket.GrandTotal}"; //fix this
+            TotalAmount.Text = $"{mySQL.readValues("ticket", $"CUSTOMER_NAME = '{Customer.UserName}'")["GrandTotal"]}"; //fix this
         }
 
         private void CheckoutButton_Click(object sender, RoutedEventArgs e)
