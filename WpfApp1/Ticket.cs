@@ -2,28 +2,28 @@
 
 namespace ARS
 {
-    public class Ticket
+    public static class Ticket
     {
         // Departure details
-        public string FromCode { get; set; }
-        public string FromLocation { get; set; }
-        public string FromTime { get; set; }
+        public static string FromCode { get; set; }
+        public static string FromLocation { get; set; }
+        public static string FromTime { get; set; }
 
         // Arrival details
-        public string ToCode { get; set; }
-        public string ToLocation { get; set; }
-        public string ToTime { get; set; }
+        public static string ToCode { get; set; }
+        public static string ToLocation { get; set; }
+        public static string ToTime { get; set; }
 
-        public string Duration { get; set; }
+        public static string Duration { get; set; }
 
         // Passenger details
-        public int PassengerCount { get; set; }
+        public static int PassengerCount { get; set; }
 
         // Price of one ticket details
-        public decimal TicketPrice { get; set; }
+        public static int TicketPrice { get; set; }
 
         // Grand Total Attributes
-        public decimal GrandTotal { get; set; }
+        public static string GrandTotal { get; set; }
 
     }
 }
