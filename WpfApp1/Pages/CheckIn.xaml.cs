@@ -24,5 +24,31 @@ namespace ARS
         {
             InitializeComponent();
         }
+
+        private void CheckIn_Click(object sender, RoutedEventArgs e)
+        {
+            SQL mySQL = new SQL();
+            if (mySQL.checkValue("ticket", "ticketId", BookingIDTextBox.Text))
+            {
+                // Log event
+                Logger.logEvent("Booking found!");
+
+                // Booking found
+                errorImage.Visibility = Visibility.Collapsed;
+                successImage.Visibility = Visibility.Visible;
+                messageText.Text = "You have been checked in succesfully";
+
+            }
+            else
+            {
+                // Log error
+                Logger.logError("Booking not found");
+
+                // Booking not found
+                successImage.Visibility= Visibility.Collapsed;
+                errorImage.Visibility = Visibility.Visible;
+                messageText.Text = "Sorry your booking is not found";
+            }
+        }
     }
 }
