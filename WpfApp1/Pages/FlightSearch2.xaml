@@ -7,8 +7,34 @@
       mc:Ignorable="d" 
      d:DesignHeight="490" d:DesignWidth="710"
       Title="FlightSearch2">
-
-    <Grid Background="white">
+    <Page.Resources>
+        <!-- Existing RoundedButtonStyle -->
+        <Style x:Key="RoundedButtonStyle" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" Background="#2e395d" CornerRadius="10" BorderBrush="Black" BorderThickness="1">
+                            <Border.Effect>
+                                <DropShadowEffect Color="Gray" BlurRadius="5" ShadowDepth="5" Opacity="0.5"/>
+                            </Border.Effect>
+                            <ContentPresenter x:Name="contentPresenter" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#2e395d"/>
+                                <Setter TargetName="contentPresenter" Property="TextElement.Foreground" Value="yellow"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Width" Value="150"/>
+            <Setter Property="Height" Value="40"/>
+        </Style>
+    </Page.Resources>
+    <Grid Background="#f4f4f8">
         <Grid.RowDefinitions>
             <RowDefinition Height="51*"/>
             <RowDefinition Height="35*"/>
@@ -16,15 +42,15 @@
 
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="73*"/>
-            <ColumnDefinition Width="73*"/>
-            <ColumnDefinition Width="73*"/>
-            <ColumnDefinition Width="206*"/>
+            <ColumnDefinition Width="106*"/>
+            <ColumnDefinition Width="148*"/>
+            <ColumnDefinition Width="129*"/>
+            <ColumnDefinition Width="42*"/>
             <ColumnDefinition Width="85*"/>
             <ColumnDefinition Width="99*"/>
             <ColumnDefinition Width="102*"/>
         </Grid.ColumnDefinitions>
-        <Border Grid.ColumnSpan="8" Grid.RowSpan="1" Grid.Column="0" Margin="0,0,0,0" BorderThickness="2" Background="white">
+        <Border Grid.ColumnSpan="7" Grid.RowSpan="1" Grid.Column="0" BorderThickness="2" Background="white">
 
             <Grid VerticalAlignment="Bottom">
                 <Grid.ColumnDefinitions>
@@ -59,15 +85,15 @@
                 </Button>
             </Grid>
         </Border>
-        <TextBlock Grid.ColumnSpan="3"
-           VerticalAlignment="Bottom" HorizontalAlignment="Left"
+        <TextBlock
+           VerticalAlignment="Top" HorizontalAlignment="Left"
            FontSize="20" FontWeight="bold"
            TextWrapping="Wrap"
            Text="FLIGHT SUMMARY"
-           Margin="40,0,0,0" 
-           Height="27" Width="266"/>
-        <Border BorderBrush="Black" BorderThickness="1" Grid.Row="2" Grid.ColumnSpan="7" Margin="17,0,10,273">
-            <Grid>
+           Margin="53,24,0,0" 
+           Height="26" Width="180" Grid.Column="0" Grid.ColumnSpan="2"/>
+        <Border BorderBrush="Black" BorderThickness="1" Grid.Row="2" Grid.ColumnSpan="7" Margin="17,0,10,200" Background="White">
+            <Grid Margin="-1,0,-1,-1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"/>
                     <ColumnDefinition Width="1*"/>
@@ -78,23 +104,40 @@
 
                 <!-- Departure details -->
                 <TextBlock x:Name="FromCode" Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold" Text="YYN" TextAlignment="Center" Height="27" Margin="0,19,0,0"/>
-                <TextBlock x:Name="FromLocation" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="10" FontWeight="Bold" Text="TORONTO" TextAlignment="Center" Height="15" Margin="0,0,0,4"/>
-                <TextBlock x:Name="FromTime" Grid.Column="2" FontSize="10" FontWeight="Bold" Text="00:00" TextAlignment="Center" Height="13" Margin="0,15,0,4"/>
-
-                <!-- Arrow and total duration -->
-                <StackPanel Grid.Column="3" Orientation="Horizontal">
-                    <TextBlock x:Name="ArrowLeft" FontSize="10" FontWeight="Bold" Text="---------------" TextAlignment="Center" Width="65"/>
-                    <TextBlock x:Name="ArrowTime" FontSize="10" FontWeight="Bold" Text="00:00" TextAlignment="Center" Width="40" Height="13"/>
-                    <TextBlock x:Name="ArrowRight" FontSize="10" FontWeight="Bold" Text="----------------" TextAlignment="Center" Width="65"/>
-                </StackPanel>
+                <TextBlock x:Name="FromLocation" Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="10" FontWeight="Bold" Text="TORONTO" TextAlignment="Center" Height="15" Margin="29,51,0,0"/>
+                <TextBlock x:Name="FromTime" Grid.Column="0" FontSize="10" FontWeight="Bold" Text="00:00" TextAlignment="Center" Height="13" Margin="4,71,93,119" Grid.ColumnSpan="2"/>
 
                 <!-- Arrival details -->
-                <TextBlock x:Name="ToCode" Grid.Column="4" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold" Text="IND" TextAlignment="Center" Height="27" Margin="0,19,0,0"/>
-                <TextBlock x:Name="ToLocation" Grid.Column="5" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="10" FontWeight="Bold" Text="India" TextAlignment="Center" Height="15" Margin="0,0,0,4"/>
-                <TextBlock x:Name="ToTime" Grid.Column="5" FontSize="10" FontWeight="Bold" Text="00:00" TextAlignment="Center" Height="13" Margin="34,15,33,4"/>
+                <TextBlock x:Name="ToCode" Grid.Column="3" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="20" FontWeight="Bold" Text="IND" TextAlignment="Center" Height="27" Margin="10,20,0,0"/>
+                <TextBlock x:Name="ToLocation" Grid.Column="3" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="10" FontWeight="Bold" Text="INDIA" TextAlignment="Center" Height="15" Margin="10,55,0,0" RenderTransformOrigin="1.495,0.92"/>
+                <TextBlock x:Name="ToTime" Grid.Column="3" FontSize="10" FontWeight="Bold" Text="10:00" TextAlignment="Center" Height="13" Margin="0,74,148,116" RenderTransformOrigin="0.258,-1.923"/>
 
-                <!-- Class type -->
-                <TextBlock x:Name="Class" Grid.Column="6" FontSize="15" FontWeight="Bold" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Text="ECONOMY" Height="20" Margin="136,0,0,0"/>
+                <!-- Arrow and duration -->
+
+                <TextBlock x:Name="ArrowLeft" FontSize="10" FontWeight="Bold" Text="---------------" TextAlignment="Center" Grid.ColumnSpan="2" Margin="97,57,33,132"/>
+                <TextBlock x:Name="ArrowTime_Copy" FontSize="10" FontWeight="Bold" Text="10:00" TextAlignment="Center" Grid.Column="1" Grid.ColumnSpan="2" Margin="70,59,86,125" RenderTransformOrigin="-6.012,0.631"/>
+                <TextBlock x:Name="ArrowRight" FontSize="10" FontWeight="Bold" Text="------------------" TextAlignment="Center" Grid.Column="2" Margin="12,59,6,125"/>
+                <!--passanger details-->
+                <TextBlock x:Name="PssengerText" FontSize="10" FontWeight="Bold" Text="Number of Passengers" TextAlignment="Center" Margin="36,107,0,80" Width="110" Grid.ColumnSpan="2" HorizontalAlignment="Left"/>
+                <TextBlock x:Name="PassengerCount"  FontSize="10" FontWeight="Bold" Text="10" TextAlignment="Center" Margin="2,107,0,80" Width="49" HorizontalAlignment="Left" Grid.Column="2"/>
+
+                <!--price of one ticket details-->
+                <TextBlock x:Name="ticketDetailsText" FontSize="10" FontWeight="Bold" Text="Price of one ticket" TextAlignment="Center" Margin="36,125,0,62" Width="110" Grid.ColumnSpan="2" HorizontalAlignment="Left" RenderTransformOrigin="0.533,1.35"/>
+                <TextBlock x:Name="ticketPrice"  FontSize="10" FontWeight="Bold" Text="10" TextAlignment="Center" Margin="3,128,0,59" Width="49" HorizontalAlignment="Left" Grid.Column="2"/>
+                <!--Grand Total Attributes-->
+                <TextBlock x:Name="LineToSeperate" FontSize="10" FontWeight="Bold" Text="---------------------------------------------------------------------------" TextAlignment="Center" Grid.ColumnSpan="4" Margin="36,150,158,39"/>
+                <TextBlock x:Name="GrantTotalText" FontSize="10" FontWeight="Bold" Text="GRAND TOTAL" TextAlignment="Center" Grid.ColumnSpan="2" Margin="37,164,49,25"/>
+                <TextBlock x:Name="GrantTotal" FontSize="10" FontWeight="Bold" Text="$200" TextAlignment="Center" Grid.ColumnSpan="3" Margin="97,164,194,25" Grid.Column="1"/>
+                
+                <!--check out button-->
+                <Button Grid.Column="4"
+                    Height="25" Width="70"
+                    VerticalAlignment="Top" 
+                    x:Name="CheckoutButton" 
+                    Content="CHECKOUT"
+                    Background="#374B68" Foreground="white" 
+                    FontSize="10" FontWeight="bold"
+                    Style="{StaticResource RoundedButtonStyle}"  Margin="97,157,28,0"/>
             </Grid>
         </Border>
 
