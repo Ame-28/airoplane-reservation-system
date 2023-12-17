@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfApp1.Pages
+namespace ARS
 {
     /// <summary>
     /// Interaction logic for FlightSearch1.xaml
@@ -24,8 +24,22 @@ namespace WpfApp1.Pages
         public FlightSearch1()
         {
             InitializeComponent();
-            
+        }
 
+        public FlightSearch1(List<FlightDetailsTag> flights)
+        {
+            InitializeComponent();
+            populateDetails(flights);
+        }
+
+        public void populateDetails(List<FlightDetailsTag> flights)
+        {
+            foreach (var i in flights)
+            {
+                // Add the new instance to the StackPanel
+                flightStack.Children.Add(i);
+            }
+                    
         }
     }
 }
