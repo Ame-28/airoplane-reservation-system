@@ -68,7 +68,7 @@
                        TextWrapping="Wrap"
                        Text="TORONTO" TextAlignment="Center"
                        Grid.Row="1"/>
-            <TextBlock x:Name="FromTime" 
+            <TextBlock x:Name="DepartureTime" 
                        VerticalAlignment="Bottom" HorizontalAlignment="Center"
                        FontSize="10" FontWeight="bold"
                        TextWrapping="Wrap" TextAlignment="Center"
@@ -95,7 +95,7 @@
                        Text="---------------" TextAlignment="Center" 
                        Grid.Row="1" Grid.Column="1" />
 
-            <!--To code,location and time-->
+            <!-- To code,location and time -->
             <TextBlock x:Name="ToCode" 
                        Grid.Column="2"
                        VerticalAlignment="Center" HorizontalAlignment="Center"
@@ -109,7 +109,7 @@
                        TextWrapping="Wrap"
                        Text="INDIA" TextAlignment="Center"
                        Grid.Row="1" Grid.Column="2"/>
-            <TextBlock x:Name="ToTime" 
+            <TextBlock x:Name="ArrivalTime" 
                        VerticalAlignment="Bottom" HorizontalAlignment="Center"
                        FontSize="10" FontWeight="bold"
                        TextWrapping="Wrap" TextAlignment="Center"
