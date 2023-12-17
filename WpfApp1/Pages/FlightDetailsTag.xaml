@@ -135,10 +135,11 @@
             <Button Grid.Row="1" Grid.Column="6"
                     Height="25" Width="70"
                     VerticalAlignment="Center" 
-                    x:Name="RegisterButton" 
+                    x:Name="BookButton" 
                     Content="BOOK FLIGHT"
                     Background="#374B68" Foreground="white" 
                     FontSize="10" FontWeight="bold"
+                    Click="BookButton_Click"
                     Style="{StaticResource RoundedButtonStyle}"/>
             
             <!-- User Image-->
