@@ -39,13 +39,13 @@ namespace ARS
         private void SearchFlights_Click(object sender, RoutedEventArgs e)
         {
             SQL sql = new SQL();
-            Dictionary<string, object> fromDetails = new Dictionary<string, object>();
-            Dictionary<string, object> toDetails = new Dictionary<string, object>();
             Dictionary<string, object> route = new Dictionary<string, object>();
             List<Dictionary<string, object>> flight = new List<Dictionary<string, object>>();
+            List<FlightDetailsTag> allFlights = new List<FlightDetailsTag>();
             string departDate = DepartDatePicker.Text;
             string returnDate = ReturnDatePicker.Text;
-
+            Airport fromAirport = new Airport();
+            Airport toAirport = new Airport();
             /*
              * Validate fields
              * Go to FlightSearch1.xaml
@@ -55,23 +55,33 @@ namespace ARS
             // Get From and To details
             Route.FromCity = sql.readValues("airport", $"CITY = '{FromTextBox.Text}'")["CITY"].ToString();
             Route.ToCity = sql.readValues("airport", $"CITY = '{ToTextBox.Text}'")["CITY"].ToString();
-            //fromDetails = sql.readValues("airport", $"CITY = '{FromTextBox.Text}'");
-            //toDetails = sql.readValues("airport", $"CITY = '{ToTextBox.Text}'");
-            route = sql.readValues("route", $"DEPARTURE_LOCATION_ID = {fromDetails["AIRPORT_ID"]} AND ARRIVAL_LOCATION_ID = {toDetails["AIRPORT_ID"]}");
+
+            // Get Departure Airport Details
+            //Dictionary<string, object> test = sql.readValues("airport", $"CITY = {FromTextBox.Text}");
+            fromAirport.AirportID = Convert.ToInt32(sql.readValues("airport", $"CITY = '{FromTextBox.Text}'")["AIRPORT_ID"]);
+            fromAirport.AirportCity = FromTextBox.Text;           
+            fromAirport.IATACode = sql.customQuery("SELECT DISTINCT iata_code FROM airport a LEFT JOIN route r ON a.airport_id = r.ARRIVAL_LOCATION_ID LEFT JOIN flight f ON r.route_id = f.route_id WHERE r.route_id = 1;")[0]["iata_code"].ToString();
+
+            // Get Arrival Airport Details
+            toAirport.AirportID = Convert.ToInt32(sql.readValues("airport", $"CITY = '{ToTextBox.Text}'")["AIRPORT_ID"]);
+            toAirport.AirportCity = ToTextBox.Text;
+            toAirport.IATACode = sql.customQuery("SELECT DISTINCT iata_code FROM airport a LEFT JOIN route r ON a.airport_id = r.DEPARTURE_LOCATION_ID LEFT JOIN flight f ON r.route_id = f.route_id WHERE r.route_id = 1;")[0]["iata_code"].ToString();
+
+            
+            route = sql.readValues("route", $"DEPARTURE_LOCATION_ID = {fromAirport.AirportID} AND ARRIVAL_LOCATION_ID = {toAirport.AirportID}");
             flight = sql.readValues("flight", $"ROUTE_ID = {route["ROUTE_ID"]}", false);
 
             foreach (var i in flight)
             {
                 FlightDetailsTag flightDetailsTag = new FlightDetailsTag();
-                var fromIATA = sql.customQuery("SELECT DISTINCT iata_code FROM airport a LEFT JOIN route r ON a.airport_id = r.ARRIVAL_LOCATION_ID LEFT JOIN flight f ON r.route_id = f.route_id WHERE r.route_id = 1;")[0]["iata_code"];
-                flightDetailsTag.FromCode.Text = fromIATA.ToString();
-                var toIATA = sql.customQuery("SELECT DISTINCT iata_code FROM airport a LEFT JOIN route r ON a.airport_id = r.DEPARTURE_LOCATION_ID LEFT JOIN flight f ON r.route_id = f.route_id WHERE r.route_id = 1;")[0]["iata_code"];
-                flightDetailsTag.ToCode.Text = toIATA.ToString();
-                flightDetailsTag.FromLocation.Text = sql.readValues("airport", $"IATA_CODE = '{fromIATA}'")["CITY"].ToString();
-                flightDetailsTag.ToLocation.Text = sql.readValues("airport", $"IATA_CODE = '{toIATA}'")["CITY"].ToString();
-
+                flightDetailsTag.FromCode.Text = fromAirport.IATACode;
+                flightDetailsTag.ToCode.Text = toAirport.IATACode;
+                flightDetailsTag.FromLocation.Text = fromAirport.AirportCity;
+                flightDetailsTag.ToLocation.Text = toAirport.AirportCity;
+                allFlights.Add(flightDetailsTag);
             }
-            NavigationService.Navigate(new FlightSearch1());
+            NavigationService.Navigate(new FlightSearch1(allFlights));
+            //((FlightSearch1)NavigationService.Content).populateDetails(allFlights);
 
         }
 
