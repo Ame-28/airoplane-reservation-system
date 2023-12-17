@@ -37,7 +37,7 @@ namespace ARS
         public void confirmed()
         {
             BookingTime.Text = $"Your booking has been confirmed at {DateTime.Now}";
-            Ticket.TicketID = "ABC123";
+            BookingID.Text = $"Your Booking ID is 1";
             Logger.logEvent($"Your booking has been confirmed");
         }
 
@@ -55,6 +55,11 @@ namespace ARS
         private void ManageBooking_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Uri("/Pages/ManageBooking.xaml", UriKind.Relative));
+        }
+
+        private void GoBack_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
         }
     }
 }
