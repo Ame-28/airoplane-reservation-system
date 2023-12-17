@@ -14,6 +14,7 @@ using System.Windows.Media.Media3D;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WpfApp1.Pages;
+using static Org.BouncyCastle.Asn1.Cmp.Challenge;
 
 namespace ARS
 {
@@ -42,19 +43,22 @@ namespace ARS
 
         private void SearchFlights_Click(object sender, RoutedEventArgs e)
         {
-            List<Dictionary<string, object>> flight = new List<Dictionary<string, object>>();
             List<FlightDetailsTag> allFlights = new List<FlightDetailsTag>();
             Airport fromAirport = new Airport();
             Airport toAirport = new Airport();
             List<Dictionary<string, object>> flights = getAirportDetails(fromAirport, toAirport);
+            Random random = new Random();
+
             /*
              * Validate fields
              * Go to FlightSearch1.xaml
              * Populate the tag with details
+             * Randomly generate from and to time
+             * Randomly generate price 
              */
 
 
-            foreach (var i in flight)
+            foreach (var i in flights)
             {
                 FlightDetailsTag flightDetailsTag = new FlightDetailsTag();
                 
@@ -63,9 +67,13 @@ namespace ARS
                 flightDetailsTag.ToCode.Text = toAirport.IATACode;
                 flightDetailsTag.FromLocation.Text = fromAirport.AirportCity;
                 flightDetailsTag.ToLocation.Text = toAirport.AirportCity;
-                flightDetailsTag.DepartureTime.Text = Flight.DepartureTime.TimeOfDay.ToString();
-                flightDetailsTag.ArrivalTime.Text = Flight.ArrivalTime.TimeOfDay.ToString();
-
+                //flightDetailsTag.DepartureTime.Text = Flight.DepartureTime.TimeOfDay.ToString();
+                flightDetailsTag.DepartureTime.Text = generateRandomTime();
+                flightDetailsTag.ArrivalTime.Text = generateRandomTime();
+                //flightDetailsTag.ArrivalTime.Text = Flight.ArrivalTime.TimeOfDay.ToString();
+                flightDetailsTag.Duration.Text = $"{calculateDuration(flightDetailsTag.DepartureTime.Text, flightDetailsTag.ArrivalTime.Text)} hrs";
+                flightDetailsTag.Price.Text = $"{random.Next(100, 500)}$";
+                
                 // Add flight tag to list
                 allFlights.Add(flightDetailsTag);
             }
@@ -98,8 +106,44 @@ namespace ARS
                 "LEFT JOIN flight f ON r.route_id = f.route_id WHERE r.route_id = 1;")
                 [0]["iata_code"].ToString();
             Flight.ArrivalTime = Convert.ToDateTime(sql.readValues("flight", $"ROUTE_ID = {Route.RouteID}")["ARRIVAL_TIME"]);
-     
-            return sql.readValues("flight", $"ROUTE_ID = {route["ROUTE_ID"]}", false);
+
+            // Get Duration
+            Route.Duration = sql.readValues("route", $"ROUTE_ID = {Route.RouteID}")["DURATION"].ToString();
+            return sql.readValues("flight", $"ROUTE_ID = {Route.RouteID}", false);
+        }
+
+        public static string generateRandomTime()
+        {
+            Random random = new Random();
+
+            // Generate a random hour between 0 and 23
+            int randomHour = random.Next(0, 24);
+
+            // Generate a random minute between 0 and 59
+            int randomMinute = random.Next(0, 60);
+
+            // Format the time as HH:mm
+            string formattedTime = $"{randomHour:D2}:{randomMinute:D2}";
+
+            return formattedTime;
+        }
+
+        public static TimeSpan calculateDuration(string departureTime, string arrivalTime)
+        {
+            // Parse departure and arrival times
+            TimeSpan departure = TimeSpan.Parse(departureTime);
+            TimeSpan arrival = TimeSpan.Parse(arrivalTime);
+
+            // Calculate the duration
+            TimeSpan duration = arrival - departure;
+
+            // Handle cases where the arrival time is earlier than the departure time (e.g., overnight flights)
+            if (duration.TotalMinutes < 0)
+            {
+                duration = TimeSpan.FromHours(24) + duration;
+            }
+
+            return duration;
         }
     }
 }
