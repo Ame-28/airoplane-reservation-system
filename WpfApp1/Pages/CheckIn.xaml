@@ -4,7 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
-      Height="600" Width="900"
+      Height="465" Width="729"
       Title="CheckIn">
 
     <Page.Resources>
@@ -58,8 +58,8 @@
             <RowDefinition Height="83*"/>
             <RowDefinition Height="101*"/>
             <RowDefinition Height="99*"/>
-            <RowDefinition Height="83*"/>
-            <RowDefinition Height="83*"/>
+            <RowDefinition Height="95*"/>
+            <RowDefinition Height="80*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="89*"/>
@@ -76,39 +76,26 @@
            Text="ENTER BOOKING DETAILS"
            Margin="40,0,0,0" 
            Height="27" Width="266"/>
-        <!--Textblock for Booking reference-->
+
+        <!--Textblock for BookingID -->
         <TextBlock Grid.ColumnSpan="2"
            VerticalAlignment="Center" HorizontalAlignment="Center"
            TextWrapping="Wrap"  
-           Text="PNR/BOOKING REFERENCE"                
+           Text="BookingID"                
            Foreground="Black"  
            FontSize="15" FontWeight="Bold"
             Height="18" Width="230" Grid.RowSpan="2"/>
-        
-        <!--Textblock for email/last name-->
-        <TextBlock Grid.Column="2" Grid.ColumnSpan="3"
+
+        <!--Textblock for user name/first name-->
+        <TextBlock Grid.Column="2" Grid.ColumnSpan="2"
            VerticalAlignment="Top" HorizontalAlignment="Left"
            TextWrapping="Wrap"  
-           Text="EMAIL/LAST NAME"                
+           Text="USER NAME/FIRST NAME"                
            Foreground="Black"  
-           FontSize="15" FontWeight="Bold" Height="18" Width="230"  Grid.Row="1"/>
+           FontSize="15" FontWeight="Bold" Height="18" Width="230" Margin="38,84,0,0" Grid.RowSpan="2"/>
 
-        <TextBlock Grid.ColumnSpan="2" Grid.Row="1"
-           VerticalAlignment="Bottom" HorizontalAlignment="Left"
-           FontSize="10" 
-           TextWrapping="Wrap" 
-           Text="Booking reference:6 letters and/or Number(eg ABC123)"
-           Height="15" Width="250" Margin="40,0,0,37"/>
-        
-        <TextBlock Grid.ColumnSpan="2" Grid.Row="1"
-           VerticalAlignment="bottom" HorizontalAlignment="Left"
-           FontSize="10" 
-           TextWrapping="Wrap" 
-           Text="PNR number:13 numbers(eg 1234567890123)"
-           Height="15" Width="250" Margin="40,0,0,22"/>
-
-        <!-- Bookingreference TextBox-->
-        <TextBox x:Name="BookingreferenceCheckinTextBox" 
+        <!-- BookingID TextBox-->
+        <TextBox x:Name="BookingIDTextBox" 
              Grid.Row="1" 
              Grid.ColumnSpan="2" Grid.Column="0"
              Style="{StaticResource RoundedTextBoxStyle}"
@@ -127,24 +114,37 @@
              VerticalContentAlignment="Center"
              FontSize="15"  Grid.ColumnSpan="3" Margin="200,31,0,0"/>
 
-        <!--TextBox for managebookTextarea-->
-        <TextBox x:Name="manageCheckInTextarea"                   
-             Grid.Row="2"               
-             Style="{StaticResource RoundedTextBoxStyle}"                      
-             Width="600" Height="110"
-             HorizontalAlignment="left" VerticalAlignment="Top"
-             VerticalContentAlignment="Center"
-             FontSize="15" Margin="50,78,0,0" Grid.ColumnSpan="4" Grid.RowSpan="2" Grid.Column="0" />
+        <!-- Images -->
+        <Image x:Name="successImage" 
+               Visibility="Hidden"
+               Source="/Images/success1.png" 
+               Height="100" Width="100"
+               Grid.Row="3" Grid.Column="1"/>
 
-        <!-- Find Booking Button -->
-        <Button x:Name="FindBookedFlightsButton" Grid.Row="1"               
-            Grid.ColumnSpan="2"
-            Height="40" Width="150" 
-            HorizontalAlignment="Left" VerticalAlignment="Top" 
-            Content="CHECK IN"
-            Background="#374B68" Foreground="white" 
-            FontSize="15" FontWeight="bold" 
-            Style="{StaticResource RoundedButtonStyle}" Margin="40,118,0,0" Grid.RowSpan="2"/>
+        <Image x:Name="errorImage" 
+               Visibility="Hidden"
+               Source="/Images/cancel.png" 
+               Height="100" Width="100"
+               Grid.Row="3" Grid.Column="1"/>
+
+        <!-- Message -->
+        <TextBlock  Grid.Row="3" Grid.Column="2"
+                    x:Name="messageText"
+                    FontSize="20"
+                    VerticalAlignment="Center"
+                    TextWrapping="Wrap"/>
+
+
+        <!-- Check-In Booking Button -->
+        <Button Grid.Row="1"               
+                Grid.ColumnSpan="2"
+                Height="40" Width="150" 
+                HorizontalAlignment="Left" VerticalAlignment="Top" 
+                Content="CHECK IN"
+                Background="#374B68" Foreground="white" 
+                FontSize="15" FontWeight="bold" 
+                Style="{StaticResource RoundedButtonStyle}" Margin="40,118,0,0" Grid.RowSpan="2" 
+                Click="CheckIn_Click"/>
 
     </Grid>
 </Page>
