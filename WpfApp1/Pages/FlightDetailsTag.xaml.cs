@@ -23,22 +23,22 @@ namespace ARS
     {
         public FlightDetailsTag()
         {
-            InitializeComponent();
-           
+            InitializeComponent();         
         }
+
+        SQL mySQL = new SQL();
 
         private void BookButton_Click(object sender, RoutedEventArgs e)
         {           
             // Populate Ticket
             populateTicket();
 
-            // Find the parent window or page
-            var parentWindow = Window.GetWindow(this); // For UserControl inside a Window
+            var parentWindow = Window.GetWindow(this); 
 
             if (parentWindow != null)
             {
-                // Access the Frame in the parent window or page
-                var frame = ((MainWindow)parentWindow).MainPage_Frame; // Adjust type accordingly
+                // Access the Frame 
+                var frame = ((MainWindow)parentWindow).MainPage_Frame; 
 
                 // Navigate to the desired page
                 frame.NavigationService.Navigate(new Uri("/Pages/FlightSearch2.xaml", UriKind.Relative));
@@ -47,18 +47,34 @@ namespace ARS
 
         public void populateTicket()
         {
-            Ticket.FromCode = FromCode.Text;
-            Ticket.FromLocation = FromLocation.Text;
-            Ticket.FromTime = DepartureTime.Text;
+            //Ticket.FromCode = FromCode.Text;
+            //Ticket.FromLocation = FromLocation.Text;
+            //Ticket.FromTime = DepartureTime.Text;
 
-            Ticket.ToCode = ToCode.Text;
-            Ticket.ToLocation = ToLocation.Text;
-            Ticket.ToTime = ArrivalTime.Text;
+            //Ticket.ToCode = ToCode.Text;
+            //Ticket.ToLocation = ToLocation.Text;
+            //Ticket.ToTime = ArrivalTime.Text;
 
-            Ticket.Duration = Duration.Text;
-            Ticket.PassengerCount = Convert.ToInt32(PassengerCount.Text);
-            Ticket.GrandTotal = Price.Text;
-            Ticket.TicketPrice = 123; //fix this
+            //Ticket.Duration = Duration.Text;
+            //Ticket.PassengerCount = Convert.ToInt32(PassengerCount.Text);
+            //Ticket.GrandTotal = Price.Text;
+            //Ticket.TicketPrice = 123; //fix this
+            Dictionary<string, object> ticketValues = new Dictionary<string, object>
+            {
+                { "FromCode", FromCode.Text },
+                { "FromLocation", FromLocation.Text },
+                { "FromTime", DepartureTime.Text },
+                { "ToCode", ToCode.Text },
+                { "ToLocation", ToLocation.Text },
+                { "ToTime", ArrivalTime.Text },
+                { "Duration", Duration.Text },
+                { "PassengerCount", Convert.ToInt32(PassengerCount.Text) },
+                { "TicketPrice", 123/*Convert.ToInt32(Price.Text)*/ },
+                { "GrandTotal", Price.Text },
+                { "CUSTOMER_NAME",Customer.UserName }
+            };
+
+            mySQL.insertValues("ticket", ticketValues);
         }
     }
 }
