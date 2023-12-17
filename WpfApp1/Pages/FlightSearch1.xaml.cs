@@ -37,6 +37,7 @@ namespace ARS
             foreach (var i in flights)
             {
                 // Add the new instance to the StackPanel
+                i.Margin = new Thickness(0, 0, 0, 10);
                 flightStack.Children.Add(i);
             }
                     
