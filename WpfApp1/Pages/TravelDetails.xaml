@@ -136,7 +136,7 @@
                 Height="26" 
                 Margin="70,118,0,0" 
                 HorizontalAlignment="Left" VerticalAlignment="Top" 
-                Click="Swap" Width="26" >
+                Click="swap" Width="26" >
             <Button.Template>
                 <ControlTemplate>
                     <Image Source="/Images/two-way-arrows.png"/>

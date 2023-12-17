@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace ARS
 {
-    public class Flight
+    public static class Flight
     {
-        public string FlightName { get; set; }
-        public int FlightNo { get; set; }
-        public DateTime ArrivalTime { get; set; }
-        public DateTime DepartureTime { get; set; }
+        public static string FlightName { get; set; }
+        public static int FlightNo { get; set; }
+        public static DateTime ArrivalTime { get; set; }
+        public static DateTime DepartureTime { get; set; }
     }
 }
