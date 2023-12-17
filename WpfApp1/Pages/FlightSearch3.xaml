@@ -1,0 +1,86 @@
+﻿<Page x:Class="ARS.FlightSearch3"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp1.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="465" d:DesignWidth="729"
+      Title="FlightSearch3">
+
+    <Page.Resources>
+        <!-- RoundedButtonStyle -->
+        <Style x:Key="RoundedButtonStyle" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" Background="#2e395d" CornerRadius="10" BorderBrush="Black" BorderThickness="1">
+                            <Border.Effect>
+                                <DropShadowEffect Color="Gray" BlurRadius="5" ShadowDepth="5" Opacity="0.5"/>
+                            </Border.Effect>
+                            <ContentPresenter x:Name="contentPresenter" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#2e395d"/>
+                                <Setter TargetName="contentPresenter" Property="TextElement.Foreground" Value="yellow"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Width" Value="150"/>
+            <Setter Property="Height" Value="40"/>
+        </Style>
+    </Page.Resources>
+
+    <Grid x:Name="myGrid" Background="White">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <!-- Images -->
+        <Image x:Name="confirmImage" 
+               Source="/Images/success1.png" 
+               Height="100" Width="100"/>
+        
+        <Image x:Name="cancelImage" 
+               Visibility="Hidden"
+               Source="/Images/cancel.png" 
+               Height="100" Width="100"/>
+        <!-- Confirmed Text -->
+        <TextBlock x:Name="confirmText" 
+                   Grid.Column="1"
+                   Text="YOUR BOOKING HAS BEEN CONFIRMED!"
+                   FontSize="30" FontWeight="Bold"
+                   VerticalAlignment="Center"                 
+                   TextAlignment="Center" TextWrapping="Wrap"/>
+
+        <!-- Manage Button -->
+        <Button Grid.Column="2" 
+                Height="50" Width="150"
+                x:Name="ManageBooking" 
+                Content="Manage Booking"
+                Background="#374B68" Foreground="white" 
+                FontSize="15" FontWeight="bold"
+                Margin="0,0,10,10"
+                Style="{StaticResource RoundedButtonStyle}"
+                Click="ManageBooking_Click"/>
+        
+        <!-- Booking Time -->
+        <TextBlock Grid.Column="1"
+                   Text="booking time"
+                   x:Name="BookingTime"
+                   VerticalAlignment="Center" HorizontalAlignment="Center"
+                   FontSize="15"
+                   Margin="0,200,0,0"/>
+    </Grid>
+</Page>

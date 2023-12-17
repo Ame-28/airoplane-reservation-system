@@ -45,5 +45,16 @@ namespace ARS
 
             TotalAmount.Text = $"{Ticket.GrandTotal}"; //fix this
         }
+
+        private void CheckoutButton_Click(object sender, RoutedEventArgs e)
+        {
+            //NavigationService.Navigate(new Uri("/Pages/FlightSearch3.xaml", UriKind.Relative));
+            NavigationService.Navigate(new FlightSearch3(true));
+        }
+
+        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new FlightSearch3(false));
+        }
     }
 }

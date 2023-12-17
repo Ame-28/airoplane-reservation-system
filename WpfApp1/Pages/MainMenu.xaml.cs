@@ -36,7 +36,7 @@ namespace ARS
         private void ManageBooking_click(object sender, RoutedEventArgs e)
         {
             ManageBooking ManageBooking = new ManageBooking();
-            Main_frame.Content=ManageBooking;
+            Main_frame.Content = ManageBooking;
         }
         private void AccountButton_clicked(object sender, RoutedEventArgs e)
         {
