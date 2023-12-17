@@ -14,6 +14,6 @@ namespace ARS
         public static string ToIATA { get; set; }
         public static string ToCity { get; set; }
         public static int Distance { get; set; }
-        public static int Duration { get; set; }
+        public static string Duration { get; set; }
     }
 }
