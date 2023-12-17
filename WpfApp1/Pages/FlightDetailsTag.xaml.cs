@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfApp1.Pages
+namespace ARS
 {
     /// <summary>
     /// Interaction logic for FlightDetailsTag.xaml
