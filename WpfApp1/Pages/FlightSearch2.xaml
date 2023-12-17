@@ -139,7 +139,7 @@
                            Text="---------------" TextAlignment="Center" 
                            Grid.Column="1"
                            HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                <TextBlock x:Name="ArrowTime_Copy" 
+                <TextBlock x:Name="Duration" 
                            FontSize="10" FontWeight="Bold" 
                            Text="10:00" TextAlignment="Center" 
                            Grid.Column="1"
@@ -181,7 +181,7 @@
                 <!--Grand Total Attributes-->
                 <TextBlock x:Name="LineToSeperate" 
                            FontSize="10" FontWeight="Bold"
-                           Text="------------------------------------------------------------\" TextAlignment="Center"
+                           Text="-------------------------------------------------------------" TextAlignment="Center"
                            Grid.Row="1" Grid.ColumnSpan="2" 
                            VerticalAlignment="Bottom" HorizontalAlignment="Left" 
                            Margin="16,0,0,0"/>
