@@ -29,18 +29,19 @@ namespace ARS
         public FlightSearch1(List<FlightDetailsTag> flights)
         {
             InitializeComponent();
-            populateDetails(flights);
+            populateFlightTag(flights);
         }
 
-        public void populateDetails(List<FlightDetailsTag> flights)
+        public void populateFlightTag(List<FlightDetailsTag> flights)
         {
             foreach (var i in flights)
             {
                 // Add the new instance to the StackPanel
                 i.Margin = new Thickness(0, 0, 0, 10);
                 flightStack.Children.Add(i);
-            }
-                    
+            }              
         }
+
+        //public 
     }
 }
