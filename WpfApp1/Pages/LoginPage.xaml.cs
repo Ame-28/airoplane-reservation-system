@@ -50,7 +50,7 @@ namespace ARS
             // Check user name field
             if (!Validator.IsValidUserName(userName))
             {
-                userNameError.Text = "ERROR: The username is invalid. Do not enter number or null characters";
+                userNameError.Text = "ERROR: The username is invalid.";
                 Logger.logError("The username is invalid. Do not enter number or null characters");
             }
             // Check password field
